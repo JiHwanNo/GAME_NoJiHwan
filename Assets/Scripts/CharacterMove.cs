@@ -14,7 +14,6 @@ public class CharacterMove : MonoBehaviour, MouseInput.IPlayerActions, IPointerD
     [Header("Camera")]
     public Camera mycamera;
     public GameObject touchEffect;
-    public Vector3 offset_Cam;
     RaycastHit hit;
 
     [Header("Player")]
@@ -49,9 +48,6 @@ public class CharacterMove : MonoBehaviour, MouseInput.IPlayerActions, IPointerD
        PlayerAni.SetBool("Walk", PlayerNav.velocity != Vector3.zero);
 
         OnTarget();
-
-        mycamera.transform.position = Player.position+offset_Cam;
-        
     }
     private void OnEnable()
     {
@@ -65,33 +61,37 @@ public class CharacterMove : MonoBehaviour, MouseInput.IPlayerActions, IPointerD
 
     public void OnPointerDown(PointerEventData eventData)
     {
-        Ray ray = mycamera.ScreenPointToRay(eventData.position);
-        Physics.Raycast(ray, out hit);
-
-        if(hit.transform != null)
+        if(Input.GetMouseButton(0))
         {
-            touchEffect.SetActive(false);
-            touchEffect.transform.position = mycamera.WorldToScreenPoint(hit.point);
-            touchEffect.SetActive(true);
+            Ray ray = mycamera.ScreenPointToRay(eventData.position);
+            Physics.Raycast(ray, out hit);
 
-            if(hit.transform.gameObject.tag == "Ground")
+            if (hit.transform != null)
             {
-                PlayerNav.SetDestination(hit.point);
-            }
-            if(hit.transform.gameObject.tag == "Player")
-            {
-                Manager.instance.myaudio.audioSource.PlayOneShot(Manager.instance.myaudio.button_Click);
-                Manager.instance.inventory.charInfoFrame.SetActive(true);
-            }
+                touchEffect.SetActive(false);
+                touchEffect.transform.position = mycamera.WorldToScreenPoint(hit.point);
+                touchEffect.SetActive(true);
 
-            if(hit.transform.gameObject.tag == "Enemy")
-            {
-                Targeting();
+                if (hit.transform.gameObject.tag == "Ground")
+                {
+                    PlayerNav.SetDestination(hit.point);
+                }
+                if (hit.transform.gameObject.tag == "Player")
+                {
+                    Manager.instance.myaudio.audioSource.PlayOneShot(Manager.instance.myaudio.button_Click);
+                    Manager.instance.inventory.charInfoFrame.SetActive(true);
+                }
+
+                if (hit.transform.gameObject.tag == "Enemy")
+                {
+                    Targeting();
+                }
             }
         }
+      
        
     }
-
+    // 타켓팅 설정 함수
     void Targeting()
     {
         target = hit.transform;
@@ -99,6 +99,7 @@ public class CharacterMove : MonoBehaviour, MouseInput.IPlayerActions, IPointerD
         hpBar_Target.SetActive(target.GetComponent<Obj_Info>().type == "Enemy");
         target_Tool.SetActive(true);
     }
+    //타켓 체크 함수
     void OnTarget()
     {
         if(target != null)
