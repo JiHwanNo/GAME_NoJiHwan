@@ -127,4 +127,19 @@ public class CharacterMove : MonoBehaviour, MouseInput.IPlayerActions, IPointerD
     {
         Manager.instance.inventory.InvenFrame.SetActive(false);
     }
+
+    public void OnSkill1(InputAction.CallbackContext context)
+    {
+        throw new System.NotImplementedException();
+    }
+
+    public void OnSkill2(InputAction.CallbackContext context)
+    {
+        throw new System.NotImplementedException();
+    }
+
+    public void OnSkill3(InputAction.CallbackContext context)
+    {
+        throw new System.NotImplementedException();
+    }
 }

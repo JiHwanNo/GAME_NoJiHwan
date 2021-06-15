@@ -1,0 +1,1370 @@
+Using pre-set license
+Built from '2021.1/staging' branch; Version is '2021.1.7f1 (d91830b65d9b) revision 14227504'; Using compiler version '192528614'; Build Type 'Release'
+OS: 'Windows 10 Home; OS build 19041.1052; Version 2004; 64bit' Language: 'ko' Physical Memory: 7901 MB
+BatchMode: 1, IsHumanControllingUs: 0, StartBugReporterOnCrash: 0, Is64bit: 1, IsPro: 0
+
+ COMMAND LINE ARGUMENTS:
+C:\Program Files\Unity\Hub\Editor\2021.1.7f1\Editor\Unity.exe
+-adb2
+-batchMode
+-noUpm
+-name
+AssetImportWorker0
+-projectPath
+C:/Users/lg/Desktop/GAME
+-logFile
+Logs/AssetImportWorker0.log
+-srvPort
+63166
+Successfully changed project path to: C:/Users/lg/Desktop/GAME
+C:/Users/lg/Desktop/GAME
+Using Asset Import Pipeline V2.
+Refreshing native plugins compatible for Editor in 180.05 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Initialize engine version: 2021.1.7f1 (d91830b65d9b)
+[Subsystems] Discovering subsystems at path C:/Program Files/Unity/Hub/Editor/2021.1.7f1/Editor/Data/Resources/UnitySubsystems
+[Subsystems] Discovering subsystems at path C:/Users/lg/Desktop/GAME/Assets
+GfxDevice: creating device client; threaded=0; jobified=0
+Direct3D:
+    Version:  Direct3D 11.0 [level 11.1]
+    Renderer: Intel(R) Iris(R) Plus Graphics (ID=0x8a52)
+    Vendor:   Intel
+    VRAM:     3950 MB
+    Driver:   27.20.100.9510
+Initialize mono
+Mono path[0] = 'C:/Program Files/Unity/Hub/Editor/2021.1.7f1/Editor/Data/Managed'
+Mono path[1] = 'C:/Program Files/Unity/Hub/Editor/2021.1.7f1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit'
+Mono config path = 'C:/Program Files/Unity/Hub/Editor/2021.1.7f1/Editor/Data/MonoBleedingEdge/etc'
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56808
+Begin MonoManager ReloadAssembly
+Registering precompiled unity dll's ...
+Register platform support module: C:/Program Files/Unity/Hub/Editor/2021.1.7f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
+Registered in 0.004140 seconds.
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 186.09 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  2.972 seconds
+Platform modules already initialized, skipping
+Registering precompiled user dll's ...
+Registered in 0.005865 seconds.
+Begin MonoManager ReloadAssembly
+Symbol file LoadedFromMemory doesn't match image C:\Users\lg\Desktop\GAME\Library\PackageCache\com.unity.visualscripting@1.6.1\Editor\VisualScripting.Core\Dependencies\YamlDotNet\Unity.VisualScripting.YamlDotNet.dll
+Symbol file LoadedFromMemory doesn't match image C:\Users\lg\Desktop\GAME\Library\PackageCache\com.unity.visualscripting@1.6.1\Editor\VisualScripting.Core\Dependencies\DotNetZip\Unity.VisualScripting.IonicZip.dll
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 271.82 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.630 seconds
+Platform modules already initialized, skipping
+========================================================================
+Worker process is ready to serve import requests
+Launched and connected shader compiler UnityShaderCompiler.exe after 0.08 seconds
+Refreshing native plugins compatible for Editor in 1.24 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 3027 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 125.5 MB.
+System memory in use after: 125.7 MB.
+
+Unloading 16 unused Assets to reduce memory usage. Loaded Objects now: 3490.
+Total: 3.005500 ms (FindLiveObjects: 0.258800 ms CreateObjectMapping: 0.121300 ms MarkObjects: 2.451500 ms  DeleteObjects: 0.172400 ms)
+
+========================================================================
+Received Import Request.
+  path: Assets/PlayerInput.inputactions
+  artifactKey: Guid(38f4123b507993943aed2ca7836b72d9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/PlayerInput.inputactions using Guid(38f4123b507993943aed2ca7836b72d9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '336a9a073a2bc3072f61a3be5dfa3a0a') in 0.059286 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.909823 seconds.
+  path: Assets/PlayerInput.inputactions
+  artifactKey: Guid(38f4123b507993943aed2ca7836b72d9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/PlayerInput.inputactions using Guid(38f4123b507993943aed2ca7836b72d9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '50ad8f117d8de1374069575d68ed713b') in 0.009516 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 14.749580 seconds.
+  path: Assets/PlayerInput.inputactions
+  artifactKey: Guid(38f4123b507993943aed2ca7836b72d9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/PlayerInput.inputactions using Guid(38f4123b507993943aed2ca7836b72d9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2d0f581f7d81eb80e2970437c5e53033') in 0.045276 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 4.422832 seconds.
+  path: Assets/PlayerInput.inputactions
+  artifactKey: Guid(38f4123b507993943aed2ca7836b72d9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/PlayerInput.inputactions using Guid(38f4123b507993943aed2ca7836b72d9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'aba4edf7d665ea07067935adad66b072') in 0.034282 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 3.472060 seconds.
+  path: Assets/PlayerInput.inputactions
+  artifactKey: Guid(38f4123b507993943aed2ca7836b72d9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/PlayerInput.inputactions using Guid(38f4123b507993943aed2ca7836b72d9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'fd9caa67f55296bcd239a3706aad4d08') in 0.010279 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 1.678629 seconds.
+  path: Assets/PlayerInput.inputactions
+  artifactKey: Guid(38f4123b507993943aed2ca7836b72d9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/PlayerInput.inputactions using Guid(38f4123b507993943aed2ca7836b72d9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '03bdff0fe2ad77f1be8f9a1966937799') in 0.021525 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 2.567734 seconds.
+  path: Assets/PlayerInput.inputactions
+  artifactKey: Guid(38f4123b507993943aed2ca7836b72d9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/PlayerInput.inputactions using Guid(38f4123b507993943aed2ca7836b72d9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2484c2331690cb490c6ec17b5365fab5') in 0.010257 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 4.791288 seconds.
+  path: Assets/PlayerInput.inputactions
+  artifactKey: Guid(38f4123b507993943aed2ca7836b72d9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/PlayerInput.inputactions using Guid(38f4123b507993943aed2ca7836b72d9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1416c10d736dae5357d32b5f229ea26c') in 0.033317 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 2.080913 seconds.
+  path: Assets/PlayerInput.inputactions
+  artifactKey: Guid(38f4123b507993943aed2ca7836b72d9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/PlayerInput.inputactions using Guid(38f4123b507993943aed2ca7836b72d9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a494dd52c35db3731c6bcbf7710db942') in 0.024134 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 1.460360 seconds.
+  path: Assets/PlayerInput.inputactions
+  artifactKey: Guid(38f4123b507993943aed2ca7836b72d9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/PlayerInput.inputactions using Guid(38f4123b507993943aed2ca7836b72d9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b2485334b35f740a3ab719d9c8767041') in 0.022771 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 6.492845 seconds.
+  path: Assets/PlayerInput.inputactions
+  artifactKey: Guid(38f4123b507993943aed2ca7836b72d9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/PlayerInput.inputactions using Guid(38f4123b507993943aed2ca7836b72d9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'dceca79dceff993a8a2596f4116f791f') in 0.033469 seconds 
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.007112 seconds.
+Begin MonoManager ReloadAssembly
+Symbol file LoadedFromMemory doesn't match image C:\Users\lg\Desktop\GAME\Library\PackageCache\com.unity.visualscripting@1.6.1\Editor\VisualScripting.Core\Dependencies\YamlDotNet\Unity.VisualScripting.YamlDotNet.dll
+Symbol file LoadedFromMemory doesn't match image C:\Users\lg\Desktop\GAME\Library\PackageCache\com.unity.visualscripting@1.6.1\Editor\VisualScripting.Core\Dependencies\DotNetZip\Unity.VisualScripting.IonicZip.dll
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 1.27 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.773 seconds
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 1.26 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 3008 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 124.3 MB.
+System memory in use after: 124.5 MB.
+
+Unloading 9 unused Assets to reduce memory usage. Loaded Objects now: 3493.
+Total: 3.540100 ms (FindLiveObjects: 0.391200 ms CreateObjectMapping: 0.189600 ms MarkObjects: 2.838100 ms  DeleteObjects: 0.118800 ms)
+
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.008409 seconds.
+Begin MonoManager ReloadAssembly
+Symbol file LoadedFromMemory doesn't match image C:\Users\lg\Desktop\GAME\Library\PackageCache\com.unity.visualscripting@1.6.1\Editor\VisualScripting.Core\Dependencies\YamlDotNet\Unity.VisualScripting.YamlDotNet.dll
+Symbol file LoadedFromMemory doesn't match image C:\Users\lg\Desktop\GAME\Library\PackageCache\com.unity.visualscripting@1.6.1\Editor\VisualScripting.Core\Dependencies\DotNetZip\Unity.VisualScripting.IonicZip.dll
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 1.12 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.327 seconds
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 1.22 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 3008 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 124.4 MB.
+System memory in use after: 124.6 MB.
+
+Unloading 9 unused Assets to reduce memory usage. Loaded Objects now: 3496.
+Total: 2.361900 ms (FindLiveObjects: 0.255300 ms CreateObjectMapping: 0.124600 ms MarkObjects: 1.880100 ms  DeleteObjects: 0.098700 ms)
+
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.009183 seconds.
+Begin MonoManager ReloadAssembly
+Symbol file LoadedFromMemory doesn't match image C:\Users\lg\Desktop\GAME\Library\PackageCache\com.unity.visualscripting@1.6.1\Editor\VisualScripting.Core\Dependencies\YamlDotNet\Unity.VisualScripting.YamlDotNet.dll
+Symbol file LoadedFromMemory doesn't match image C:\Users\lg\Desktop\GAME\Library\PackageCache\com.unity.visualscripting@1.6.1\Editor\VisualScripting.Core\Dependencies\DotNetZip\Unity.VisualScripting.IonicZip.dll
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 3.54 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  4.109 seconds
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 2.59 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 3008 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 124.4 MB.
+System memory in use after: 124.6 MB.
+
+Unloading 9 unused Assets to reduce memory usage. Loaded Objects now: 3499.
+Total: 6.128300 ms (FindLiveObjects: 0.805600 ms CreateObjectMapping: 0.255800 ms MarkObjects: 4.859600 ms  DeleteObjects: 0.180500 ms)
+
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.010689 seconds.
+Begin MonoManager ReloadAssembly
+Symbol file LoadedFromMemory doesn't match image C:\Users\lg\Desktop\GAME\Library\PackageCache\com.unity.visualscripting@1.6.1\Editor\VisualScripting.Core\Dependencies\YamlDotNet\Unity.VisualScripting.YamlDotNet.dll
+Symbol file LoadedFromMemory doesn't match image C:\Users\lg\Desktop\GAME\Library\PackageCache\com.unity.visualscripting@1.6.1\Editor\VisualScripting.Core\Dependencies\DotNetZip\Unity.VisualScripting.IonicZip.dll
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 2.57 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  3.107 seconds
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 2.22 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 3008 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 124.4 MB.
+System memory in use after: 124.6 MB.
+
+Unloading 9 unused Assets to reduce memory usage. Loaded Objects now: 3502.
+Total: 3.140300 ms (FindLiveObjects: 0.345200 ms CreateObjectMapping: 0.126100 ms MarkObjects: 2.583300 ms  DeleteObjects: 0.083700 ms)
+
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.018420 seconds.
+Begin MonoManager ReloadAssembly
+Symbol file LoadedFromMemory doesn't match image C:\Users\lg\Desktop\GAME\Library\PackageCache\com.unity.visualscripting@1.6.1\Editor\VisualScripting.Core\Dependencies\YamlDotNet\Unity.VisualScripting.YamlDotNet.dll
+Symbol file LoadedFromMemory doesn't match image C:\Users\lg\Desktop\GAME\Library\PackageCache\com.unity.visualscripting@1.6.1\Editor\VisualScripting.Core\Dependencies\DotNetZip\Unity.VisualScripting.IonicZip.dll
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 3.17 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  3.592 seconds
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 2.10 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 3008 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 124.4 MB.
+System memory in use after: 124.6 MB.
+
+Unloading 9 unused Assets to reduce memory usage. Loaded Objects now: 3505.
+Total: 4.625600 ms (FindLiveObjects: 0.277600 ms CreateObjectMapping: 0.159400 ms MarkObjects: 4.037600 ms  DeleteObjects: 0.148100 ms)
+
+========================================================================
+Received Import Request.
+  Time since last request: 436.378502 seconds.
+  path: Assets/MouseInput.cs
+  artifactKey: Guid(3307d459199435d4e8d22043a86fd5c0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/MouseInput.cs using Guid(3307d459199435d4e8d22043a86fd5c0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'dceecd392055498c30cb16256e8607b2') in 0.075718 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 11.764404 seconds.
+  path: Assets/PlayerInput.inputactions
+  artifactKey: Guid(38f4123b507993943aed2ca7836b72d9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/PlayerInput.inputactions using Guid(38f4123b507993943aed2ca7836b72d9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '73e9bc301390e77c2eebba4683b3abb9') in 0.072085 seconds 
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.009413 seconds.
+Begin MonoManager ReloadAssembly
+Symbol file LoadedFromMemory doesn't match image C:\Users\lg\Desktop\GAME\Library\PackageCache\com.unity.visualscripting@1.6.1\Editor\VisualScripting.Core\Dependencies\YamlDotNet\Unity.VisualScripting.YamlDotNet.dll
+Symbol file LoadedFromMemory doesn't match image C:\Users\lg\Desktop\GAME\Library\PackageCache\com.unity.visualscripting@1.6.1\Editor\VisualScripting.Core\Dependencies\DotNetZip\Unity.VisualScripting.IonicZip.dll
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 1.81 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  2.950 seconds
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 1.60 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 3008 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 124.5 MB.
+System memory in use after: 124.7 MB.
+
+Unloading 9 unused Assets to reduce memory usage. Loaded Objects now: 3508.
+Total: 3.442000 ms (FindLiveObjects: 0.475700 ms CreateObjectMapping: 0.290000 ms MarkObjects: 2.589900 ms  DeleteObjects: 0.084400 ms)
+
+========================================================================
+Received Import Request.
+  Time since last request: 31.036025 seconds.
+  path: Assets/PlayerInput.inputactions
+  artifactKey: Guid(38f4123b507993943aed2ca7836b72d9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/PlayerInput.inputactions using Guid(38f4123b507993943aed2ca7836b72d9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '4d371802b38091cc8d7e52ffd4d77a1a') in 0.079074 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 4.891932 seconds.
+  path: Assets/PlayerInput.inputactions
+  artifactKey: Guid(38f4123b507993943aed2ca7836b72d9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/PlayerInput.inputactions using Guid(38f4123b507993943aed2ca7836b72d9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a0b597b1e30c5377ad9647e859ef1784') in 0.054187 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 4.770444 seconds.
+  path: Assets/PlayerInput.inputactions
+  artifactKey: Guid(38f4123b507993943aed2ca7836b72d9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/PlayerInput.inputactions using Guid(38f4123b507993943aed2ca7836b72d9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1786f3d4fc5c896d18b9cdcc8db55067') in 0.015586 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 4.756615 seconds.
+  path: Assets/PlayerInput.inputactions
+  artifactKey: Guid(38f4123b507993943aed2ca7836b72d9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/PlayerInput.inputactions using Guid(38f4123b507993943aed2ca7836b72d9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '40f5f7ac411b9632d11e607ab75ee635') in 0.090822 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 5.533623 seconds.
+  path: Assets/PlayerInput.inputactions
+  artifactKey: Guid(38f4123b507993943aed2ca7836b72d9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/PlayerInput.inputactions using Guid(38f4123b507993943aed2ca7836b72d9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '22fa2e3dfffb34dce18ecb2a3c68e37b') in 0.016643 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 2.454602 seconds.
+  path: Assets/PlayerInput.inputactions
+  artifactKey: Guid(38f4123b507993943aed2ca7836b72d9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/PlayerInput.inputactions using Guid(38f4123b507993943aed2ca7836b72d9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3f9e0769698c932911c39d0f70480297') in 0.070506 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 3.315587 seconds.
+  path: Assets/PlayerInput.inputactions
+  artifactKey: Guid(38f4123b507993943aed2ca7836b72d9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/PlayerInput.inputactions using Guid(38f4123b507993943aed2ca7836b72d9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'fcec638ad2520cf20ac002c85d68867d') in 0.020176 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 4.993605 seconds.
+  path: Assets/PlayerInput.inputactions
+  artifactKey: Guid(38f4123b507993943aed2ca7836b72d9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/PlayerInput.inputactions using Guid(38f4123b507993943aed2ca7836b72d9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b5ff5a7e02a7069cbc5459a01b79a04e') in 0.029885 seconds 
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.007852 seconds.
+Begin MonoManager ReloadAssembly
+Symbol file LoadedFromMemory doesn't match image C:\Users\lg\Desktop\GAME\Library\PackageCache\com.unity.visualscripting@1.6.1\Editor\VisualScripting.Core\Dependencies\YamlDotNet\Unity.VisualScripting.YamlDotNet.dll
+Symbol file LoadedFromMemory doesn't match image C:\Users\lg\Desktop\GAME\Library\PackageCache\com.unity.visualscripting@1.6.1\Editor\VisualScripting.Core\Dependencies\DotNetZip\Unity.VisualScripting.IonicZip.dll
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 2.16 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  2.166 seconds
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 1.48 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 3008 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 124.5 MB.
+System memory in use after: 124.7 MB.
+
+Unloading 9 unused Assets to reduce memory usage. Loaded Objects now: 3511.
+Total: 2.634000 ms (FindLiveObjects: 0.326000 ms CreateObjectMapping: 0.111600 ms MarkObjects: 2.119200 ms  DeleteObjects: 0.073700 ms)
+
+========================================================================
+Received Import Request.
+  Time since last request: 101.916528 seconds.
+  path: Assets/Sorce/PolygonMiniFantasyCharacters
+  artifactKey: Guid(e264639563335b54a849810eaff14d8a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sorce/PolygonMiniFantasyCharacters using Guid(e264639563335b54a849810eaff14d8a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0562b1cfcaf0c3a4660bff6129f1b972') in 0.034907 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 983.967889 seconds.
+  path: Assets/Sorce/NGUI
+  artifactKey: Guid(a0f4e493b9da12d4db7ac4a52cb0e946) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sorce/NGUI using Guid(a0f4e493b9da12d4db7ac4a52cb0e946) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '4d1c784d23c82de49a10ac9658ecb9ad') in 0.024560 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 1.899863 seconds.
+  path: Assets/Sorce/NGUI/Resources
+  artifactKey: Guid(70d846d32bd619b4a856519ce1779bfe) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sorce/NGUI/Resources using Guid(70d846d32bd619b4a856519ce1779bfe) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6347b2eab0ff404e2ee3e60a0367b7ca') in 0.028691 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 11.895773 seconds.
+  path: Assets/Sorce/NGUI/Examples/Animations
+  artifactKey: Guid(35664f5772e49ac408f3c841391d67a8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sorce/NGUI/Examples/Animations using Guid(35664f5772e49ac408f3c841391d67a8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7c9168285cb4b75fd9db6b51d7d713c2') in 0.015662 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 1.869610 seconds.
+  path: Assets/Sorce/NGUI/Examples/Animations/Button.anim
+  artifactKey: Guid(e8c465e83c3e18040884ef096f01647b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sorce/NGUI/Examples/Animations/Button.anim using Guid(e8c465e83c3e18040884ef096f01647b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '40dc0b01d3ea8ba6d52e2bac1cb186a9') in 0.054922 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 7.533653 seconds.
+  path: Assets/Sorce/NGUI/Examples/Atlases/Wooden
+  artifactKey: Guid(987a2b1e1974477429a35863afff9c4a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sorce/NGUI/Examples/Atlases/Wooden using Guid(987a2b1e1974477429a35863afff9c4a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '72e88d3c72d5f3d0a5eaa4ef47776c43') in 0.023255 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 1.120429 seconds.
+  path: Assets/Sorce/NGUI/Examples/Atlases/Wooden/Control - Colored Button.prefab
+  artifactKey: Guid(fee46b827274e694aa251e2d36700135) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sorce/NGUI/Examples/Atlases/Wooden/Control - Colored Button.prefab using Guid(fee46b827274e694aa251e2d36700135) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f21205fb615a283b5f81f1c412449a2c') in 0.053464 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.727936 seconds.
+  path: Assets/Sorce/NGUI/Examples/Atlases/Wooden/Arimo14.asset
+  artifactKey: Guid(800fce3d977b52d4cadf1a0790a413f0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sorce/NGUI/Examples/Atlases/Wooden/Arimo14.asset using Guid(800fce3d977b52d4cadf1a0790a413f0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e4069d7a76da4982f2a3b16908a8187f') in 0.022175 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000682 seconds.
+  path: Assets/Sorce/NGUI/Examples/Atlases/Wooden/Control - Simple Input Field.prefab
+  artifactKey: Guid(45edf347f9f51214dbfbab27b16fbf01) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sorce/NGUI/Examples/Atlases/Wooden/Control - Simple Input Field.prefab using Guid(45edf347f9f51214dbfbab27b16fbf01) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '8b0cfcec6669e2740a2682ced76f28c1') in 0.020941 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.006789 seconds.
+  path: Assets/Sorce/NGUI/Examples/Atlases/Wooden/Wooden Atlas.mat
+  artifactKey: Guid(ec268c3ea1baceb4abb2168daed86f68) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sorce/NGUI/Examples/Atlases/Wooden/Wooden Atlas.mat using Guid(ec268c3ea1baceb4abb2168daed86f68) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5c6617ea4a36fb7fe439d0c9d656dc35') in 0.437718 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000519 seconds.
+  path: Assets/Sorce/NGUI/Examples/Atlases/Wooden/Control - Background.prefab
+  artifactKey: Guid(1f972f5483b779142956dc9ac68b71a7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sorce/NGUI/Examples/Atlases/Wooden/Control - Background.prefab using Guid(1f972f5483b779142956dc9ac68b71a7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b6afdb07ece4e251d5bf903a9324533e') in 0.018726 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000400 seconds.
+  path: Assets/Sorce/NGUI/Examples/Atlases/Wooden/Control - Simple Horizontal Slider.prefab
+  artifactKey: Guid(43662805c0ee7b24abe17486ab2b2e42) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sorce/NGUI/Examples/Atlases/Wooden/Control - Simple Horizontal Slider.prefab using Guid(43662805c0ee7b24abe17486ab2b2e42) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '62da892da13d563bbcefbd4051056f3b') in 0.066928 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000701 seconds.
+  path: Assets/Sorce/NGUI/Examples/Atlases/Wooden/Control - Simple Text Box.prefab
+  artifactKey: Guid(23c0cd5b08147994c821cf4615b25bc7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sorce/NGUI/Examples/Atlases/Wooden/Control - Simple Text Box.prefab using Guid(23c0cd5b08147994c821cf4615b25bc7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'bed58aa45e935ebf5f1a40d996d50df7') in 0.051603 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000383 seconds.
+  path: Assets/Sorce/NGUI/Examples/Atlases/Wooden/Control - Colored Vertical Scroll Bar.prefab
+  artifactKey: Guid(6f802c84f4ff4e1489958bbce5149bcc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sorce/NGUI/Examples/Atlases/Wooden/Control - Colored Vertical Scroll Bar.prefab using Guid(6f802c84f4ff4e1489958bbce5149bcc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b488139443e81bd9d5bb4dcc92717e09') in 0.024041 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000659 seconds.
+  path: Assets/Sorce/NGUI/Examples/Atlases/Wooden/Control - Simple Button.prefab
+  artifactKey: Guid(7c3a28b051e872b448d4808cfcf9199c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sorce/NGUI/Examples/Atlases/Wooden/Control - Simple Button.prefab using Guid(7c3a28b051e872b448d4808cfcf9199c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '43e861c3d44e8f6a838bd4851826c0e7') in 0.031632 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000386 seconds.
+  path: Assets/Sorce/NGUI/Examples/Atlases/Wooden/Control - Simple Vertical Scroll Bar.prefab
+  artifactKey: Guid(df7390d50d06a4b4b893085286142266) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sorce/NGUI/Examples/Atlases/Wooden/Control - Simple Vertical Scroll Bar.prefab using Guid(df7390d50d06a4b4b893085286142266) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e3eab87ac3a1c87b01168042ecc50efd') in 0.055583 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000403 seconds.
+  path: Assets/Sorce/NGUI/Examples/Atlases/Wooden/Control - Colored Popup List.prefab
+  artifactKey: Guid(ea7ea4be01fdadf45a93ce4ffd074f36) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sorce/NGUI/Examples/Atlases/Wooden/Control - Colored Popup List.prefab using Guid(ea7ea4be01fdadf45a93ce4ffd074f36) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '098ded325fa1771c6f4b5dada4a917cd') in 0.055372 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.001048 seconds.
+  path: Assets/Sorce/NGUI/Examples/Atlases/Wooden/Control - Simple Checkbox.prefab
+  artifactKey: Guid(8298f3014addb4740b073bab416a0335) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sorce/NGUI/Examples/Atlases/Wooden/Control - Simple Checkbox.prefab using Guid(8298f3014addb4740b073bab416a0335) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3c4aad3321aad67fe528fd464ea0c067') in 0.052952 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000555 seconds.
+  path: Assets/Sorce/NGUI/Examples/Atlases/Wooden/Arimo20.asset
+  artifactKey: Guid(29056518aafb01b49a5b08faf8e30cff) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sorce/NGUI/Examples/Atlases/Wooden/Arimo20.asset using Guid(29056518aafb01b49a5b08faf8e30cff) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '51fdc4c26c21bfbe4570e0df3df532fb') in 0.054050 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000852 seconds.
+  path: Assets/Sorce/NGUI/Examples/Atlases/Wooden/Arimo18.tga
+  artifactKey: Guid(0d2934d77585b8f4ab5725d4e57ed6a5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sorce/NGUI/Examples/Atlases/Wooden/Arimo18.tga using Guid(0d2934d77585b8f4ab5725d4e57ed6a5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7aab0462fb69b7b6a0505f8f17a3acf8') in 0.093592 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000351 seconds.
+  path: Assets/Sorce/NGUI/Examples/Atlases/Wooden/Wooden Atlas.asset
+  artifactKey: Guid(62adb30369acbf943a67cee0f69267a3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sorce/NGUI/Examples/Atlases/Wooden/Wooden Atlas.asset using Guid(62adb30369acbf943a67cee0f69267a3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ea32860e7f746d8d3af9300cb54e4db2') in 0.009555 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.002326 seconds.
+  path: Assets/Sorce/NGUI/Examples/Atlases/Wooden/Wooden Atlas.png
+  artifactKey: Guid(7280812eccadc1e47b7402e6d9679e5c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sorce/NGUI/Examples/Atlases/Wooden/Wooden Atlas.png using Guid(7280812eccadc1e47b7402e6d9679e5c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e4913126245ae7b6194bc96c926e27cd') in 0.181538 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000469 seconds.
+  path: Assets/Sorce/NGUI/Examples/Atlases/Wooden/Control - Simple Horizontal Scroll Bar.prefab
+  artifactKey: Guid(7f3c0d790c9a5494ea6e015207ab9c4f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sorce/NGUI/Examples/Atlases/Wooden/Control - Simple Horizontal Scroll Bar.prefab using Guid(7f3c0d790c9a5494ea6e015207ab9c4f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '53df933ec175ad75c25d4aca562adc41') in 0.020070 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000374 seconds.
+  path: Assets/Sorce/NGUI/Examples/Atlases/Wooden/Arimo20.tga
+  artifactKey: Guid(31320d95f085b244da859514fb70c620) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sorce/NGUI/Examples/Atlases/Wooden/Arimo20.tga using Guid(31320d95f085b244da859514fb70c620) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9e542a3901ffa3d96d614dc15af71b3c') in 0.062864 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000754 seconds.
+  path: Assets/Sorce/NGUI/Examples/Atlases/Wooden/Coalition.prefab
+  artifactKey: Guid(93e68f7902ba67545ba1e60502873fb5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sorce/NGUI/Examples/Atlases/Wooden/Coalition.prefab using Guid(93e68f7902ba67545ba1e60502873fb5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ff434a2116ecaab249f58c631f6e5eb0') in 0.043676 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000633 seconds.
+  path: Assets/Sorce/NGUI/Examples/Atlases/Wooden/Arimo14.tga
+  artifactKey: Guid(34598662602230e4281f2aba2397b578) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sorce/NGUI/Examples/Atlases/Wooden/Arimo14.tga using Guid(34598662602230e4281f2aba2397b578) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '571e5787972b58748ad1293c23d66451') in 0.040250 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000555 seconds.
+  path: Assets/Sorce/NGUI/Examples/Atlases/Wooden/Control - Colored Checkbox.prefab
+  artifactKey: Guid(d817ce413af090746808cf805ff3375b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sorce/NGUI/Examples/Atlases/Wooden/Control - Colored Checkbox.prefab using Guid(d817ce413af090746808cf805ff3375b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e156bcb74f3a75857f8a2350d66f3e54') in 0.029140 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000710 seconds.
+  path: Assets/Sorce/NGUI/Examples/Atlases/Wooden/Control - Simple Vertical Slider.prefab
+  artifactKey: Guid(73c06049ef328174489241d773446e1f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sorce/NGUI/Examples/Atlases/Wooden/Control - Simple Vertical Slider.prefab using Guid(73c06049ef328174489241d773446e1f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c7ef4c3dee83414661b19cc985f61ae8') in 0.041713 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000628 seconds.
+  path: Assets/Sorce/NGUI/Examples/Atlases/Wooden/Control - Simple Progress Bar.prefab
+  artifactKey: Guid(8b0d1c50c984d704f94ef3e458f797fa) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sorce/NGUI/Examples/Atlases/Wooden/Control - Simple Progress Bar.prefab using Guid(8b0d1c50c984d704f94ef3e458f797fa) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '64d0fec6fc01b53edbf3613ea1c0fc1b') in 0.044418 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000403 seconds.
+  path: Assets/Sorce/NGUI/Examples/Atlases/Wooden/Arimo18.asset
+  artifactKey: Guid(0f5e030a8cdc292438f880d3ec49ef64) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sorce/NGUI/Examples/Atlases/Wooden/Arimo18.asset using Guid(0f5e030a8cdc292438f880d3ec49ef64) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'da807352a6730933f8e47d6ed3ec9951') in 0.050683 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.003528 seconds.
+  path: Assets/Sorce/NGUI/Examples/Atlases/Wooden/Control - Colored Progress Bar.prefab
+  artifactKey: Guid(0b2eaf764cd5dcc498274816bd1bec13) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sorce/NGUI/Examples/Atlases/Wooden/Control - Colored Progress Bar.prefab using Guid(0b2eaf764cd5dcc498274816bd1bec13) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '705ae0ed81a46dcfd4269fabb2c86048') in 0.046200 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000428 seconds.
+  path: Assets/Sorce/NGUI/Examples/Atlases/Wooden/Control - Colored Slider.prefab
+  artifactKey: Guid(1d6f4f3ab0ce7924ca9daf1717928185) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sorce/NGUI/Examples/Atlases/Wooden/Control - Colored Slider.prefab using Guid(1d6f4f3ab0ce7924ca9daf1717928185) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '81e332a5b35e5728f898226cca8fea53') in 0.042042 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.002394 seconds.
+  path: Assets/Sorce/NGUI/Examples/Atlases/Wooden/Control - Simple Popup List.prefab
+  artifactKey: Guid(004eb8234dcbc3f4bb49009e57a6ed44) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sorce/NGUI/Examples/Atlases/Wooden/Control - Simple Popup List.prefab using Guid(004eb8234dcbc3f4bb49009e57a6ed44) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0f0f9fd70927f35614e1c19e03620abb') in 0.042762 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000605 seconds.
+  path: Assets/Sorce/NGUI/Examples/Atlases/Wooden/Control - Colored Horizontal Scroll Bar.prefab
+  artifactKey: Guid(daa32720f1eb9324eb99463ea71cbef1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sorce/NGUI/Examples/Atlases/Wooden/Control - Colored Horizontal Scroll Bar.prefab using Guid(daa32720f1eb9324eb99463ea71cbef1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ea741642a71b0f1a5927eb3c1b551493') in 0.033022 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 5.819321 seconds.
+  path: Assets/Sorce/NGUI/Examples/Atlases/SciFi/SciFi Atlas.asset
+  artifactKey: Guid(2f2473f73b9ca724f9080d6d76009ea2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sorce/NGUI/Examples/Atlases/SciFi/SciFi Atlas.asset using Guid(2f2473f73b9ca724f9080d6d76009ea2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'aba81c5fd4a7f4a9f69d5b72e2126a9d') in 0.019865 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000461 seconds.
+  path: Assets/Sorce/NGUI/Examples/Atlases/SciFi/SciFi Font - Normal.asset
+  artifactKey: Guid(ac44b8a25154a9d40a172ab5851e0986) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sorce/NGUI/Examples/Atlases/SciFi/SciFi Font - Normal.asset using Guid(ac44b8a25154a9d40a172ab5851e0986) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6a470bb6020289b4b72a1828783c78f9') in 0.024370 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000473 seconds.
+  path: Assets/Sorce/NGUI/Examples/Atlases/SciFi/SciFi Atlas.mat
+  artifactKey: Guid(d650d98b3c4028a4a8b7225c1a6482f8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sorce/NGUI/Examples/Atlases/SciFi/SciFi Atlas.mat using Guid(d650d98b3c4028a4a8b7225c1a6482f8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '38d30d65c5294dbb3060979895332684') in 0.058293 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.004589 seconds.
+  path: Assets/Sorce/NGUI/Examples/Atlases/SciFi/SciFi Atlas.psd
+  artifactKey: Guid(d4b622e2ae4b7aa4abf761706845a53f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sorce/NGUI/Examples/Atlases/SciFi/SciFi Atlas.psd using Guid(d4b622e2ae4b7aa4abf761706845a53f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '09fe50b7ce066cba17aa9d1fbca229b4') in 0.068314 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.002524 seconds.
+  path: Assets/Sorce/NGUI/Examples/Atlases/SciFi/SciFi Font - Header.asset
+  artifactKey: Guid(7a48ea22e80d1ac4b97fdd87f9009546) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sorce/NGUI/Examples/Atlases/SciFi/SciFi Font - Header.asset using Guid(7a48ea22e80d1ac4b97fdd87f9009546) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '072548976fd569047d89111b0860f358') in 0.027825 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 19.476647 seconds.
+  path: Assets/Sorce/NGUI/Examples/Atlases/Refractive/Refractive Atlas - Bump.psd
+  artifactKey: Guid(d76cce1d794620346b2ef8868ec101e5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sorce/NGUI/Examples/Atlases/Refractive/Refractive Atlas - Bump.psd using Guid(d76cce1d794620346b2ef8868ec101e5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd71eddea98fbb712bdca8d7e7befad91') in 0.039226 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000455 seconds.
+  path: Assets/Sorce/NGUI/Examples/Atlases/Refractive/Refractive Font - Header.asset
+  artifactKey: Guid(fc7978f4e2005ea418e07fdd0465efe5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sorce/NGUI/Examples/Atlases/Refractive/Refractive Font - Header.asset using Guid(fc7978f4e2005ea418e07fdd0465efe5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f8cfc1528c8977ea7f1132079c8423d3') in 0.014932 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000373 seconds.
+  path: Assets/Sorce/NGUI/Examples/Atlases/Refractive/Refractive Atlas.psd
+  artifactKey: Guid(35452be164663f146b8829318f9c05eb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sorce/NGUI/Examples/Atlases/Refractive/Refractive Atlas.psd using Guid(35452be164663f146b8829318f9c05eb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0e29be3d27295a697dade19b4481c573') in 0.091918 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000647 seconds.
+  path: Assets/Sorce/NGUI/Examples/Atlases/Refractive/Refractive Atlas - Masks.psd
+  artifactKey: Guid(0428f8f60fa9fc44fbc83b1388991bca) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sorce/NGUI/Examples/Atlases/Refractive/Refractive Atlas - Masks.psd using Guid(0428f8f60fa9fc44fbc83b1388991bca) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1f89536a2a2b881e460afeaf9027272f') in 0.062649 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000410 seconds.
+  path: Assets/Sorce/NGUI/Examples/Atlases/Refractive/Refractive Atlas.asset
+  artifactKey: Guid(f1289d9a909bfda4e97fbd6af270d511) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sorce/NGUI/Examples/Atlases/Refractive/Refractive Atlas.asset using Guid(f1289d9a909bfda4e97fbd6af270d511) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3154974a258ea45d52816d339911eeb5') in 0.031371 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000478 seconds.
+  path: Assets/Sorce/NGUI/Examples/Atlases/Refractive/Refractive Atlas.mat
+  artifactKey: Guid(e76d0bdab6849b94aa507497bbb96687) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sorce/NGUI/Examples/Atlases/Refractive/Refractive Atlas.mat using Guid(e76d0bdab6849b94aa507497bbb96687) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f12bb6b7b401a6f521177db9e44b46f4') in 0.265549 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000516 seconds.
+  path: Assets/Sorce/NGUI/Examples/Atlases/Refractive/Refractive Font - Normal.asset
+  artifactKey: Guid(9dfefea9e318d8c439ce15f9525c0853) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sorce/NGUI/Examples/Atlases/Refractive/Refractive Font - Normal.asset using Guid(9dfefea9e318d8c439ce15f9525c0853) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '03134d1e8b555b0e74c223e53861daf3') in 0.046019 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.548695 seconds.
+  path: Assets/Sorce/NGUI/Examples/Atlases/Fantasy/Fantasy Atlas.asset
+  artifactKey: Guid(f95e07e3d350bf748b0c42b453a69d2e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sorce/NGUI/Examples/Atlases/Fantasy/Fantasy Atlas.asset using Guid(f95e07e3d350bf748b0c42b453a69d2e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '137531e48f1a7b4282f81fc6f6ede12e') in 0.017569 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000590 seconds.
+  path: Assets/Sorce/NGUI/Examples/Atlases/Fantasy/Fantasy Font - Normal.asset
+  artifactKey: Guid(16a2d4ace59bac64dbcf4085964b38eb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sorce/NGUI/Examples/Atlases/Fantasy/Fantasy Font - Normal.asset using Guid(16a2d4ace59bac64dbcf4085964b38eb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '67ad143056d4b4e38621bb6c5406a2d4') in 0.031644 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.003776 seconds.
+  path: Assets/Sorce/NGUI/Examples/Atlases/Fantasy/Fantasy Atlas.psd
+  artifactKey: Guid(da323e2b403b83f48a9c5bc9e05ec0cd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sorce/NGUI/Examples/Atlases/Fantasy/Fantasy Atlas.psd using Guid(da323e2b403b83f48a9c5bc9e05ec0cd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '17f26b850fc61f159b280ab9b80809e6') in 0.075413 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000367 seconds.
+  path: Assets/Sorce/NGUI/Examples/Atlases/Fantasy/Fantasy Atlas.mat
+  artifactKey: Guid(e7ef61ebb5c25394c8706a7ea658349f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sorce/NGUI/Examples/Atlases/Fantasy/Fantasy Atlas.mat using Guid(e7ef61ebb5c25394c8706a7ea658349f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6919da2d08e5ab2a8a61159fb77c1a60') in 0.080000 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 8.441118 seconds.
+  path: Assets/Sorce/NGUI/Editor/Preview
+  artifactKey: Guid(7abc1bfabe3adb741a055c1da2f6f43f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sorce/NGUI/Editor/Preview using Guid(7abc1bfabe3adb741a055c1da2f6f43f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '081aabcf2b4a68b631a52d1eb96b8a8a') in 0.017903 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.109273 seconds.
+  path: Assets/Sorce/NGUI/Editor/Preview/Control - Background.png
+  artifactKey: Guid(4c4e2225904897741851cb40a292d928) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sorce/NGUI/Editor/Preview/Control - Background.png using Guid(4c4e2225904897741851cb40a292d928) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '88fc6763ab16d69056f842183dcbfb6d') in 0.018598 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000340 seconds.
+  path: Assets/Sorce/NGUI/Editor/Preview/Control - Simple Progress Bar.png
+  artifactKey: Guid(36e1d3a725d052b48a97f62725e5f50e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sorce/NGUI/Editor/Preview/Control - Simple Progress Bar.png using Guid(36e1d3a725d052b48a97f62725e5f50e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9d77d91a86576c72e80823717bc044e8') in 0.047501 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.001622 seconds.
+  path: Assets/Sorce/NGUI/Editor/Preview/Control - Simple Vertical Scroll Bar.png
+  artifactKey: Guid(c98890007a14b3940a04585ef65e2b54) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sorce/NGUI/Editor/Preview/Control - Simple Vertical Scroll Bar.png using Guid(c98890007a14b3940a04585ef65e2b54) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '481a404e4b7bd9fa3952b4b58bbce4c2') in 0.052934 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000517 seconds.
+  path: Assets/Sorce/NGUI/Editor/Preview/Control - Simple Text Box.png
+  artifactKey: Guid(d9bd30f0086842a46b831d7e11af42a5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sorce/NGUI/Editor/Preview/Control - Simple Text Box.png using Guid(d9bd30f0086842a46b831d7e11af42a5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ada5a87278bcb35862c0e71ed8a5b2b2') in 0.041092 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.001316 seconds.
+  path: Assets/Sorce/NGUI/Editor/Preview/Control - Simple Vertical Slider.png
+  artifactKey: Guid(0c5e6f3665051a24c8deca6e53bdc587) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sorce/NGUI/Editor/Preview/Control - Simple Vertical Slider.png using Guid(0c5e6f3665051a24c8deca6e53bdc587) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '756e1980bb75489ec591a767e3d971a5') in 0.028414 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000405 seconds.
+  path: Assets/Sorce/NGUI/Editor/Preview/Control - Colored Checkbox.png
+  artifactKey: Guid(737211ff6e83c5f4babd40d5cc5b2e94) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sorce/NGUI/Editor/Preview/Control - Colored Checkbox.png using Guid(737211ff6e83c5f4babd40d5cc5b2e94) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e0c8106fb3a29bc4a68c3f61a325261d') in 0.064962 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000466 seconds.
+  path: Assets/Sorce/NGUI/Editor/Preview/Control - Simple Input Field.png
+  artifactKey: Guid(505a4aa2be60a31478dc1897f8d21084) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sorce/NGUI/Editor/Preview/Control - Simple Input Field.png using Guid(505a4aa2be60a31478dc1897f8d21084) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '94b5d3752414326c8cadead662ac9658') in 0.057814 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000782 seconds.
+  path: Assets/Sorce/NGUI/Editor/Preview/Control - Colored Horizontal Scroll Bar.png
+  artifactKey: Guid(349118c2d8d95a240892835f9a939619) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sorce/NGUI/Editor/Preview/Control - Colored Horizontal Scroll Bar.png using Guid(349118c2d8d95a240892835f9a939619) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a75c4f6b78d5fcf79f82deec906bba1f') in 0.061271 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000507 seconds.
+  path: Assets/Sorce/NGUI/Editor/Preview/Control - Simple Popup List.png
+  artifactKey: Guid(005656bced889b542a3bf808084700f8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sorce/NGUI/Editor/Preview/Control - Simple Popup List.png using Guid(005656bced889b542a3bf808084700f8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9ac8b4de22ece71d676aa08f211023d2') in 0.047245 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000374 seconds.
+  path: Assets/Sorce/NGUI/Editor/Preview/Control - Colored Button.png
+  artifactKey: Guid(4cc8814ed8715f445bad8716f0a84360) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sorce/NGUI/Editor/Preview/Control - Colored Button.png using Guid(4cc8814ed8715f445bad8716f0a84360) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a526bb5fcc2e2bc95465764bcaa1f209') in 0.052720 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000428 seconds.
+  path: Assets/Sorce/NGUI/Editor/Preview/Control - Colored Progress Bar.png
+  artifactKey: Guid(1efcf3b84c99d3041b869d559d696634) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sorce/NGUI/Editor/Preview/Control - Colored Progress Bar.png using Guid(1efcf3b84c99d3041b869d559d696634) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '450cfe514fbc5f039fff87f4598e823c') in 0.067191 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.001975 seconds.
+  path: Assets/Sorce/NGUI/Editor/Preview/Control - Simple Checkbox.png
+  artifactKey: Guid(ffe6a388a543b98488dfeec1e73a8c9e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sorce/NGUI/Editor/Preview/Control - Simple Checkbox.png using Guid(ffe6a388a543b98488dfeec1e73a8c9e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '391e9101ca94387a75a8bb9a206f37f8') in 0.027866 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000469 seconds.
+  path: Assets/Sorce/NGUI/Editor/Preview/Control - Simple Horizontal Slider.png
+  artifactKey: Guid(2db969756433ebb46a2a069c1ef5190e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sorce/NGUI/Editor/Preview/Control - Simple Horizontal Slider.png using Guid(2db969756433ebb46a2a069c1ef5190e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7d036a57ecd75bd6b88449a953d9e0e9') in 0.039525 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.003960 seconds.
+  path: Assets/Sorce/NGUI/Editor/Preview/Control - Simple Button.png
+  artifactKey: Guid(d8f05a96f6d43d442a884ea5ba44713c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sorce/NGUI/Editor/Preview/Control - Simple Button.png using Guid(d8f05a96f6d43d442a884ea5ba44713c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7396e6a54d958c7c2d3142a36e62f2a1') in 0.052771 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.001746 seconds.
+  path: Assets/Sorce/NGUI/Editor/Preview/Control - Simple Horizontal Scroll Bar.png
+  artifactKey: Guid(6cfd453c36386934689fb42db3299dbc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sorce/NGUI/Editor/Preview/Control - Simple Horizontal Scroll Bar.png using Guid(6cfd453c36386934689fb42db3299dbc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'eb92bdef75e151dbdba5b38f786a768b') in 0.045045 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.003294 seconds.
+  path: Assets/Sorce/NGUI/Editor/Preview/Control - Colored Slider.png
+  artifactKey: Guid(51decac5933324a4ebb5df8e33571cc3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sorce/NGUI/Editor/Preview/Control - Colored Slider.png using Guid(51decac5933324a4ebb5df8e33571cc3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '11a5544629331ed9cc3dd2f4ed46a1d4') in 0.046805 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000809 seconds.
+  path: Assets/Sorce/NGUI/Editor/Preview/Control - Colored Popup List.png
+  artifactKey: Guid(8a499e7c18f95184e9df7b63d375f25b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sorce/NGUI/Editor/Preview/Control - Colored Popup List.png using Guid(8a499e7c18f95184e9df7b63d375f25b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3757ba8a9210fcf1dc3ba8c7791fc3f8') in 0.047997 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000667 seconds.
+  path: Assets/Sorce/NGUI/Editor/Preview/Control - Colored Vertical Scroll Bar.png
+  artifactKey: Guid(766942a75e07e4b44b3d17844bc185fb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sorce/NGUI/Editor/Preview/Control - Colored Vertical Scroll Bar.png using Guid(766942a75e07e4b44b3d17844bc185fb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '4c5c2a587fdc5e0580999060a20bdb63') in 0.039584 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 23.078648 seconds.
+  path: Assets/Sorce/NGUI/Examples/Materials/Backdrop.mat
+  artifactKey: Guid(6c2b3cc909d408944b7528b7e39f4d38) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sorce/NGUI/Examples/Materials/Backdrop.mat using Guid(6c2b3cc909d408944b7528b7e39f4d38) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'cb2d06568ab6a733fe5ea008fe484388') in 0.021559 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000551 seconds.
+  path: Assets/Sorce/NGUI/Examples/Materials/burlap.mat
+  artifactKey: Guid(19fb2eefdd5dffc40926407f1e877f90) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sorce/NGUI/Examples/Materials/burlap.mat using Guid(19fb2eefdd5dffc40926407f1e877f90) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7440071b776569165c88388d7de5468b') in 0.196001 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000381 seconds.
+  path: Assets/Sorce/NGUI/Examples/Materials/sand.mat
+  artifactKey: Guid(a40a40a3e330dd64b88859d19e82b8ec) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sorce/NGUI/Examples/Materials/sand.mat using Guid(a40a40a3e330dd64b88859d19e82b8ec) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '58c87cc171fe2b30951e6c9c25957e6e') in 0.027238 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000416 seconds.
+  path: Assets/Sorce/NGUI/Examples/Materials/brick.mat
+  artifactKey: Guid(c91d13dd6a85732418472200f4abc68c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sorce/NGUI/Examples/Materials/brick.mat using Guid(c91d13dd6a85732418472200f4abc68c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '82e15082e05a09627c0eb2d04795779f') in 0.249893 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.856805 seconds.
+  path: Assets/Sorce/NGUI/Examples/Other/Storage Icon Template.prefab
+  artifactKey: Guid(d8b3491109ac9a54981225a3a7876ace) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sorce/NGUI/Examples/Other/Storage Icon Template.prefab using Guid(d8b3491109ac9a54981225a3a7876ace) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '4875087d271eb575181383925fb86194') in 0.023302 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 1.013791 seconds.
+  path: Assets/Sorce/NGUI/Examples/Sounds/Crumple.wav
+  artifactKey: Guid(4ecb26c462ed72b4dbfba168ff91e2fa) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sorce/NGUI/Examples/Sounds/Crumple.wav using Guid(4ecb26c462ed72b4dbfba168ff91e2fa) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '21ba82bba924ff92fb7401ef47e3124f') in 0.063892 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000346 seconds.
+  path: Assets/Sorce/NGUI/Examples/Sounds/Swipe.wav
+  artifactKey: Guid(cab912f3009b43843b0a48ac3120c6ad) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sorce/NGUI/Examples/Sounds/Swipe.wav using Guid(cab912f3009b43843b0a48ac3120c6ad) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e50c06000badf4c28976491755b157be') in 0.054743 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.002725 seconds.
+  path: Assets/Sorce/NGUI/Examples/Sounds/Rumble.wav
+  artifactKey: Guid(ab4b41aa0a43dcc48a386073b6a1a0d9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sorce/NGUI/Examples/Sounds/Rumble.wav using Guid(ab4b41aa0a43dcc48a386073b6a1a0d9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9ef9ec6e5f3e15bc6ee1e741e3ac77bd') in 0.054825 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.001718 seconds.
+  path: Assets/Sorce/NGUI/Examples/Sounds/Tap.wav
+  artifactKey: Guid(b5083cfe83bb875479bd797c61594131) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sorce/NGUI/Examples/Sounds/Tap.wav using Guid(b5083cfe83bb875479bd797c61594131) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '153ef04d446addfaecb8f98039fd583a') in 0.052110 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.210109 seconds.
+  path: Assets/Sorce/NGUI/Examples/Textures/Backdrop.png
+  artifactKey: Guid(20f7cab44eaf6e849a8b7131f390055a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sorce/NGUI/Examples/Textures/Backdrop.png using Guid(20f7cab44eaf6e849a8b7131f390055a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f6c87c8f4744003778e00e93858e76df') in 0.024539 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000569 seconds.
+  path: Assets/Sorce/NGUI/Examples/Textures/brickNM.png
+  artifactKey: Guid(e4e97d23f9bd614429d7e119e5d3cc51) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sorce/NGUI/Examples/Textures/brickNM.png using Guid(e4e97d23f9bd614429d7e119e5d3cc51) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '41aa7df926cf64b434549171f5a13bea') in 0.060791 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000606 seconds.
+  path: Assets/Sorce/NGUI/Examples/Textures/burlap.jpg
+  artifactKey: Guid(5705f2fc1302ea340a90c9525cc0428b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sorce/NGUI/Examples/Textures/burlap.jpg using Guid(5705f2fc1302ea340a90c9525cc0428b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6ee26f028287ae1de59fb83a081dc35b') in 0.049549 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000716 seconds.
+  path: Assets/Sorce/NGUI/Examples/Textures/sand.png
+  artifactKey: Guid(0a4a878577c88654795d8c6aee74368d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sorce/NGUI/Examples/Textures/sand.png using Guid(0a4a878577c88654795d8c6aee74368d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '15becdd6465bbfbfac5c09566abc51bd') in 0.048085 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.001946 seconds.
+  path: Assets/Sorce/NGUI/Examples/Textures/brick.jpg
+  artifactKey: Guid(e950636c300acaa45a3365cbe5b186ab) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sorce/NGUI/Examples/Textures/brick.jpg using Guid(e950636c300acaa45a3365cbe5b186ab) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5f8247189e389c5a20ae7df67af3d955') in 0.072183 seconds 
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.008186 seconds.
+Begin MonoManager ReloadAssembly
+Symbol file LoadedFromMemory doesn't match image C:\Users\lg\Desktop\GAME\Library\PackageCache\com.unity.visualscripting@1.6.1\Editor\VisualScripting.Core\Dependencies\YamlDotNet\Unity.VisualScripting.YamlDotNet.dll
+Symbol file LoadedFromMemory doesn't match image C:\Users\lg\Desktop\GAME\Library\PackageCache\com.unity.visualscripting@1.6.1\Editor\VisualScripting.Core\Dependencies\DotNetZip\Unity.VisualScripting.IonicZip.dll
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 2.20 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  2.101 seconds
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 1.29 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 3008 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 142.7 MB.
+System memory in use after: 142.9 MB.
+
+Unloading 9 unused Assets to reduce memory usage. Loaded Objects now: 4015.
+Total: 3.164200 ms (FindLiveObjects: 0.464500 ms CreateObjectMapping: 0.197500 ms MarkObjects: 2.425000 ms  DeleteObjects: 0.075500 ms)
+
+========================================================================
+Received Import Request.
+  Time since last request: 92.059856 seconds.
+  path: Assets/Scenes/Game_Field.unity
+  artifactKey: Guid(8b23ccd6375da40459eadc3d5bf25a1b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scenes/Game_Field.unity using Guid(8b23ccd6375da40459eadc3d5bf25a1b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '026aac524280ab2d88097d16b11dfd18') in 0.036694 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 13.755384 seconds.
+  path: Assets/Sorce/PolygonMiniFantasyCharacters/Scenes
+  artifactKey: Guid(cc79915e77b4a9a43986d48a32c1a7fd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sorce/PolygonMiniFantasyCharacters/Scenes using Guid(cc79915e77b4a9a43986d48a32c1a7fd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '34f33465fbe7906c403b30d10ee00c17') in 0.018654 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.113582 seconds.
+  path: Assets/Sorce/PolygonMiniFantasyCharacters/Scenes/Ground.mat
+  artifactKey: Guid(2a685462110eed6458b8bc9864790228) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sorce/PolygonMiniFantasyCharacters/Scenes/Ground.mat using Guid(2a685462110eed6458b8bc9864790228) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e35625b01a66020e6a6c61dad3f56966') in 0.067495 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 4.146073 seconds.
+  path: Assets/Sorce/PolygonMiniFantasyCharacters/Models/Characters.fbx
+  artifactKey: Guid(e6f8c6b4cd0c5d24fbefebd224edfdb5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sorce/PolygonMiniFantasyCharacters/Models/Characters.fbx using Guid(e6f8c6b4cd0c5d24fbefebd224edfdb5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '83c9ec1908316e0bd8e48a57e66553ec') in 0.752529 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000337 seconds.
+  path: Assets/Sorce/PolygonMiniFantasyCharacters/Models/Prop_MusketRifle_01.fbx
+  artifactKey: Guid(b6ccaf2de7884b24090d1171e163d7e9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sorce/PolygonMiniFantasyCharacters/Models/Prop_MusketRifle_01.fbx using Guid(b6ccaf2de7884b24090d1171e163d7e9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '4e9c2307b7d25f520b28e35890b60ff6') in 0.143419 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000342 seconds.
+  path: Assets/Sorce/PolygonMiniFantasyCharacters/Models/Prop_CrystalSwordDouble_01.fbx
+  artifactKey: Guid(23b62034d72157c43af7e6996737025c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sorce/PolygonMiniFantasyCharacters/Models/Prop_CrystalSwordDouble_01.fbx using Guid(23b62034d72157c43af7e6996737025c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '17e1e3b6e4af2dbd8283dc2ddaf9ec7a') in 0.090691 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000352 seconds.
+  path: Assets/Sorce/PolygonMiniFantasyCharacters/Models/Prop_Broom_01.fbx
+  artifactKey: Guid(3b887020c47cc8845b234a339a50258d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sorce/PolygonMiniFantasyCharacters/Models/Prop_Broom_01.fbx using Guid(3b887020c47cc8845b234a339a50258d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f9eb7f63d87c7a542e7c535c138dec82') in 0.085846 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000360 seconds.
+  path: Assets/Sorce/PolygonMiniFantasyCharacters/Models/Prop_Axe_01.fbx
+  artifactKey: Guid(4cfc1dec98dca4348b719df9f5de8242) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sorce/PolygonMiniFantasyCharacters/Models/Prop_Axe_01.fbx using Guid(4cfc1dec98dca4348b719df9f5de8242) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'edd1e9217f782feccbb67a7862642cc7') in 0.099225 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000396 seconds.
+  path: Assets/Sorce/PolygonMiniFantasyCharacters/Models/Prop_BoneAxe_01.fbx
+  artifactKey: Guid(815c431301038224b8ed6d6d6dd16e90) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sorce/PolygonMiniFantasyCharacters/Models/Prop_BoneAxe_01.fbx using Guid(815c431301038224b8ed6d6d6dd16e90) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'cec7cdd6ddb3a98f0cfaccc3f78d75c2') in 0.123984 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000405 seconds.
+  path: Assets/Sorce/PolygonMiniFantasyCharacters/Models/Prop_MusketPistol_01.fbx
+  artifactKey: Guid(4ef6e353015d4814dbe9af0f3f9ead92) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sorce/PolygonMiniFantasyCharacters/Models/Prop_MusketPistol_01.fbx using Guid(4ef6e353015d4814dbe9af0f3f9ead92) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '066cf8fb24376f1f3b90786c7967eed5') in 0.108804 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000498 seconds.
+  path: Assets/Sorce/PolygonMiniFantasyCharacters/Models/Prop_Hammer_01.fbx
+  artifactKey: Guid(c40a754f65969584ebd98a7be70c374f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sorce/PolygonMiniFantasyCharacters/Models/Prop_Hammer_01.fbx using Guid(c40a754f65969584ebd98a7be70c374f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd338c3fd2915e28542539e9eed3901c9') in 0.109731 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000364 seconds.
+  path: Assets/Sorce/PolygonMiniFantasyCharacters/Models/Prop_Club_01.fbx
+  artifactKey: Guid(b8c1379590b8d0d498ca6e4374397a16) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sorce/PolygonMiniFantasyCharacters/Models/Prop_Club_01.fbx using Guid(b8c1379590b8d0d498ca6e4374397a16) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd9b04c228752120db602871b9c48bd21') in 0.113117 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000440 seconds.
+  path: Assets/Sorce/PolygonMiniFantasyCharacters/Models/Prop_Katana_01.fbx
+  artifactKey: Guid(daaf1aa9ebec9be46a25a5a154c040e5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sorce/PolygonMiniFantasyCharacters/Models/Prop_Katana_01.fbx using Guid(daaf1aa9ebec9be46a25a5a154c040e5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '87b084a8ddbfc50ea4ecc5e112e5efd3') in 0.094540 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000421 seconds.
+  path: Assets/Sorce/PolygonMiniFantasyCharacters/Models/Prop_Revolver_01.fbx
+  artifactKey: Guid(33b0441c79ed7f246a01c3a0c12ee7bc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sorce/PolygonMiniFantasyCharacters/Models/Prop_Revolver_01.fbx using Guid(33b0441c79ed7f246a01c3a0c12ee7bc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c2f871560bbe5f34d361620a83e3d43f') in 0.126911 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.001319 seconds.
+  path: Assets/Sorce/PolygonMiniFantasyCharacters/Models/Prop_Lute_01.fbx
+  artifactKey: Guid(7679412c8d9e68c489a80ea96e1a563d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sorce/PolygonMiniFantasyCharacters/Models/Prop_Lute_01.fbx using Guid(7679412c8d9e68c489a80ea96e1a563d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5e58a6b37be4d0f1b89ff6ee5ca722bd') in 0.096618 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000356 seconds.
+  path: Assets/Sorce/PolygonMiniFantasyCharacters/Models/Prop_Bomb_01.fbx
+  artifactKey: Guid(6af7306dcdd4b984892f50a7007124b4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sorce/PolygonMiniFantasyCharacters/Models/Prop_Bomb_01.fbx using Guid(6af7306dcdd4b984892f50a7007124b4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e3a9bfec0346b48044f8684c1a97ae60') in 0.114023 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.001919 seconds.
+  path: Assets/Sorce/PolygonMiniFantasyCharacters/Models/Prop_GoblinWarBanner_01.fbx
+  artifactKey: Guid(802167d1a0cfb01459cac07a4be3d019) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sorce/PolygonMiniFantasyCharacters/Models/Prop_GoblinWarBanner_01.fbx using Guid(802167d1a0cfb01459cac07a4be3d019) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c416a92c3b328857fd66f279e11deff8') in 0.088573 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000460 seconds.
+  path: Assets/Sorce/PolygonMiniFantasyCharacters/Models/Prop_CrystalHalberd_01.fbx
+  artifactKey: Guid(627656fb5ad2a7b4189a216a6ac77d07) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sorce/PolygonMiniFantasyCharacters/Models/Prop_CrystalHalberd_01.fbx using Guid(627656fb5ad2a7b4189a216a6ac77d07) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5d65363bf215ec18b200cc2d4c2773a8') in 0.126721 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000595 seconds.
+  path: Assets/Sorce/PolygonMiniFantasyCharacters/Models/Prop_Arrow_01.fbx
+  artifactKey: Guid(f243403125522884fb33db29ecd00fd8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sorce/PolygonMiniFantasyCharacters/Models/Prop_Arrow_01.fbx using Guid(f243403125522884fb33db29ecd00fd8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '78ac1486987c5dfc91b03bc83349e559') in 0.098294 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000372 seconds.
+  path: Assets/Sorce/PolygonMiniFantasyCharacters/Models/Prop_Bow_01.fbx
+  artifactKey: Guid(ed92bb92b111261458407f7400e46cf6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sorce/PolygonMiniFantasyCharacters/Models/Prop_Bow_01.fbx using Guid(ed92bb92b111261458407f7400e46cf6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'bb75a2843990dda21a0158152773b973') in 0.113963 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000384 seconds.
+  path: Assets/Sorce/PolygonMiniFantasyCharacters/Models/Prop_Naginata_01.fbx
+  artifactKey: Guid(dbee62cb4f9197345a6b16c9d5dd2613) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sorce/PolygonMiniFantasyCharacters/Models/Prop_Naginata_01.fbx using Guid(dbee62cb4f9197345a6b16c9d5dd2613) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '247c2bea8b2d668301afcb7f4e1caef9') in 0.095043 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000362 seconds.
+  path: Assets/Sorce/PolygonMiniFantasyCharacters/Models/Prop_CrystalSword_01.fbx
+  artifactKey: Guid(bb2a94b2948762540bc7c64fedb9bbe4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sorce/PolygonMiniFantasyCharacters/Models/Prop_CrystalSword_01.fbx using Guid(bb2a94b2948762540bc7c64fedb9bbe4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ea37d5d36a123ff8853388fdb35f7d22') in 0.096300 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000488 seconds.
+  path: Assets/Sorce/PolygonMiniFantasyCharacters/Models/Prop_NatureStaff_01.fbx
+  artifactKey: Guid(6d09b38283235f2418d96c1f0bc1a9ff) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sorce/PolygonMiniFantasyCharacters/Models/Prop_NatureStaff_01.fbx using Guid(6d09b38283235f2418d96c1f0bc1a9ff) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7a3223a7cf82e0167f611fd689b82f88') in 0.100041 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 1.201343 seconds.
+  path: Assets/Sorce/PolygonMiniFantasyCharacters/Materials/PolygonMiniFantasyCharacters_01_A.mat
+  artifactKey: Guid(5ec5815f62a0d37488d95601e3f0129f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sorce/PolygonMiniFantasyCharacters/Materials/PolygonMiniFantasyCharacters_01_A.mat using Guid(5ec5815f62a0d37488d95601e3f0129f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e4922dec56cd0b0156a3979f6448b906') in 0.034737 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000552 seconds.
+  path: Assets/Sorce/PolygonMiniFantasyCharacters/Materials/PolygonMiniFantasyCharacters_01_C.mat
+  artifactKey: Guid(e754fc27989b55644b3671f714122224) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sorce/PolygonMiniFantasyCharacters/Materials/PolygonMiniFantasyCharacters_01_C.mat using Guid(e754fc27989b55644b3671f714122224) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c4f0003e9638433acc4de25c1c635ea5') in 0.118011 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000347 seconds.
+  path: Assets/Sorce/PolygonMiniFantasyCharacters/Materials/PolygonMiniFantasyCharacters_01_B.mat
+  artifactKey: Guid(bd447d9c14c590947b6d77f5243fe951) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sorce/PolygonMiniFantasyCharacters/Materials/PolygonMiniFantasyCharacters_01_B.mat using Guid(bd447d9c14c590947b6d77f5243fe951) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '4642670ce214a9e3b186e1c982c1903a') in 0.094508 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 2.369233 seconds.
+  path: Assets/Sorce/PolygonMiniFantasyCharacters/Textures/PolygonMinis_Texture_01_A.png
+  artifactKey: Guid(a8d95232b0de4ed4185b460e08b09997) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sorce/PolygonMiniFantasyCharacters/Textures/PolygonMinis_Texture_01_A.png using Guid(a8d95232b0de4ed4185b460e08b09997) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0b741242068f3a08c3732ced085d61ff') in 0.034042 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000528 seconds.
+  path: Assets/Sorce/PolygonMiniFantasyCharacters/Textures/PolygonMinis_Texture_Purple_B.png
+  artifactKey: Guid(b83636c9d10cb0d48a69fbcaa557577f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sorce/PolygonMiniFantasyCharacters/Textures/PolygonMinis_Texture_Purple_B.png using Guid(b83636c9d10cb0d48a69fbcaa557577f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'cd1d4e8283b1020ee39b9db2ac057b07') in 0.083333 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000622 seconds.
+  path: Assets/Sorce/PolygonMiniFantasyCharacters/Textures/PolygonMinis_Texture_Purple_A.png
+  artifactKey: Guid(739995f27de6a3f40889d62f853ab064) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sorce/PolygonMiniFantasyCharacters/Textures/PolygonMinis_Texture_Purple_A.png using Guid(739995f27de6a3f40889d62f853ab064) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f9083a93704a9301ebbc6bd632e4c13b') in 0.080891 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000526 seconds.
+  path: Assets/Sorce/PolygonMiniFantasyCharacters/Textures/PolygonMinis_Texture_Blue_A.png
+  artifactKey: Guid(2e85dedabd3401748988d63758188c9a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sorce/PolygonMiniFantasyCharacters/Textures/PolygonMinis_Texture_Blue_A.png using Guid(2e85dedabd3401748988d63758188c9a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'cb1854c829cfe641dac3777be6c74ef3') in 0.085366 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000350 seconds.
+  path: Assets/Sorce/PolygonMiniFantasyCharacters/Textures/PolygonMinis_Texture_Yellow_C.png
+  artifactKey: Guid(5c8d77d21504fe6458c5a9034a1db906) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sorce/PolygonMiniFantasyCharacters/Textures/PolygonMinis_Texture_Yellow_C.png using Guid(5c8d77d21504fe6458c5a9034a1db906) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '788b68d74cf8ed769e5014685381dd2c') in 0.076858 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000316 seconds.
+  path: Assets/Sorce/PolygonMiniFantasyCharacters/Textures/PolygonMinis_Texture_Blue_C.png
+  artifactKey: Guid(60f289d89d8d7cc449c28fa6025f6d78) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sorce/PolygonMiniFantasyCharacters/Textures/PolygonMinis_Texture_Blue_C.png using Guid(60f289d89d8d7cc449c28fa6025f6d78) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0a37cd36f24a7b22cf4add383a4ec860') in 0.089047 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000363 seconds.
+  path: Assets/Sorce/PolygonMiniFantasyCharacters/Textures/PolygonMinis_Texture_Red_C.png
+  artifactKey: Guid(dd66d4c6521dcf54fa59719cf049ef9a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sorce/PolygonMiniFantasyCharacters/Textures/PolygonMinis_Texture_Red_C.png using Guid(dd66d4c6521dcf54fa59719cf049ef9a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ef5f7b99554ccb5f44fbd09eb1016b56') in 0.086190 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000353 seconds.
+  path: Assets/Sorce/PolygonMiniFantasyCharacters/Textures/PolygonMinis_Texture_01_C.png
+  artifactKey: Guid(0a06be8e7becfa14d9c75b9ec8c36f8a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sorce/PolygonMiniFantasyCharacters/Textures/PolygonMinis_Texture_01_C.png using Guid(0a06be8e7becfa14d9c75b9ec8c36f8a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'cd03ff851adcf1d3d7f8f43ac15ea43c') in 0.084440 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000325 seconds.
+  path: Assets/Sorce/PolygonMiniFantasyCharacters/Textures/PolygonMinis_Texture_Yellow_B.png
+  artifactKey: Guid(953aa6d14810df8468451432473dad8a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sorce/PolygonMiniFantasyCharacters/Textures/PolygonMinis_Texture_Yellow_B.png using Guid(953aa6d14810df8468451432473dad8a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '8d8e601ddeb161186ff9a66629a48711') in 0.072890 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000402 seconds.
+  path: Assets/Sorce/PolygonMiniFantasyCharacters/Textures/PolygonMinis_Texture_Green_C.png
+  artifactKey: Guid(12e045e448c4aeb4ab00b77c06fd6f50) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sorce/PolygonMiniFantasyCharacters/Textures/PolygonMinis_Texture_Green_C.png using Guid(12e045e448c4aeb4ab00b77c06fd6f50) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f7c4cfb797f0e3f314d1f1b6ba0d8bfd') in 0.080160 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000952 seconds.
+  path: Assets/Sorce/PolygonMiniFantasyCharacters/Textures/PolygonMinis_Texture_Purple_C.png
+  artifactKey: Guid(6f78307d68bdb6c4fb22dd2663f03d1c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sorce/PolygonMiniFantasyCharacters/Textures/PolygonMinis_Texture_Purple_C.png using Guid(6f78307d68bdb6c4fb22dd2663f03d1c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'faccc9b7117e1106b6dd55336f4a90d9') in 0.089926 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000951 seconds.
+  path: Assets/Sorce/PolygonMiniFantasyCharacters/Textures/PolygonMinis_Texture_Green_B.png
+  artifactKey: Guid(932e3282dff79484696e4a543d941c10) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sorce/PolygonMiniFantasyCharacters/Textures/PolygonMinis_Texture_Green_B.png using Guid(932e3282dff79484696e4a543d941c10) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'fb660e073ab46cd0cdd64ac35e06863e') in 0.101815 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000538 seconds.
+  path: Assets/Sorce/PolygonMiniFantasyCharacters/Textures/PolygonMinis_Texture_Red_B.png
+  artifactKey: Guid(d2764a99f559fae41957ffd60454a586) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sorce/PolygonMiniFantasyCharacters/Textures/PolygonMinis_Texture_Red_B.png using Guid(d2764a99f559fae41957ffd60454a586) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '98b470736e7d36376a81a1e56b3f53e7') in 0.096471 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000397 seconds.
+  path: Assets/Sorce/PolygonMiniFantasyCharacters/Textures/PolygonMinis_Texture_Red_A.png
+  artifactKey: Guid(082504c4564f7eb42b2ff5aadf50b059) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sorce/PolygonMiniFantasyCharacters/Textures/PolygonMinis_Texture_Red_A.png using Guid(082504c4564f7eb42b2ff5aadf50b059) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6b2ff54b782e68e3350880d4992876ae') in 0.093402 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000427 seconds.
+  path: Assets/Sorce/PolygonMiniFantasyCharacters/Textures/PolygonMinis_Texture_Yellow_A.png
+  artifactKey: Guid(dd41876725391114a89b9cea6f363050) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sorce/PolygonMiniFantasyCharacters/Textures/PolygonMinis_Texture_Yellow_A.png using Guid(dd41876725391114a89b9cea6f363050) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '45898711083cc5f83c8fb32cd8a5d51b') in 0.088591 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000449 seconds.
+  path: Assets/Sorce/PolygonMiniFantasyCharacters/Textures/PolygonMinis_Texture_01_B.png
+  artifactKey: Guid(aa1da9c455747b54d913490de783f45d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sorce/PolygonMiniFantasyCharacters/Textures/PolygonMinis_Texture_01_B.png using Guid(aa1da9c455747b54d913490de783f45d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd2793dbd99f70e7526901ff65b60b616') in 0.070550 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000529 seconds.
+  path: Assets/Sorce/PolygonMiniFantasyCharacters/Textures/PolygonMinis_Texture_Green_A.png
+  artifactKey: Guid(8d9a537ad157ff74faa6fc8c47030ed9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sorce/PolygonMiniFantasyCharacters/Textures/PolygonMinis_Texture_Green_A.png using Guid(8d9a537ad157ff74faa6fc8c47030ed9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd0e2b352110a0e36422e964eb70d3802') in 0.075988 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000483 seconds.
+  path: Assets/Sorce/PolygonMiniFantasyCharacters/Textures/PolygonMinis_Texture_Blue_B.png
+  artifactKey: Guid(72e9dc151dba3eb468e6d762857dc96c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sorce/PolygonMiniFantasyCharacters/Textures/PolygonMinis_Texture_Blue_B.png using Guid(72e9dc151dba3eb468e6d762857dc96c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '96834db5a7002cfba17a31aefdf239eb') in 0.079328 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.745728 seconds.
+  path: Assets/Sorce/PolygonMiniFantasyCharacters/Prefabs/Props/Prop_Arrow_01.prefab
+  artifactKey: Guid(cc64a580633f7bc48ad844b2335c0555) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sorce/PolygonMiniFantasyCharacters/Prefabs/Props/Prop_Arrow_01.prefab using Guid(cc64a580633f7bc48ad844b2335c0555) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0569b254f0f25b2f2f83291b7e27e335') in 0.031778 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000502 seconds.
+  path: Assets/Sorce/PolygonMiniFantasyCharacters/Prefabs/Props/Prop_Bomb_01.prefab
+  artifactKey: Guid(b19e5108015761b4ea472f6d4fcd098b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sorce/PolygonMiniFantasyCharacters/Prefabs/Props/Prop_Bomb_01.prefab using Guid(b19e5108015761b4ea472f6d4fcd098b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ef290f11e9f8e0fae071cb384c6acdd0') in 0.018558 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000529 seconds.
+  path: Assets/Sorce/PolygonMiniFantasyCharacters/Prefabs/Props/Prop_Broom_01.prefab
+  artifactKey: Guid(826bb8f90e8f36649b09ac1d20a178e0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sorce/PolygonMiniFantasyCharacters/Prefabs/Props/Prop_Broom_01.prefab using Guid(826bb8f90e8f36649b09ac1d20a178e0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c185a4ea4e6bafaa0b99b32b727077ed') in 0.020787 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000549 seconds.
+  path: Assets/Sorce/PolygonMiniFantasyCharacters/Prefabs/Props/Prop_Bow_01.prefab
+  artifactKey: Guid(bcff30685ec6fc04db819fc983097575) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sorce/PolygonMiniFantasyCharacters/Prefabs/Props/Prop_Bow_01.prefab using Guid(bcff30685ec6fc04db819fc983097575) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a4eadf56d09c629e5228d3011235b00b') in 0.018920 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000411 seconds.
+  path: Assets/Sorce/PolygonMiniFantasyCharacters/Prefabs/Props/Prop_GoblinWarBanner_01.prefab
+  artifactKey: Guid(8b8d9352ec675eb4b8fe1539a37c37ff) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sorce/PolygonMiniFantasyCharacters/Prefabs/Props/Prop_GoblinWarBanner_01.prefab using Guid(8b8d9352ec675eb4b8fe1539a37c37ff) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'bffb5611477a4a836797b1d48b7d28c0') in 0.018920 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000437 seconds.
+  path: Assets/Sorce/PolygonMiniFantasyCharacters/Prefabs/Props/Prop_Katana_01.prefab
+  artifactKey: Guid(9b0d8eaa536db954f91e47275325e47c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sorce/PolygonMiniFantasyCharacters/Prefabs/Props/Prop_Katana_01.prefab using Guid(9b0d8eaa536db954f91e47275325e47c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '41e7d6b896cda3b5d944421d82a45add') in 0.016625 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000348 seconds.
+  path: Assets/Sorce/PolygonMiniFantasyCharacters/Prefabs/Props/Prop_Lute_01.prefab
+  artifactKey: Guid(35ea555f14504ce45bccb2552b0311e7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sorce/PolygonMiniFantasyCharacters/Prefabs/Props/Prop_Lute_01.prefab using Guid(35ea555f14504ce45bccb2552b0311e7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ea9d5d0b50e8faf709b1514019d1a322') in 0.018235 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000353 seconds.
+  path: Assets/Sorce/PolygonMiniFantasyCharacters/Prefabs/Props/Prop_Sai_01.prefab
+  artifactKey: Guid(b34ad1aebff90cd4bba6bf6c3e4db10b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sorce/PolygonMiniFantasyCharacters/Prefabs/Props/Prop_Sai_01.prefab using Guid(b34ad1aebff90cd4bba6bf6c3e4db10b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '465164da2f013074a6118b2d8947ce46') in 0.106010 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.003215 seconds.
+  path: Assets/Sorce/PolygonMiniFantasyCharacters/Prefabs/Props/Prop_Saber_01.prefab
+  artifactKey: Guid(1fa1c27671d4723408d57b6937ca6c61) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sorce/PolygonMiniFantasyCharacters/Prefabs/Props/Prop_Saber_01.prefab using Guid(1fa1c27671d4723408d57b6937ca6c61) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '4ec91283b63c42b2d420e9a0e2921ab4') in 0.100909 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.002305 seconds.
+  path: Assets/Sorce/PolygonMiniFantasyCharacters/Prefabs/Props/Prop_MusketPistol_01.prefab
+  artifactKey: Guid(49ba2fb570f0f9c4aa93a2a2921d3fdd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sorce/PolygonMiniFantasyCharacters/Prefabs/Props/Prop_MusketPistol_01.prefab using Guid(49ba2fb570f0f9c4aa93a2a2921d3fdd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6043f33fa5a05d8520c48b183c969f2a') in 0.060460 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000346 seconds.
+  path: Assets/Sorce/PolygonMiniFantasyCharacters/Prefabs/Props/Prop_CrystalHalberd_01.prefab
+  artifactKey: Guid(ffd4f10b2e0a2264ca68aed5a3edab53) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sorce/PolygonMiniFantasyCharacters/Prefabs/Props/Prop_CrystalHalberd_01.prefab using Guid(ffd4f10b2e0a2264ca68aed5a3edab53) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '975dd4ab63e90a5393df4c4bcc824cec') in 0.016914 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000394 seconds.
+  path: Assets/Sorce/PolygonMiniFantasyCharacters/Prefabs/Props/Prop_MusketRifle_01.prefab
+  artifactKey: Guid(28d94b6a219c34848928ea20deae9d93) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sorce/PolygonMiniFantasyCharacters/Prefabs/Props/Prop_MusketRifle_01.prefab using Guid(28d94b6a219c34848928ea20deae9d93) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '147a7285acc9606487ffabf8d8d8dd49') in 0.022794 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000504 seconds.
+  path: Assets/Sorce/PolygonMiniFantasyCharacters/Prefabs/Props/Prop_BoneAxe_01.prefab
+  artifactKey: Guid(60cc28f704641104f8f01ea92c9496f7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sorce/PolygonMiniFantasyCharacters/Prefabs/Props/Prop_BoneAxe_01.prefab using Guid(60cc28f704641104f8f01ea92c9496f7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ebb9efafffa4ddc00b4bbb649048025c') in 0.023976 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000491 seconds.
+  path: Assets/Sorce/PolygonMiniFantasyCharacters/Prefabs/Props/Prop_NatureStaff_01.prefab
+  artifactKey: Guid(eb38fdee4ed140447b0e6983954831a9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sorce/PolygonMiniFantasyCharacters/Prefabs/Props/Prop_NatureStaff_01.prefab using Guid(eb38fdee4ed140447b0e6983954831a9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7a74539a70bcda0ab25735ce768c4692') in 0.028645 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000469 seconds.
+  path: Assets/Sorce/PolygonMiniFantasyCharacters/Prefabs/Props/Prop_CrystalSword_01.prefab
+  artifactKey: Guid(681cb6d4cd64a814fbbe1286870a0ffd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sorce/PolygonMiniFantasyCharacters/Prefabs/Props/Prop_CrystalSword_01.prefab using Guid(681cb6d4cd64a814fbbe1286870a0ffd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '50fe862ff77850239fd1776b24103b78') in 0.021035 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000423 seconds.
+  path: Assets/Sorce/PolygonMiniFantasyCharacters/Prefabs/Props/Prop_Revolver_01.prefab
+  artifactKey: Guid(ccceedc1e788b2f49b23d17b79269a21) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sorce/PolygonMiniFantasyCharacters/Prefabs/Props/Prop_Revolver_01.prefab using Guid(ccceedc1e788b2f49b23d17b79269a21) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '736a34d1bf40acd39b1bdcab0ed5c2f0') in 0.031742 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000445 seconds.
+  path: Assets/Sorce/PolygonMiniFantasyCharacters/Prefabs/Props/Prop_Club_01.prefab
+  artifactKey: Guid(e600491f73a29184299be916770e9832) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sorce/PolygonMiniFantasyCharacters/Prefabs/Props/Prop_Club_01.prefab using Guid(e600491f73a29184299be916770e9832) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '796e998e08d0cc8e9cb06728c1e24d82') in 0.097392 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000418 seconds.
+  path: Assets/Sorce/PolygonMiniFantasyCharacters/Prefabs/Props/Prop_Naginata_01.prefab
+  artifactKey: Guid(578bca1a2d6fca24ab7feb5a0df394f6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sorce/PolygonMiniFantasyCharacters/Prefabs/Props/Prop_Naginata_01.prefab using Guid(578bca1a2d6fca24ab7feb5a0df394f6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '51f718cc16b87b327d34ec9dcb33aa30') in 0.074634 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.001009 seconds.
+  path: Assets/Sorce/PolygonMiniFantasyCharacters/Prefabs/Props/Prop_CrystalSwordDouble_01.prefab
+  artifactKey: Guid(8d9f5147ca9e1244db8b05b1bd4039df) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sorce/PolygonMiniFantasyCharacters/Prefabs/Props/Prop_CrystalSwordDouble_01.prefab using Guid(8d9f5147ca9e1244db8b05b1bd4039df) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3a49eb1b824f0a8e774ac3caba96ca61') in 0.072510 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000478 seconds.
+  path: Assets/Sorce/PolygonMiniFantasyCharacters/Prefabs/Props/Prop_Hammer_01.prefab
+  artifactKey: Guid(dfcac9fe819de4a48aa11c0ae20d93b4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sorce/PolygonMiniFantasyCharacters/Prefabs/Props/Prop_Hammer_01.prefab using Guid(dfcac9fe819de4a48aa11c0ae20d93b4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6ad02e644c66c9316a0e35d0777b255a') in 0.069596 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000503 seconds.
+  path: Assets/Sorce/PolygonMiniFantasyCharacters/Prefabs/Props/Prop_Axe_01.prefab
+  artifactKey: Guid(9e7134bd16b21cc4a8551794a16703c4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sorce/PolygonMiniFantasyCharacters/Prefabs/Props/Prop_Axe_01.prefab using Guid(9e7134bd16b21cc4a8551794a16703c4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd592d00443ddb290dbbaa2ab0766a4c5') in 0.070093 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 7.296143 seconds.
+  path: Assets/Sorce/PolygonMiniFantasyCharacters/Models/Prop_Saber_01.fbx
+  artifactKey: Guid(d69faf3936362d34abbfd139a70bd4e2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sorce/PolygonMiniFantasyCharacters/Models/Prop_Saber_01.fbx using Guid(d69faf3936362d34abbfd139a70bd4e2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0d3c37fc540720d2ffba893f798936da') in 0.032937 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000425 seconds.
+  path: Assets/Sorce/PolygonMiniFantasyCharacters/Models/Prop_ShamanMask_01.fbx
+  artifactKey: Guid(b3a1afba87590954c81b3685f1e3d6c2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sorce/PolygonMiniFantasyCharacters/Models/Prop_ShamanMask_01.fbx using Guid(b3a1afba87590954c81b3685f1e3d6c2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e3889e665ddea68cf9f9308b2caf52d2') in 0.121167 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000380 seconds.
+  path: Assets/Sorce/PolygonMiniFantasyCharacters/Models/Prop_ShieldHalf_01.fbx
+  artifactKey: Guid(4c99ffcc6b9a7ef4b981b787fa65e6ab) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sorce/PolygonMiniFantasyCharacters/Models/Prop_ShieldHalf_01.fbx using Guid(4c99ffcc6b9a7ef4b981b787fa65e6ab) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '238d6fc42acc47fc497e49a5fa3d6385') in 0.097476 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000327 seconds.
+  path: Assets/Sorce/PolygonMiniFantasyCharacters/Models/Prop_Sai_01.fbx
+  artifactKey: Guid(a39ee7e4de78b204d8d103cd4b1b70d3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sorce/PolygonMiniFantasyCharacters/Models/Prop_Sai_01.fbx using Guid(a39ee7e4de78b204d8d103cd4b1b70d3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2fbe1b33d8a9f8240c556c46ac3e843e') in 0.075206 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000375 seconds.
+  path: Assets/Sorce/PolygonMiniFantasyCharacters/Models/Prop_ShieldViking_01.fbx
+  artifactKey: Guid(f10cd5c2e676b4d4e94fcb7a9079e6bd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sorce/PolygonMiniFantasyCharacters/Models/Prop_ShieldViking_01.fbx using Guid(f10cd5c2e676b4d4e94fcb7a9079e6bd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '08debbaf45da5904fd666958c7fc59e3') in 0.090308 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000393 seconds.
+  path: Assets/Sorce/PolygonMiniFantasyCharacters/Models/Prop_Sword_Broken_01.fbx
+  artifactKey: Guid(e6dbb48741371da40b628388e2f108d2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sorce/PolygonMiniFantasyCharacters/Models/Prop_Sword_Broken_01.fbx using Guid(e6dbb48741371da40b628388e2f108d2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '61f771c9af94f0f5aade80f6c433c49d') in 0.083721 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000479 seconds.
+  path: Assets/Sorce/PolygonMiniFantasyCharacters/Models/Prop_Staff_01.fbx
+  artifactKey: Guid(754e2c60720c8cd4190c42259de5af2a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sorce/PolygonMiniFantasyCharacters/Models/Prop_Staff_01.fbx using Guid(754e2c60720c8cd4190c42259de5af2a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7961c94e11f7c91508ee9fde0b655da1') in 0.123810 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000556 seconds.
+  path: Assets/Sorce/PolygonMiniFantasyCharacters/Models/Prop_Sword_01.fbx
+  artifactKey: Guid(41c02276a422f2b4ea68f0df2a4653f9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sorce/PolygonMiniFantasyCharacters/Models/Prop_Sword_01.fbx using Guid(41c02276a422f2b4ea68f0df2a4653f9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7193a84b516701c2a7373f9defc29be1') in 0.098273 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000436 seconds.
+  path: Assets/Sorce/PolygonMiniFantasyCharacters/Models/Prop_ShieldKnight_01.fbx
+  artifactKey: Guid(340f47eb01cfdab468821fb26fa8eddd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sorce/PolygonMiniFantasyCharacters/Models/Prop_ShieldKnight_01.fbx using Guid(340f47eb01cfdab468821fb26fa8eddd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b0758c1f54ef3a896eddc80414b9ac7f') in 0.117957 seconds 
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.006198 seconds.
+Begin MonoManager ReloadAssembly
+Symbol file LoadedFromMemory doesn't match image C:\Users\lg\Desktop\GAME\Library\PackageCache\com.unity.visualscripting@1.6.1\Editor\VisualScripting.Core\Dependencies\YamlDotNet\Unity.VisualScripting.YamlDotNet.dll
+Symbol file LoadedFromMemory doesn't match image C:\Users\lg\Desktop\GAME\Library\PackageCache\com.unity.visualscripting@1.6.1\Editor\VisualScripting.Core\Dependencies\DotNetZip\Unity.VisualScripting.IonicZip.dll
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 1.77 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  2.155 seconds
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 1.85 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 3027 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 176.7 MB.
+System memory in use after: 177.0 MB.
+
+Unloading 10 unused Assets to reduce memory usage. Loaded Objects now: 4294.
+Total: 5.569200 ms (FindLiveObjects: 1.025400 ms CreateObjectMapping: 0.398700 ms MarkObjects: 4.016100 ms  DeleteObjects: 0.126900 ms)
+
+========================================================================
+Received Import Request.
+  Time since last request: 450.476715 seconds.
+  path: Assets/Scripts/SkillBtn.cs
+  artifactKey: Guid(40fe0df7520b4674cbb4805c0c4d4513) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/SkillBtn.cs using Guid(40fe0df7520b4674cbb4805c0c4d4513) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '302a231433d4077a80d26227c286811e') in 0.023953 seconds 
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.007560 seconds.
+Begin MonoManager ReloadAssembly
+Symbol file LoadedFromMemory doesn't match image C:\Users\lg\Desktop\GAME\Library\PackageCache\com.unity.visualscripting@1.6.1\Editor\VisualScripting.Core\Dependencies\YamlDotNet\Unity.VisualScripting.YamlDotNet.dll
+Symbol file LoadedFromMemory doesn't match image C:\Users\lg\Desktop\GAME\Library\PackageCache\com.unity.visualscripting@1.6.1\Editor\VisualScripting.Core\Dependencies\DotNetZip\Unity.VisualScripting.IonicZip.dll
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 1.94 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  2.083 seconds
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 1.06 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 3009 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 176.2 MB.
+System memory in use after: 176.4 MB.
+
+Unloading 9 unused Assets to reduce memory usage. Loaded Objects now: 4297.
+Total: 2.937100 ms (FindLiveObjects: 0.384900 ms CreateObjectMapping: 0.149000 ms MarkObjects: 2.306900 ms  DeleteObjects: 0.094800 ms)
+
+========================================================================
+Received Import Request.
+  Time since last request: 245.745037 seconds.
+  path: Assets/Scripts/SkillBtn.cs
+  artifactKey: Guid(40fe0df7520b4674cbb4805c0c4d4513) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/SkillBtn.cs using Guid(40fe0df7520b4674cbb4805c0c4d4513) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd02befd3671a7a0642609dee818888f5') in 0.007672 seconds 
