@@ -8,6 +8,7 @@ public class Manager : MonoBehaviour
     [Header("Manager")]
     public Audio_Manager myaudio;
     public Inventory_Manager inventory;
+    public CharacterMove characterMove;
 
     private void Awake()
     {

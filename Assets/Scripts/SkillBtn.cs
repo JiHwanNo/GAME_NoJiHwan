@@ -11,13 +11,16 @@ public class SkillBtn : MonoBehaviour
     public float coolTime;
     public Image CTimage1;
     bool cool;
+    public float castingTime;
 
     public void OnClickBtn()
     {
-        if(!cool)
+        if(!cool && Manager.instance.characterMove.target != null && Manager.instance.characterMove.target.gameObject.tag == "Enemy"
+            && !Manager.instance.characterMove.onCasting)
         {
             cool = true;
             StartCoroutine("CoolDown");
+            Manager.instance.characterMove.Casting(castingTime, SkiilName);
         }
     }
 

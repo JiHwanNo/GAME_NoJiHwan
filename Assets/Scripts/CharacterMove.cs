@@ -5,6 +5,7 @@ using UnityEngine.InputSystem;
 using UnityEngine.EventSystems;
 using UnityEngine.AI;
 using TMPro;
+using UnityEngine.UI;
 
 public class CharacterMove : MonoBehaviour, MouseInput.IPlayerActions, IPointerDownHandler
 {
@@ -28,6 +29,14 @@ public class CharacterMove : MonoBehaviour, MouseInput.IPlayerActions, IPointerD
     public GameObject target_Tool;
     public TextMeshProUGUI name_Target;
     public GameObject hpBar_Target;
+
+    [Header("Casting")]
+    public bool onCasting;
+    public Image castingBar;
+    float castingTime;
+    string SkillName;
+    Transform atkTarget;
+
     private void Awake()
     {
         mouseInput = new MouseInput();
@@ -74,6 +83,7 @@ public class CharacterMove : MonoBehaviour, MouseInput.IPlayerActions, IPointerD
 
                 if (hit.transform.gameObject.tag == "Ground")
                 {
+                    if(!onCasting)
                     PlayerNav.SetDestination(hit.point);
                 }
                 if (hit.transform.gameObject.tag == "Player")
@@ -90,6 +100,42 @@ public class CharacterMove : MonoBehaviour, MouseInput.IPlayerActions, IPointerD
         }
       
        
+    }
+
+    public void Casting(float time, string name)
+    {
+        castingTime = time;
+        SkillName = name;
+        atkTarget = target;
+
+        StartCoroutine("OnCasting");
+    }
+
+    IEnumerator OnCasting()
+    {
+        onCasting = true;
+        float time = 0;
+        Player.LookAt(atkTarget);
+        PlayerAni.Play("Player_Casting");
+        PlayerNav.enabled = false;
+        castingBar.transform.parent.gameObject.SetActive(true);
+        castingBar.transform.GetChild(0).GetComponent<TextMeshProUGUI>().text = SkillName;
+
+        while(true)
+        {
+            time += Time.deltaTime;
+            castingBar.fillAmount = time / castingTime;
+
+            if(time >= castingTime)
+            {
+                StopCoroutine("OnCasting");
+                castingBar.transform.parent.gameObject.SetActive(false);
+                PlayerAni.Play("Player_Shot");
+                PlayerNav.enabled = true;
+                onCasting = false;
+            }
+            yield return null;
+        }
     }
     // 타켓팅 설정 함수
     void Targeting()
