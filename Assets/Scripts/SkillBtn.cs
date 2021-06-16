@@ -1,16 +1,18 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
 using UnityEngine.UI;
 
 public class SkillBtn : MonoBehaviour
 {
-    public string SkiilName;
+    MouseInput mouseInput;
 
+    public string SkiilName;
     float cooldown;
     public float coolTime;
     public Image CTimage1;
-    bool cool;
+    public bool cool;
     public float castingTime;
 
     public void OnClickBtn()
@@ -42,5 +44,5 @@ public class SkillBtn : MonoBehaviour
             yield return null;
         }
     }
-
+    
 }

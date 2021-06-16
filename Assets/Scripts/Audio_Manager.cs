@@ -9,4 +9,5 @@ public class Audio_Manager : MonoBehaviour
     [Header("Clip")]
     public AudioClip step;
     public AudioClip button_Click;
+    public AudioClip Casting;
 }

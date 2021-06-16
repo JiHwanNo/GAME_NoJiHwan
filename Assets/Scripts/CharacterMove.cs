@@ -7,10 +7,9 @@ using UnityEngine.AI;
 using TMPro;
 using UnityEngine.UI;
 
-public class CharacterMove : MonoBehaviour, MouseInput.IPlayerActions, IPointerDownHandler
+public class CharacterMove : MonoBehaviour, IPointerDownHandler
 {
     Animator PlayerAni;
-    MouseInput mouseInput;
 
     [Header("Camera")]
     public Camera mycamera;
@@ -39,9 +38,6 @@ public class CharacterMove : MonoBehaviour, MouseInput.IPlayerActions, IPointerD
 
     private void Awake()
     {
-        mouseInput = new MouseInput();
-        mouseInput.Player.SetCallbacks(this);
-
         PlayerAni = Player.GetComponent<Animator>();
         PlayerNav = Player.GetComponent<NavMeshAgent>();
 
@@ -58,16 +54,6 @@ public class CharacterMove : MonoBehaviour, MouseInput.IPlayerActions, IPointerD
 
         OnTarget();
     }
-    private void OnEnable()
-    {
-        mouseInput.Enable();
-    }
-
-    private void OnDisable()
-    {
-        mouseInput.Disable();
-    }
-
     public void OnPointerDown(PointerEventData eventData)
     {
         if(Input.GetMouseButton(0))
@@ -113,6 +99,7 @@ public class CharacterMove : MonoBehaviour, MouseInput.IPlayerActions, IPointerD
 
     IEnumerator OnCasting()
     {
+        Manager.instance.myaudio.audioSource.PlayOneShot(Manager.instance.myaudio.Casting);
         onCasting = true;
         float time = 0;
         Player.LookAt(atkTarget);
@@ -128,6 +115,7 @@ public class CharacterMove : MonoBehaviour, MouseInput.IPlayerActions, IPointerD
 
             if(time >= castingTime)
             {
+                Manager.instance.myaudio.audioSource.Stop();
                 StopCoroutine("OnCasting");
                 castingBar.transform.parent.gameObject.SetActive(false);
                 PlayerAni.Play("Player_Shot");
@@ -175,18 +163,4 @@ public class CharacterMove : MonoBehaviour, MouseInput.IPlayerActions, IPointerD
         Manager.instance.inventory.InvenFrame.SetActive(false);
     }
 
-    public void OnSkill1(InputAction.CallbackContext context)
-    {
-        throw new System.NotImplementedException();
-    }
-
-    public void OnSkill2(InputAction.CallbackContext context)
-    {
-        throw new System.NotImplementedException();
-    }
-
-    public void OnSkill3(InputAction.CallbackContext context)
-    {
-        throw new System.NotImplementedException();
-    }
 }
