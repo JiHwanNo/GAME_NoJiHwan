@@ -4,13 +4,25 @@ using UnityEngine;
 
 public class Skill_Effect : MonoBehaviour
 {
-    public Transform target;
+    Transform target;
     public float speed;
     public GameObject hitEffect;
-
+    public int index;
+    float time = 0;
     private void OnEnable()
     {
-        StartCoroutine("SkillShot");
+        target = Manager.instance.characterMove.atkTarget;
+        
+        if(index == 2)
+        {
+            Manager.instance.myaudio.audioSource.PlayOneShot(Manager.instance.myaudio.Heal);
+            StartCoroutine("HealSkill");
+        }
+        else
+        {
+            Manager.instance.myaudio.audioSource.PlayOneShot(Manager.instance.myaudio.FireSkill_Flying);
+            StartCoroutine("SkillShot");
+        }
     }
     IEnumerator SkillShot()
     {
@@ -22,6 +34,21 @@ public class Skill_Effect : MonoBehaviour
             yield return null;
         }
     }
+    IEnumerator HealSkill()
+    {
+        while (true)
+        {
+            time += Time.fixedDeltaTime * speed;
+            if (time >= 6f)
+            {
+                time = 0;
+                StopCoroutine("HealSkill");
+                gameObject.SetActive(false);
+            }
+            yield return null;
+        }
+    }
+   
     void OnHitEffect(Vector3 hitPoint)
     {
         hitEffect.transform.position = hitPoint + new Vector3(0, 1, 0);
@@ -29,7 +56,7 @@ public class Skill_Effect : MonoBehaviour
     }
     private void OnTriggerEnter(Collider other)
     {
-        if(other.gameObject.tag == "Enemy"|| other.gameObject.tag == "Dead")
+        if (other.gameObject.tag == "Enemy" || other.gameObject.tag == "Dead")
         {
             StopCoroutine("SkillShot");
             gameObject.SetActive(false);

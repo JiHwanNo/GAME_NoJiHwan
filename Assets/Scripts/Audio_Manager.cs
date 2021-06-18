@@ -10,4 +10,7 @@ public class Audio_Manager : MonoBehaviour
     public AudioClip step;
     public AudioClip button_Click;
     public AudioClip Casting;
+    public AudioClip FireSkill_Flying;
+    public AudioClip FireHitEffect;
+    public AudioClip Heal;
 }

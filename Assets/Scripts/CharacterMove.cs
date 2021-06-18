@@ -34,8 +34,9 @@ public class CharacterMove : MonoBehaviour, IPointerDownHandler
     public Image castingBar;
     float castingTime;
     string SkillName;
-    Transform atkTarget;
-
+    public Transform atkTarget;
+    GameObject skillObj;
+    
     private void Awake()
     {
         PlayerAni = Player.GetComponent<Animator>();
@@ -88,11 +89,12 @@ public class CharacterMove : MonoBehaviour, IPointerDownHandler
        
     }
 
-    public void Casting(float time, string name)
+    public void Casting(float time, string name, GameObject Obj)
     {
         castingTime = time;
         SkillName = name;
         atkTarget = target;
+        skillObj = Obj;
 
         StartCoroutine("OnCasting");
     }
@@ -121,6 +123,9 @@ public class CharacterMove : MonoBehaviour, IPointerDownHandler
                 PlayerAni.Play("Player_Shot");
                 PlayerNav.enabled = true;
                 onCasting = false;
+
+                skillObj.transform.position = Player.position + new Vector3(0, 2, 0);
+                skillObj.SetActive(true);
             }
             yield return null;
         }

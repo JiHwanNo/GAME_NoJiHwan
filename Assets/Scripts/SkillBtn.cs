@@ -14,7 +14,7 @@ public class SkillBtn : MonoBehaviour,MouseInput.IPlayerActions
     public Image[] CTimage;
     public bool cool;
     public float[] castingTime;
-
+    public GameObject[] skillObj;
     private void Awake()
     {
         mouseInput = new MouseInput();
@@ -40,7 +40,7 @@ public class SkillBtn : MonoBehaviour,MouseInput.IPlayerActions
             {
                 cool = true;
                 StartCoroutine(CoolDown(index));
-                Manager.instance.characterMove.Casting(castingTime[index], SkiilName[index]);
+                Manager.instance.characterMove.Casting(castingTime[index], SkiilName[index], skillObj[index]);
             }
         }
         else // 그외 공격마법
@@ -50,7 +50,7 @@ public class SkillBtn : MonoBehaviour,MouseInput.IPlayerActions
             {
                 cool = true;
                 StartCoroutine(CoolDown(index));
-                Manager.instance.characterMove.Casting(castingTime[index], SkiilName[index]);
+                Manager.instance.characterMove.Casting(castingTime[index], SkiilName[index], skillObj[index]);
             }
         }
     }
