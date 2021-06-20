@@ -9,7 +9,7 @@ public class Manager : MonoBehaviour
     public Audio_Manager myaudio;
     public Inventory_Manager inventory;
     public CharacterMove characterMove;
-
+    public ObjectPoolManager ObjectPool;
     private void Awake()
     {
         if(instance  != this)
