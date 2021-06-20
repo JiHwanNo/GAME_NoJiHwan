@@ -5987,18 +5987,22 @@ MonoBehaviour:
   - Aqua
   - Heal
   coolTime:
-  - 1
+  - 3
   - 2
   - 5
   CTimage:
   - {fileID: 486190029657830244}
   - {fileID: 486190030872039001}
   - {fileID: 486190030600354273}
-  cool: 0
+  cool: 000000
   castingTime:
   - 1
   - 2
   - 5
+  skillObj:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
 --- !u!1 &486190030872039000
 GameObject:
   m_ObjectHideFlags: 0
@@ -7897,6 +7901,7 @@ MonoBehaviour:
   hpBar_Target: {fileID: 486190031067078304}
   onCasting: 0
   castingBar: {fileID: 1978848188}
+  atkTarget: {fileID: 0}
 --- !u!1 &486190031148965020
 GameObject:
   m_ObjectHideFlags: 0

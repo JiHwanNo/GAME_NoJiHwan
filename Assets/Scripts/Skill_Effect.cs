@@ -44,6 +44,7 @@ public class Skill_Effect : MonoBehaviour
                 time = 0;
                 StopCoroutine("HealSkill");
                 gameObject.SetActive(false);
+                break;
             }
             yield return null;
         }
@@ -53,6 +54,7 @@ public class Skill_Effect : MonoBehaviour
     {
         hitEffect.transform.position = hitPoint + new Vector3(0, 1, 0);
         hitEffect.SetActive(true);
+
     }
     private void OnTriggerEnter(Collider other)
     {

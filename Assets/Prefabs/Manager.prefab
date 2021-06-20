@@ -143,6 +143,10 @@ MonoBehaviour:
   audioSource: {fileID: 1793880968474192209}
   step: {fileID: 8300000, guid: 5d8455fb534849442ad490965ff71279, type: 3}
   button_Click: {fileID: 8300000, guid: f8cab9ed881c12249b7c8b4795964bdd, type: 3}
+  Casting: {fileID: 8300000, guid: 2089813249a672843b487a53f632fb1e, type: 3}
+  FireSkill_Flying: {fileID: 8300000, guid: f86c1885eb289574aab6da2fb4bd2bca, type: 3}
+  FireHitEffect: {fileID: 8300000, guid: 16c688e4d84faa3488ebc1c4697a01f3, type: 3}
+  Heal: {fileID: 8300000, guid: 66dfe8bf42b0fd24689c18f678afd794, type: 3}
 --- !u!1 &1793880968747170422
 GameObject:
   m_ObjectHideFlags: 0

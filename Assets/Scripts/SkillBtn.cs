@@ -12,7 +12,7 @@ public class SkillBtn : MonoBehaviour,MouseInput.IPlayerActions
     float cooldown;
     public float[] coolTime;
     public Image[] CTimage;
-    public bool cool;
+    public bool[] cool;
     public float[] castingTime;
     public GameObject[] skillObj;
     private void Awake()
@@ -36,19 +36,19 @@ public class SkillBtn : MonoBehaviour,MouseInput.IPlayerActions
     {
         if(index == 2)//힐
         {
-            if (!cool && !Manager.instance.characterMove.onCasting)
+            if (!cool[index] && !Manager.instance.characterMove.onCasting)
             {
-                cool = true;
+                cool[index] = true;
                 StartCoroutine(CoolDown(index));
                 Manager.instance.characterMove.Casting(castingTime[index], SkiilName[index], skillObj[index]);
             }
         }
-        else // 그외 공격마법
+        else if(index ==1 || index ==0)// 그외 공격마법
         {
-            if (!cool && Manager.instance.characterMove.target != null && Manager.instance.characterMove.target.gameObject.tag == "Enemy"
+            if (!cool[index] && Manager.instance.characterMove.target != null && Manager.instance.characterMove.target.gameObject.tag == "Enemy"
             && !Manager.instance.characterMove.onCasting)
             {
-                cool = true;
+                cool[index] = true;
                 StartCoroutine(CoolDown(index));
                 Manager.instance.characterMove.Casting(castingTime[index], SkiilName[index], skillObj[index]);
             }
@@ -59,7 +59,6 @@ public class SkillBtn : MonoBehaviour,MouseInput.IPlayerActions
     IEnumerator CoolDown(int index)
     {
         cooldown = 0;
-
         while (true)
         {
             cooldown += Time.deltaTime;
@@ -67,10 +66,9 @@ public class SkillBtn : MonoBehaviour,MouseInput.IPlayerActions
 
             if (cooldown >= coolTime[index])
             {
-                cool = false;
-                StopCoroutine("CoolDown");
+                cool[index] = false;
+                break;
             }
-
             yield return null;
         }
     }
