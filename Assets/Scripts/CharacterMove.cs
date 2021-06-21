@@ -54,7 +54,9 @@ public class CharacterMove : MonoBehaviour, IPointerDownHandler
        PlayerAni.SetBool("Walk", PlayerNav.velocity != Vector3.zero);
 
         OnTarget();
+      
     }
+    //클릭 이벤트 생성
     public void OnPointerDown(PointerEventData eventData)
     {
         if(Input.GetMouseButton(0))

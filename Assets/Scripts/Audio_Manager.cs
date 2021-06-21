@@ -13,4 +13,6 @@ public class Audio_Manager : MonoBehaviour
     public AudioClip FireSkill_Flying;
     public AudioClip FireHitEffect;
     public AudioClip Heal;
+    public AudioClip AquaSkill_Flying;
+    public AudioClip AquaHitEffect;
 }

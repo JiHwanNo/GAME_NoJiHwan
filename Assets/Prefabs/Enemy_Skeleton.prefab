@@ -5352,8 +5352,9 @@ GameObject:
   - component: {fileID: 2704042344483957481}
   - component: {fileID: 2656385521739513301}
   - component: {fileID: 2706043341366740227}
-  - component: {fileID: 2706043341366740224}
   - component: {fileID: 2706043341366740226}
+  - component: {fileID: 8844999961985157638}
+  - component: {fileID: 6768103530324798587}
   m_Layer: 0
   m_Name: Enemy_Skeleton
   m_TagString: Enemy
@@ -5469,20 +5470,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Obj_Name: Skeleton
   type: Enemy
---- !u!136 &2706043341366740224
-CapsuleCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2706043341366740225}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  m_Radius: 0.30498123
-  m_Height: 1.8572059
-  m_Direction: 1
-  m_Center: {x: -0.019069672, y: 0.88639104, z: 0}
 --- !u!54 &2706043341366740226
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -5499,6 +5486,33 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 112
   m_CollisionDetection: 0
+--- !u!65 &8844999961985157638
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2706043341366740225}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1.5, z: 1}
+  m_Center: {x: 0, y: 1, z: 0}
+--- !u!114 &6768103530324798587
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2706043341366740225}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f50a3cb71d14bfd42b991ec0d14ad1d2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hp: 300
+  cur_Hp: 0
 --- !u!1 &2706059010989928901
 GameObject:
   m_ObjectHideFlags: 0
