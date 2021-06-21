@@ -109,11 +109,10 @@ public class Skill_Effect : MonoBehaviour
             dmgText.transform.position = Manager.instance.characterMove.mycamera.WorldToScreenPoint(hitPoint+new Vector3(0,1,0));
             dmgText.SetActive(true);
 
-            if (target != null && target.gameObject.tag == "Enemy")
+            if (other.gameObject.tag == "Enemy")
             {
-                EnemyState enemyState = target.GetComponent<EnemyState>();
-                enemyState.cur_Hp -= dmg;
-                Manager.instance.characterMove.hpBar_Target.transform.GetChild(0).GetComponent<Image>().fillAmount = enemyState.cur_Hp / enemyState.hp;
+              other.GetComponent<EnemyHit>().Hit(dmg);
+
             }
         }
     }
