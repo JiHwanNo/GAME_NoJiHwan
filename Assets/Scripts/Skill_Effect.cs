@@ -87,7 +87,7 @@ public class Skill_Effect : MonoBehaviour
         }
     }
    
-    void CalculateDmg()
+    public void CalculateDmg()
     {
         PlayerState playerState = Manager.instance.characterMove.Player.GetComponent<PlayerState>();
 

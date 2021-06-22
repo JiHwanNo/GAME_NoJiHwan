@@ -56,7 +56,7 @@ public class CharacterMove : MonoBehaviour, IPointerDownHandler
         OnTarget();
       
     }
-    //클릭 이벤트 생성
+    //클릭 이벤트 생성 
     public void OnPointerDown(PointerEventData eventData)
     {
         if(Input.GetMouseButton(0))
@@ -169,5 +169,7 @@ public class CharacterMove : MonoBehaviour, IPointerDownHandler
     {
         Manager.instance.inventory.InvenFrame.SetActive(false);
     }
+
+
 
 }
