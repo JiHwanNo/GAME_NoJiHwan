@@ -7,6 +7,7 @@ public class EnemyHit : MonoBehaviour
 {
     public void Hit(int dmg)
     {
+       GetComponent<Enemy_AI>().inCombat = true;
        EnemyState enemyState = GetComponent<EnemyState>();
        enemyState.cur_Hp -= dmg;
 

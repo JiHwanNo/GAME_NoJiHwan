@@ -32,6 +32,20 @@ public class Skill_Effect : MonoBehaviour
             dmgText.GetComponent<TextMeshProUGUI>().fontSize = 50 * dmgRange;
             dmgText.transform.position = Manager.instance.characterMove.mycamera.WorldToScreenPoint(Manager.instance.characterMove.Player.transform.position + new Vector3(0, 1, 0));
             dmgText.SetActive(true);
+
+            PlayerState playerState = Manager.instance.characterMove.Player.GetComponent<PlayerState>();
+            if(playerState.hp_Cur < playerState.hp)
+            {
+                if(playerState.hp_Cur +dmg <playerState.hp)
+                {
+                    playerState.hp_Cur += dmg;
+                }
+                else
+                {
+                    playerState.hp_Cur = playerState.hp;
+                }
+            }
+
         }
         else if(index == 0)
         {

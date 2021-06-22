@@ -39297,9 +39297,9 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 2656385521739513301, guid: d7b3b547d9353ad4cb6c6254ee93ca88, type: 3}
-      propertyPath: m_ApplyRootMotion
-      value: 0
+    - target: {fileID: 1890905781996917707, guid: d7b3b547d9353ad4cb6c6254ee93ca88, type: 3}
+      propertyPath: m_StoppingDistance
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 2704042344483957481, guid: d7b3b547d9353ad4cb6c6254ee93ca88, type: 3}
       propertyPath: m_RootOrder
@@ -39348,22 +39348,6 @@ PrefabInstance:
     - target: {fileID: 2706043341366740225, guid: d7b3b547d9353ad4cb6c6254ee93ca88, type: 3}
       propertyPath: m_Name
       value: Enemy_Skeleton
-      objectReference: {fileID: 0}
-    - target: {fileID: 2706043341366740226, guid: d7b3b547d9353ad4cb6c6254ee93ca88, type: 3}
-      propertyPath: m_IsKinematic
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8844999961985157638, guid: d7b3b547d9353ad4cb6c6254ee93ca88, type: 3}
-      propertyPath: m_Size.y
-      value: 1.747802
-      objectReference: {fileID: 0}
-    - target: {fileID: 8844999961985157638, guid: d7b3b547d9353ad4cb6c6254ee93ca88, type: 3}
-      propertyPath: m_Center.y
-      value: 0.876099
-      objectReference: {fileID: 0}
-    - target: {fileID: 8844999961985157638, guid: d7b3b547d9353ad4cb6c6254ee93ca88, type: 3}
-      propertyPath: m_IsTrigger
-      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d7b3b547d9353ad4cb6c6254ee93ca88, type: 3}
