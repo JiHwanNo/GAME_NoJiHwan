@@ -19,10 +19,10 @@ public class Skill_Effect : MonoBehaviour
     private void OnEnable()
     {
         target = Manager.instance.characterMove.atkTarget;
-        
-        if(index == 2)
+        PlayerState playerState = Manager.instance.characterMove.Player.GetComponent<PlayerState>();
+        if (index == 2)
         {
-            skillPower = 0.8f;
+            skillPower = 1.5f;
             Manager.instance.myaudio.audioSource.PlayOneShot(Manager.instance.myaudio.Heal);
             StartCoroutine("HealSkill");
 
@@ -33,10 +33,9 @@ public class Skill_Effect : MonoBehaviour
             dmgText.transform.position = Manager.instance.characterMove.mycamera.WorldToScreenPoint(Manager.instance.characterMove.Player.transform.position + new Vector3(0, 1, 0));
             dmgText.SetActive(true);
 
-            PlayerState playerState = Manager.instance.characterMove.Player.GetComponent<PlayerState>();
-            if(playerState.hp_Cur < playerState.hp)
+            if (playerState.hp_Cur < playerState.hp)
             {
-                if(playerState.hp_Cur +dmg <playerState.hp)
+                if (playerState.hp_Cur + dmg < playerState.hp)
                 {
                     playerState.hp_Cur += dmg;
                 }
@@ -45,20 +44,25 @@ public class Skill_Effect : MonoBehaviour
                     playerState.hp_Cur = playerState.hp;
                 }
             }
+            Manager.instance.characterMove.PlayerUI();
+            playerState.Mp_Cur -= 15;
 
         }
-        else if(index == 0)
+        else if (index == 0)
         {
             skillPower = 1.25f;
             Manager.instance.myaudio.audioSource.PlayOneShot(Manager.instance.myaudio.FireSkill_Flying);
             StartCoroutine("SkillShot");
-            
+            playerState.Mp_Cur -= 5;
+
+
         }
         else if (index == 1)
         {
             skillPower = 1.5f;
             Manager.instance.myaudio.audioSource.PlayOneShot(Manager.instance.myaudio.AquaSkill_Flying);
             StartCoroutine("SkillShot");
+            playerState.Mp_Cur -= 10;
         }
     }
     IEnumerator SkillShot()
@@ -67,7 +71,7 @@ public class Skill_Effect : MonoBehaviour
         {
             Vector3 dir = target.position + new Vector3(0, 2, 0);
             transform.LookAt(dir);
-            transform.Translate(Vector3.forward * speed*Time.deltaTime);
+            transform.Translate(Vector3.forward * speed * Time.deltaTime);
             yield return null;
         }
     }
@@ -86,7 +90,7 @@ public class Skill_Effect : MonoBehaviour
             yield return null;
         }
     }
-   
+
     public void CalculateDmg()
     {
         PlayerState playerState = Manager.instance.characterMove.Player.GetComponent<PlayerState>();
@@ -95,7 +99,7 @@ public class Skill_Effect : MonoBehaviour
         dmg = (int)(playerState.atk * skillPower * dmgRange);
 
         int critical = Random.Range(0, 100);
-        if(critical < playerState.cri*100)
+        if (critical < playerState.cri * 100)
         {
             dmgRange = Random.Range(2f, 2.5f);
         }
@@ -120,12 +124,12 @@ public class Skill_Effect : MonoBehaviour
 
             dmgText.GetComponent<TextMeshProUGUI>().text = dmg.ToString();
             dmgText.GetComponent<TextMeshProUGUI>().fontSize = 50 * dmgRange;
-            dmgText.transform.position = Manager.instance.characterMove.mycamera.WorldToScreenPoint(hitPoint+new Vector3(0,1,0));
+            dmgText.transform.position = Manager.instance.characterMove.mycamera.WorldToScreenPoint(hitPoint + new Vector3(0, 1, 0));
             dmgText.SetActive(true);
 
             if (other.gameObject.tag == "Enemy")
             {
-              other.GetComponent<EnemyHit>().Hit(dmg);
+                other.GetComponent<EnemyHit>().Hit(dmg);
 
             }
         }

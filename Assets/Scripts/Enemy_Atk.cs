@@ -5,18 +5,25 @@ using UnityEngine;
 
 public class Enemy_Atk : MonoBehaviour
 {
+    EnemyState enemyState;
+    PlayerState playerState;
     public Transform enemy;
-    
+    public GameObject dmgText;
+
     int dmg;
     float dmgRange;
-    public GameObject dmgText;
+
+    private void Awake()
+    {
+        enemyState = enemy.GetComponent<EnemyState>();
+        playerState = Manager.instance.characterMove.Player.GetComponent<PlayerState>();
+    }
 
     void CalculateDmg()
     {
-        EnemyState enemyState = enemy.GetComponent<EnemyState>();
 
         dmgRange = Random.Range(0.8f, 1.2f);
-        dmg = (int)(enemyState.atk * dmgRange);
+        dmg = (int)((enemyState.atk - playerState.def) * dmgRange);
 
         int critical = Random.Range(0, 100);
         if (critical < enemyState.cri * 100)
@@ -27,9 +34,8 @@ public class Enemy_Atk : MonoBehaviour
 
     void Hit(int _dmg)
     {
-        PlayerState playerState = Manager.instance.characterMove.Player.GetComponent<PlayerState>();
         playerState.hp_Cur -= _dmg;
-        Debug.Log(playerState.hp_Cur);
+
     }
     private void OnTriggerEnter(Collider other)
     {
@@ -37,7 +43,7 @@ public class Enemy_Atk : MonoBehaviour
         if (other.gameObject.tag == "Player")
         {
             Vector3 hitPoint = (other.transform.position + transform.position) * 0.5f;
-            
+
             CalculateDmg();
 
             dmgText.GetComponent<TextMeshProUGUI>().text = dmg.ToString();
@@ -45,7 +51,8 @@ public class Enemy_Atk : MonoBehaviour
             dmgText.transform.position = Manager.instance.characterMove.mycamera.WorldToScreenPoint(hitPoint + new Vector3(0, 1, 0));
             dmgText.SetActive(true);
             Hit(dmg);
-           
+            Manager.instance.characterMove.PlayerUI();
+
         }
     }
 

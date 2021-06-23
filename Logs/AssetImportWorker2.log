@@ -1,0 +1,318 @@
+Using pre-set license
+Built from '2021.1/staging' branch; Version is '2021.1.7f1 (d91830b65d9b) revision 14227504'; Using compiler version '192528614'; Build Type 'Release'
+OS: 'Windows 10 Home; OS build 19041.1052; Version 2004; 64bit' Language: 'ko' Physical Memory: 7901 MB
+BatchMode: 1, IsHumanControllingUs: 0, StartBugReporterOnCrash: 0, Is64bit: 1, IsPro: 0
+
+ COMMAND LINE ARGUMENTS:
+C:\Program Files\Unity\Hub\Editor\2021.1.7f1\Editor\Unity.exe
+-adb2
+-batchMode
+-noUpm
+-name
+AssetImportWorker2
+-projectPath
+C:/Users/lg/Desktop/GAME
+-logFile
+Logs/AssetImportWorker2.log
+-srvPort
+50399
+Successfully changed project path to: C:/Users/lg/Desktop/GAME
+C:/Users/lg/Desktop/GAME
+Using Asset Import Pipeline V2.
+Refreshing native plugins compatible for Editor in 196.60 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Initialize engine version: 2021.1.7f1 (d91830b65d9b)
+[Subsystems] Discovering subsystems at path C:/Program Files/Unity/Hub/Editor/2021.1.7f1/Editor/Data/Resources/UnitySubsystems
+[Subsystems] Discovering subsystems at path C:/Users/lg/Desktop/GAME/Assets
+GfxDevice: creating device client; threaded=0; jobified=0
+Direct3D:
+    Version:  Direct3D 11.0 [level 11.1]
+    Renderer: Intel(R) Iris(R) Plus Graphics (ID=0x8a52)
+    Vendor:   Intel
+    VRAM:     3950 MB
+    Driver:   27.20.100.9510
+Initialize mono
+Mono path[0] = 'C:/Program Files/Unity/Hub/Editor/2021.1.7f1/Editor/Data/Managed'
+Mono path[1] = 'C:/Program Files/Unity/Hub/Editor/2021.1.7f1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit'
+Mono config path = 'C:/Program Files/Unity/Hub/Editor/2021.1.7f1/Editor/Data/MonoBleedingEdge/etc'
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56324
+Begin MonoManager ReloadAssembly
+Registering precompiled unity dll's ...
+Register platform support module: C:/Program Files/Unity/Hub/Editor/2021.1.7f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
+Registered in 0.002090 seconds.
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 148.55 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.963 seconds
+Platform modules already initialized, skipping
+Registering precompiled user dll's ...
+Registered in 0.003350 seconds.
+Begin MonoManager ReloadAssembly
+Symbol file LoadedFromMemory doesn't match image C:\Users\lg\Desktop\GAME\Library\PackageCache\com.unity.visualscripting@1.6.1\Editor\VisualScripting.Core\Dependencies\YamlDotNet\Unity.VisualScripting.YamlDotNet.dll
+Symbol file LoadedFromMemory doesn't match image C:\Users\lg\Desktop\GAME\Library\PackageCache\com.unity.visualscripting@1.6.1\Editor\VisualScripting.Core\Dependencies\DotNetZip\Unity.VisualScripting.IonicZip.dll
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 132.39 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.229 seconds
+Platform modules already initialized, skipping
+========================================================================
+Worker process is ready to serve import requests
+Launched and connected shader compiler UnityShaderCompiler.exe after 0.09 seconds
+Refreshing native plugins compatible for Editor in 1.13 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 3035 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 124.0 MB.
+System memory in use after: 124.2 MB.
+
+Unloading 15 unused Assets to reduce memory usage. Loaded Objects now: 3492.
+Total: 3.011600 ms (FindLiveObjects: 0.393300 ms CreateObjectMapping: 0.154300 ms MarkObjects: 2.333200 ms  DeleteObjects: 0.129000 ms)
+
+========================================================================
+Received Import Request.
+  path: Assets/Scenes/Game_Field.unity
+  artifactKey: Guid(8b23ccd6375da40459eadc3d5bf25a1b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scenes/Game_Field.unity using Guid(8b23ccd6375da40459eadc3d5bf25a1b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6a193ccdc7419c9a8ca28fc583e26b02') in 0.025999 seconds 
+========================================================================
+Received Prepare
+Refreshing native plugins compatible for Editor in 9.71 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 6 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 62.7 MB.
+System memory in use after: 63.0 MB.
+
+Unloading 6 unused Assets to reduce memory usage. Loaded Objects now: 3492.
+Total: 4.575500 ms (FindLiveObjects: 0.338400 ms CreateObjectMapping: 0.104800 ms MarkObjects: 4.004900 ms  DeleteObjects: 0.125600 ms)
+
+========================================================================
+Received Import Request.
+  Time since last request: 259.942579 seconds.
+  path: Assets/Sorce
+  artifactKey: Guid(a6ca8ec169e1f56459964ebb20cc3e7d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sorce using Guid(a6ca8ec169e1f56459964ebb20cc3e7d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f9597c7318d35f3177c2e9e529f51598') in 0.014060 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 3.421207 seconds.
+  path: Assets/Sorce/Sound
+  artifactKey: Guid(f912bb5b88e2c674c8ceb8492c960474) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sorce/Sound using Guid(f912bb5b88e2c674c8ceb8492c960474) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f1f813024fb6f9e79fa2728eff16f7ec') in 0.021973 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.983214 seconds.
+  path: Assets/Sorce/Wooden_UI
+  artifactKey: Guid(3b9ab05591dc83e46985a0ab829245a4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sorce/Wooden_UI using Guid(3b9ab05591dc83e46985a0ab829245a4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7984f87b06d24a8c047412909ce2f2e4') in 0.021928 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 1.469220 seconds.
+  path: Assets/Sorce/Wooden_UI/Wooden_UI_png
+  artifactKey: Guid(03334a12c1a0a4c479cbafcf80058c13) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sorce/Wooden_UI/Wooden_UI_png using Guid(03334a12c1a0a4c479cbafcf80058c13) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd016beb5f7d11f8dd0f3eaf83e20668e') in 0.014339 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 12.135323 seconds.
+  path: Assets/Sorce/Wooden_UI/Wooden_UI_png/frame_k_01.png
+  artifactKey: Guid(864578efb2484da4fbe9051f1d22dea5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sorce/Wooden_UI/Wooden_UI_png/frame_k_01.png using Guid(864578efb2484da4fbe9051f1d22dea5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5444f327b00251d0c5c947b51b9212fe') in 0.254970 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 7.542497 seconds.
+  path: Assets/Sorce/Wooden_UI/Wooden_UI_png/frame_blue.png
+  artifactKey: Guid(035fbc8a5734c4348a2f9a2bca6fb93c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sorce/Wooden_UI/Wooden_UI_png/frame_blue.png using Guid(035fbc8a5734c4348a2f9a2bca6fb93c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '379d3d9c0349f47c070a0e58b8ff3864') in 0.031268 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 363.705773 seconds.
+  path: Assets/Scripts/SkillBtn.cs
+  artifactKey: Guid(40fe0df7520b4674cbb4805c0c4d4513) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/SkillBtn.cs using Guid(40fe0df7520b4674cbb4805c0c4d4513) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd861ddfd160b541b2d8c71a792745e08') in 0.031593 seconds 
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.005023 seconds.
+Begin MonoManager ReloadAssembly
+Symbol file LoadedFromMemory doesn't match image C:\Users\lg\Desktop\GAME\Library\PackageCache\com.unity.visualscripting@1.6.1\Editor\VisualScripting.Core\Dependencies\YamlDotNet\Unity.VisualScripting.YamlDotNet.dll
+Symbol file LoadedFromMemory doesn't match image C:\Users\lg\Desktop\GAME\Library\PackageCache\com.unity.visualscripting@1.6.1\Editor\VisualScripting.Core\Dependencies\DotNetZip\Unity.VisualScripting.IonicZip.dll
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 2.34 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  3.284 seconds
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 1.03 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 3017 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 127.4 MB.
+System memory in use after: 127.6 MB.
+
+Unloading 8 unused Assets to reduce memory usage. Loaded Objects now: 3533.
+Total: 2.428400 ms (FindLiveObjects: 0.233800 ms CreateObjectMapping: 0.115000 ms MarkObjects: 2.055800 ms  DeleteObjects: 0.022200 ms)
+
+========================================================================
+Received Import Request.
+  Time since last request: 134.480297 seconds.
+  path: Assets/Scripts/PlayerState.cs
+  artifactKey: Guid(6ed620b3ed880fd4f989380165eacc26) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/PlayerState.cs using Guid(6ed620b3ed880fd4f989380165eacc26) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a70d0e774e39cab0c34af8c3d0c67458') in 0.014555 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000980 seconds.
+  path: Assets/Scripts/SkillBtn.cs
+  artifactKey: Guid(40fe0df7520b4674cbb4805c0c4d4513) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/SkillBtn.cs using Guid(40fe0df7520b4674cbb4805c0c4d4513) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2e9ebf28406ca618a6fe69e0918c90e5') in 0.008512 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000950 seconds.
+  path: Assets/Scripts/Skill_Effect.cs
+  artifactKey: Guid(64910db2e583d1c498cee3a9a45ff01d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/Skill_Effect.cs using Guid(64910db2e583d1c498cee3a9a45ff01d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'dee51d3177f7496163baa14f69b0dc81') in 0.016357 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 57.643258 seconds.
+  path: Assets/Scripts/EnemyState.cs
+  artifactKey: Guid(f50a3cb71d14bfd42b991ec0d14ad1d2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/EnemyState.cs using Guid(f50a3cb71d14bfd42b991ec0d14ad1d2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd2a91f68d1725772558caa5aaefe8b25') in 0.033507 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 30.905127 seconds.
+  path: Assets/Scripts/EnemyHit.cs
+  artifactKey: Guid(52edd4e456f28ac408fdc77bd3c39e35) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/EnemyHit.cs using Guid(52edd4e456f28ac408fdc77bd3c39e35) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '81a8effae3739901a093ec05d394db39') in 0.014416 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 26.832108 seconds.
+  path: Assets/Scripts/Enemy_Atk.cs
+  artifactKey: Guid(6c0c22dfe7d860c489ec967abd372cfa) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/Enemy_Atk.cs using Guid(6c0c22dfe7d860c489ec967abd372cfa) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '360e85df4f304dd5e95ee09f7187c963') in 0.007986 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 13.566011 seconds.
+  path: Assets/Scripts/Enemy_AI.cs
+  artifactKey: Guid(2ad4c831ef6596140a76f5d7ce4ef225) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/Enemy_AI.cs using Guid(2ad4c831ef6596140a76f5d7ce4ef225) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ebb0fb4f40c028ae37edd718634114f2') in 0.017447 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 2.830333 seconds.
+  path: Assets/Scripts/DisableObj.cs
+  artifactKey: Guid(45461a767de271c458940f663d8fff85) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/DisableObj.cs using Guid(45461a767de271c458940f663d8fff85) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3699047cc744d5cf79848f27a0513cd2') in 0.016085 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 1.936180 seconds.
+  path: Assets/Scripts/CharInfoFrame.cs
+  artifactKey: Guid(ad227caeeefc0524e99b8172ffa991a7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/CharInfoFrame.cs using Guid(ad227caeeefc0524e99b8172ffa991a7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'fede0646aefc7970acae81e58835fca4') in 0.016403 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 6.336972 seconds.
+  path: Assets/Scripts/CharacterMove.cs
+  artifactKey: Guid(d55fc8af8d1a4de4694fd0ec7eca83ea) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/CharacterMove.cs using Guid(d55fc8af8d1a4de4694fd0ec7eca83ea) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1cbe509aa2595988d4d6b87a127603b8') in 0.014496 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 20.116412 seconds.
+  path: Assets/Scripts/CharacterMove.cs
+  artifactKey: Guid(d55fc8af8d1a4de4694fd0ec7eca83ea) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/CharacterMove.cs using Guid(d55fc8af8d1a4de4694fd0ec7eca83ea) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b45779b985d13c299f15c9854c762f4c') in 0.021482 seconds 
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.004700 seconds.
+Begin MonoManager ReloadAssembly
+Symbol file LoadedFromMemory doesn't match image C:\Users\lg\Desktop\GAME\Library\PackageCache\com.unity.visualscripting@1.6.1\Editor\VisualScripting.Core\Dependencies\YamlDotNet\Unity.VisualScripting.YamlDotNet.dll
+Symbol file LoadedFromMemory doesn't match image C:\Users\lg\Desktop\GAME\Library\PackageCache\com.unity.visualscripting@1.6.1\Editor\VisualScripting.Core\Dependencies\DotNetZip\Unity.VisualScripting.IonicZip.dll
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 1.05 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.313 seconds
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 0.93 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 3015 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 127.3 MB.
+System memory in use after: 127.6 MB.
+
+Unloading 8 unused Assets to reduce memory usage. Loaded Objects now: 3536.
+Total: 2.284800 ms (FindLiveObjects: 0.251800 ms CreateObjectMapping: 0.103500 ms MarkObjects: 1.909800 ms  DeleteObjects: 0.018500 ms)
+
+========================================================================
+Received Import Request.
+  Time since last request: 150.996189 seconds.
+  path: Assets/Sorce/TextMesh Pro/Examples & Extras/Textures/Sunny Days - Seamless.jpg
+  artifactKey: Guid(17c350171f7a3ca479f830547c66d187) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sorce/TextMesh Pro/Examples & Extras/Textures/Sunny Days - Seamless.jpg using Guid(17c350171f7a3ca479f830547c66d187) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '010e9405298c71a27eda0ba1047ae460') in 0.130587 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000512 seconds.
+  path: Assets/Sorce/TextMesh Pro/Examples & Extras/Textures/Fruit Jelly (B&W).jpg
+  artifactKey: Guid(1cdc5b506b1a4a33a53c30669ced1f51) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sorce/TextMesh Pro/Examples & Extras/Textures/Fruit Jelly (B&W).jpg using Guid(1cdc5b506b1a4a33a53c30669ced1f51) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1a804b324ef50d635d3dc50c5fd59ab0') in 0.031037 seconds 
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.005599 seconds.
+Begin MonoManager ReloadAssembly
+Symbol file LoadedFromMemory doesn't match image C:\Users\lg\Desktop\GAME\Library\PackageCache\com.unity.visualscripting@1.6.1\Editor\VisualScripting.Core\Dependencies\YamlDotNet\Unity.VisualScripting.YamlDotNet.dll
+Symbol file LoadedFromMemory doesn't match image C:\Users\lg\Desktop\GAME\Library\PackageCache\com.unity.visualscripting@1.6.1\Editor\VisualScripting.Core\Dependencies\DotNetZip\Unity.VisualScripting.IonicZip.dll
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 0.98 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.289 seconds
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 1.92 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 3017 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 128.5 MB.
+System memory in use after: 128.7 MB.
+
+Unloading 8 unused Assets to reduce memory usage. Loaded Objects now: 3570.
+Total: 2.935500 ms (FindLiveObjects: 0.448200 ms CreateObjectMapping: 0.099600 ms MarkObjects: 2.300500 ms  DeleteObjects: 0.086000 ms)
+
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.005976 seconds.
+Begin MonoManager ReloadAssembly
+Symbol file LoadedFromMemory doesn't match image C:\Users\lg\Desktop\GAME\Library\PackageCache\com.unity.visualscripting@1.6.1\Editor\VisualScripting.Core\Dependencies\YamlDotNet\Unity.VisualScripting.YamlDotNet.dll
+Symbol file LoadedFromMemory doesn't match image C:\Users\lg\Desktop\GAME\Library\PackageCache\com.unity.visualscripting@1.6.1\Editor\VisualScripting.Core\Dependencies\DotNetZip\Unity.VisualScripting.IonicZip.dll
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 1.06 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.353 seconds
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 1.14 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 3015 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 128.4 MB.
+System memory in use after: 128.7 MB.
+
+Unloading 8 unused Assets to reduce memory usage. Loaded Objects now: 3573.
+Total: 2.934200 ms (FindLiveObjects: 0.227900 ms CreateObjectMapping: 0.120000 ms MarkObjects: 2.537500 ms  DeleteObjects: 0.047600 ms)
+
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.004692 seconds.
+Begin MonoManager ReloadAssembly
+Symbol file LoadedFromMemory doesn't match image C:\Users\lg\Desktop\GAME\Library\PackageCache\com.unity.visualscripting@1.6.1\Editor\VisualScripting.Core\Dependencies\YamlDotNet\Unity.VisualScripting.YamlDotNet.dll
+Symbol file LoadedFromMemory doesn't match image C:\Users\lg\Desktop\GAME\Library\PackageCache\com.unity.visualscripting@1.6.1\Editor\VisualScripting.Core\Dependencies\DotNetZip\Unity.VisualScripting.IonicZip.dll
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 0.97 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  0.985 seconds
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 1.03 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 3015 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 128.5 MB.
+System memory in use after: 128.7 MB.
+
+Unloading 8 unused Assets to reduce memory usage. Loaded Objects now: 3576.
+Total: 3.340800 ms (FindLiveObjects: 0.221000 ms CreateObjectMapping: 0.103800 ms MarkObjects: 2.963800 ms  DeleteObjects: 0.050900 ms)
+
+AssetImportWorkerClient::OnTransportError - code=2 error=End of file

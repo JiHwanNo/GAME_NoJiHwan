@@ -36,12 +36,19 @@ public class CharacterMove : MonoBehaviour, IPointerDownHandler
     string SkillName;
     public Transform atkTarget;
     GameObject skillObj;
-    
+
+    [Header("Player_UI")]
+    public Image player_hpbar;
+    public Image player_mpbar;
+
+    [Header("PlayerInfoUpate")]
+    PlayerState playerState;
+
     private void Awake()
     {
         PlayerAni = Player.GetComponent<Animator>();
         PlayerNav = Player.GetComponent<NavMeshAgent>();
-
+        playerState = Manager.instance.characterMove.Player.GetComponent<PlayerState>();
     }
 
     void Start()
@@ -51,15 +58,32 @@ public class CharacterMove : MonoBehaviour, IPointerDownHandler
     }
     private void FixedUpdate()
     {
-       PlayerAni.SetBool("Walk", PlayerNav.velocity != Vector3.zero);
+        PlayerAni.SetBool("Walk", PlayerNav.velocity != Vector3.zero);
 
         OnTarget();
-      
+
+    }
+    public void GetPlayerExp()
+    {
+        playerState.exp_Cur += target.gameObject.GetComponent<EnemyState>().exp;
+        if (playerState.exp_Cur >= playerState.exp_Max)
+        {
+            playerState.Lv++;
+            playerState.exp_Cur -= playerState.exp_Max;
+            playerState.LevelUp();
+        }
+    }
+    //플레이어 상태창 동기화 (HP,MP)
+    public void PlayerUI()
+    {
+        PlayerState playerState = Manager.instance.characterMove.Player.GetComponent<PlayerState>();
+        player_hpbar.fillAmount = playerState.hp_Cur / playerState.hp;
+        player_mpbar.fillAmount = playerState.Mp_Cur / playerState.Mp;
     }
     //클릭 이벤트 생성 
     public void OnPointerDown(PointerEventData eventData)
     {
-        if(Input.GetMouseButton(0))
+        if (Input.GetMouseButton(0))
         {
             Ray ray = mycamera.ScreenPointToRay(eventData.position);
             Physics.Raycast(ray, out hit);
@@ -72,8 +96,8 @@ public class CharacterMove : MonoBehaviour, IPointerDownHandler
 
                 if (hit.transform.gameObject.tag == "Ground")
                 {
-                    if(!onCasting)
-                    PlayerNav.SetDestination(hit.point);
+                    if (!onCasting)
+                        PlayerNav.SetDestination(hit.point);
                 }
                 if (hit.transform.gameObject.tag == "Player")
                 {
@@ -87,10 +111,10 @@ public class CharacterMove : MonoBehaviour, IPointerDownHandler
                 }
             }
         }
-      
-       
-    }
 
+
+    }
+    //캐스팅 실행
     public void Casting(float time, string name, GameObject Obj)
     {
         castingTime = time;
@@ -100,7 +124,7 @@ public class CharacterMove : MonoBehaviour, IPointerDownHandler
 
         StartCoroutine("OnCasting");
     }
-
+    //캐스팅 실행 중
     IEnumerator OnCasting()
     {
         Manager.instance.myaudio.audioSource.PlayOneShot(Manager.instance.myaudio.Casting);
@@ -112,12 +136,12 @@ public class CharacterMove : MonoBehaviour, IPointerDownHandler
         castingBar.transform.parent.gameObject.SetActive(true);
         castingBar.transform.GetChild(0).GetComponent<TextMeshProUGUI>().text = SkillName;
 
-        while(true)
+        while (true)
         {
             time += Time.deltaTime;
             castingBar.fillAmount = time / castingTime;
 
-            if(time >= castingTime)
+            if (time >= castingTime)
             {
                 Manager.instance.myaudio.audioSource.Stop();
                 StopCoroutine("OnCasting");
@@ -143,19 +167,19 @@ public class CharacterMove : MonoBehaviour, IPointerDownHandler
     //타켓 체크 함수
     void OnTarget()
     {
-        if(target != null)
+        if (target != null)
         {
             float targetDis = (target.position - Player.position).magnitude;
 
-            if(targetDis > Range)
+            if (targetDis > Range)
             {
                 target = null;
                 target_Tool.SetActive(false);
             }
 
-            if(target_Tool.activeSelf)
+            if (target_Tool.activeSelf)
             {
-                target_Tool.transform.position = mycamera.WorldToScreenPoint(target.position+new Vector3(0,1,0));
+                target_Tool.transform.position = mycamera.WorldToScreenPoint(target.position + new Vector3(0, 1, 0));
             }
         }
     }

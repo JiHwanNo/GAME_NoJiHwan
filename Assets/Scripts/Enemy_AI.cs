@@ -35,19 +35,19 @@ public class Enemy_AI : MonoBehaviour
     {
         target = Manager.instance.characterMove.Player.position;
 
-        if(!inAtk)
+        if (!inAtk)
         {
             Nav.speed = speed_Combat;
             Nav.SetDestination(target);
 
-            if(targetDis <= 3)
+            if (targetDis <= 3)
             {
                 inAtk = true;
                 enemyAni.Play("Idle");
             }
         }
 
-        if(originDis >= trackingRange)
+        if (originDis >= trackingRange)
         {
             inCombat = false;
             onMove = true;
@@ -60,21 +60,21 @@ public class Enemy_AI : MonoBehaviour
     }
     void Move_NonCombat()
     {
-        if(targetDis <=2)
+        if (targetDis <= 2)
         {
             onMove = false;
         }
-        if(!onMove)
+        if (!onMove)
         {
             onMove = true;
             Nav.speed = speed_Noncombat;
 
-            target = new Vector3(transform.position.x +Random.Range(-1*moveRange,moveRange),0,
+            target = new Vector3(transform.position.x + Random.Range(-1 * moveRange, moveRange), 0,
                 transform.position.z + Random.Range(-1 * moveRange, moveRange));
 
             Nav.SetDestination(target);
         }
-        if(originDis>= moveRange)
+        if (originDis >= moveRange)
         {
             onMove = true;
             target = originPosition;
@@ -84,12 +84,12 @@ public class Enemy_AI : MonoBehaviour
 
     public void Enemy_Atk()
     {
-        if(targetDis<=2)
+        if (targetDis <= 2)
         {
             transform.LookAt(target);
             enemyAni.Play("EnemyAtk");
         }
-        if(targetDis >2)
+        if (targetDis > 2)
         {
             inAtk = false;
             enemyAni.Play("Idle");
@@ -97,18 +97,18 @@ public class Enemy_AI : MonoBehaviour
     }
     IEnumerator EnemyAI()
     {
-        
-        while(true)
+
+        while (true)
         {
             originDis = (originPosition - transform.position).magnitude;
             targetDis = (target - transform.position).magnitude;
             float speed = Nav.desiredVelocity.magnitude;
             enemyAni.SetFloat("Speed", speed);
-            if(!inCombat)
+            if (!inCombat)
             {
                 Move_NonCombat();
             }
-            if(inCombat)
+            if (inCombat)
             {
                 Move_Combat();
             }

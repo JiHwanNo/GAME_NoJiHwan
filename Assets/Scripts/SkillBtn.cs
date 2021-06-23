@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.UI;
 
-public class SkillBtn : MonoBehaviour,MouseInput.IPlayerActions
+public class SkillBtn : MonoBehaviour, MouseInput.IPlayerActions
 {
     MouseInput mouseInput;
 
@@ -34,7 +34,7 @@ public class SkillBtn : MonoBehaviour,MouseInput.IPlayerActions
 
     public void OnClickBtn(int index)
     {
-        if(index == 2)//힐
+        if (index == 2)//힐
         {
             if (!cool[index] && !Manager.instance.characterMove.onCasting)
             {
@@ -43,7 +43,7 @@ public class SkillBtn : MonoBehaviour,MouseInput.IPlayerActions
                 Manager.instance.characterMove.Casting(castingTime[index], SkiilName[index], skillObj[index]);
             }
         }
-        else if(index ==1 || index ==0)// 그외 공격마법
+        else if (index == 1 || index == 0)// 그외 공격마법
         {
             if (!cool[index] && Manager.instance.characterMove.target != null && Manager.instance.characterMove.target.gameObject.tag == "Enemy"
             && !Manager.instance.characterMove.onCasting)
@@ -54,7 +54,7 @@ public class SkillBtn : MonoBehaviour,MouseInput.IPlayerActions
             }
         }
     }
- 
+
 
     IEnumerator CoolDown(int index)
     {
@@ -76,7 +76,7 @@ public class SkillBtn : MonoBehaviour,MouseInput.IPlayerActions
 
     public void OnSkill_1(InputAction.CallbackContext context)
     {
-        if(context.performed)
+        if (context.performed)
         {
             OnClickBtn(0);
         }
