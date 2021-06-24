@@ -71,6 +71,8 @@ public class CharacterMove : MonoBehaviour, IPointerDownHandler
             playerState.Lv++;
             playerState.exp_Cur -= playerState.exp_Max;
             playerState.LevelUp();
+            //playerState.LevelUp_effect.SetActive(false);
+            
         }
     }
     //플레이어 상태창 동기화 (HP,MP)

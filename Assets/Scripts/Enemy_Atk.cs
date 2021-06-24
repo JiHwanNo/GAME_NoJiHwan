@@ -6,6 +6,7 @@ using UnityEngine;
 public class Enemy_Atk : MonoBehaviour
 {
     EnemyState enemyState;
+    Enemy_AI enemy_AI;
     PlayerState playerState;
     public Transform enemy;
     public GameObject dmgText;
@@ -17,6 +18,7 @@ public class Enemy_Atk : MonoBehaviour
     {
         enemyState = enemy.GetComponent<EnemyState>();
         playerState = Manager.instance.characterMove.Player.GetComponent<PlayerState>();
+        enemy_AI = enemy.GetComponent<Enemy_AI>();
     }
 
     void CalculateDmg()
@@ -40,7 +42,7 @@ public class Enemy_Atk : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
 
-        if (other.gameObject.tag == "Player")
+        if (other.gameObject.tag == "Player" && enemy_AI.inCombat)
         {
             Vector3 hitPoint = (other.transform.position + transform.position) * 0.5f;
 
