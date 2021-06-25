@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class ObjectPoolManager : MonoBehaviour
 {
@@ -9,19 +10,24 @@ public class ObjectPoolManager : MonoBehaviour
 
     public GameObject[] enemyPrefab;
     [SerializeField] List<GameObject> enemies;
-    public bool shouldExtend = false;
+
+    public GameObject[] ItemPrefabs;
+    [SerializeField]Dictionary<string, GameObject> Items;
 
     private void Awake()
     {
         // 장소는 ObjPoolManager 밑에 오브젝트 위치를 받는다.
         RespawnPoint = new Vector3[transform.childCount]; // manager 밑에 생성하자.
 
+        //리스폰 위치를 받는다.
         for (int i = 0; i < RespawnPoint.Length; i++)
         {
             RespawnPoint[i] = transform.GetChild(i).position;
         }
 
         enemies = new List<GameObject>();
+
+        Items = new Dictionary<string, GameObject>();
     }
 
     private void FixedUpdate()
@@ -41,23 +47,34 @@ public class ObjectPoolManager : MonoBehaviour
     }
     public GameObject GetEnemy()
     {
-        foreach (var enemy in enemies)
+        if(enemies.Count >10)
         {
-            if (!enemy.activeSelf)
-            {
-                return enemy;
-            }
+            return null;
         }
-
-        if (shouldExtend) // 존재한다면.
+        else
         {
-            GameObject obj = Instantiate(enemyPrefab[Random.Range(0, enemyPrefab.Length-1)]);
+            foreach (var enemy in enemies)
+            {
+                if (!enemy.activeSelf)
+                {
+                    return enemy;
+                }
+            }
+
+            GameObject obj = Instantiate(enemyPrefab[Random.Range(0, enemyPrefab.Length - 1)]);
             enemies.Add(obj);
             obj.SetActive(false);
 
             return obj;
         }
+    }
 
-        return null;
+    public GameObject GetItem()
+    {
+        GameObject obj = Instantiate(ItemPrefabs[Random.Range(0, ItemPrefabs.Length - 1)]);
+        Items.Add(obj.name, obj);
+        obj.SetActive(true);
+
+        return obj;
     }
 }
