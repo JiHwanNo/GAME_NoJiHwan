@@ -9,6 +9,7 @@ public class EnemyState : MonoBehaviour
     public int atk;
     public float cri;
     public int exp;
+    public int goal;
 
     private void OnEnable()
     {

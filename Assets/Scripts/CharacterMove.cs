@@ -1,10 +1,8 @@
 using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-using UnityEngine.InputSystem;
-using UnityEngine.EventSystems;
-using UnityEngine.AI;
 using TMPro;
+using UnityEngine;
+using UnityEngine.AI;
+using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
 public class CharacterMove : MonoBehaviour, IPointerDownHandler
@@ -28,6 +26,7 @@ public class CharacterMove : MonoBehaviour, IPointerDownHandler
     public GameObject target_Tool;
     public TextMeshProUGUI name_Target;
     public GameObject hpBar_Target;
+    public GameObject DropBox;
 
     [Header("Casting")]
     public bool onCasting;
@@ -72,7 +71,7 @@ public class CharacterMove : MonoBehaviour, IPointerDownHandler
             playerState.exp_Cur -= playerState.exp_Max;
             playerState.LevelUp();
             //playerState.LevelUp_effect.SetActive(false);
-            
+
         }
     }
     //플레이어 상태창 동기화 (HP,MP)
@@ -110,6 +109,12 @@ public class CharacterMove : MonoBehaviour, IPointerDownHandler
                 if (hit.transform.gameObject.tag == "Enemy")
                 {
                     Targeting();
+                }
+                if (hit.transform.gameObject.tag == "Dead")
+                {
+                    target = hit.transform;
+                    DropBox.transform.position = mycamera.WorldToScreenPoint(hit.point);
+                    DropBox.SetActive(true);
                 }
             }
         }

@@ -12,7 +12,8 @@ public class ObjectPoolManager : MonoBehaviour
     [SerializeField] List<GameObject> enemies;
 
     public GameObject[] ItemPrefabs;
-    [SerializeField]Dictionary<string, GameObject> Items;
+    public Dictionary<string, GameObject> Items;
+    public bool Item_exist;
 
     private void Awake()
     {
@@ -71,10 +72,22 @@ public class ObjectPoolManager : MonoBehaviour
 
     public GameObject GetItem()
     {
+        
         GameObject obj = Instantiate(ItemPrefabs[Random.Range(0, ItemPrefabs.Length - 1)]);
-        Items.Add(obj.name, obj);
-        obj.SetActive(true);
+        
+        string objname = obj.name;
+        if(!Items.ContainsKey(objname))
+        {
+            Items.Add(obj.name, obj);   
+            return obj;
+        }
+        GetItem();
+        return null;
+        
+    }
 
-        return obj;
+    public void ClearItem()
+    {
+        Items.Clear();
     }
 }
