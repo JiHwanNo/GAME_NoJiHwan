@@ -19,8 +19,11 @@ public class Items_Info : MonoBehaviour
 
     public bool equipped;
     public int equipNum;
-    public GameObject select_Equip;
+    public GameObject select_Equip; // 장비 착용 오브젝트 받기
 
+    [Header("Obj Info")]
+    public int HpRecovery;
+    public int MpRecovery;
     public void Select_Text()
     {
         if (equipped)

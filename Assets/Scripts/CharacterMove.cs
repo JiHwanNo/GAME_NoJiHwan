@@ -27,6 +27,7 @@ public class CharacterMove : MonoBehaviour, IPointerDownHandler
     public TextMeshProUGUI name_Target;
     public GameObject hpBar_Target;
     public GameObject DropBox;
+    public GameObject Inventory;
 
     [Header("Casting")]
     public bool onCasting;
@@ -60,7 +61,6 @@ public class CharacterMove : MonoBehaviour, IPointerDownHandler
         PlayerAni.SetBool("Walk", PlayerNav.velocity != Vector3.zero);
 
         OnTarget();
-
     }
     public void GetPlayerExp()
     {
@@ -70,8 +70,6 @@ public class CharacterMove : MonoBehaviour, IPointerDownHandler
             playerState.Lv++;
             playerState.exp_Cur -= playerState.exp_Max;
             playerState.LevelUp();
-            //playerState.LevelUp_effect.SetActive(false);
-
         }
     }
     //플레이어 상태창 동기화 (HP,MP)
@@ -99,6 +97,7 @@ public class CharacterMove : MonoBehaviour, IPointerDownHandler
                 {
                     if (!onCasting)
                         PlayerNav.SetDestination(hit.point);
+                    DropBox.SetActive(false);
                 }
                 if (hit.transform.gameObject.tag == "Player")
                 {
@@ -118,8 +117,6 @@ public class CharacterMove : MonoBehaviour, IPointerDownHandler
                 }
             }
         }
-
-
     }
     //캐스팅 실행
     public void Casting(float time, string name, GameObject Obj)
@@ -200,7 +197,8 @@ public class CharacterMove : MonoBehaviour, IPointerDownHandler
     {
         Manager.instance.inventory.InvenFrame.SetActive(false);
     }
-
+   
+    
 
 
 }

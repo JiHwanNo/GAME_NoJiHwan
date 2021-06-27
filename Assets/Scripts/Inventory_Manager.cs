@@ -19,11 +19,10 @@ public class Inventory_Manager : MonoBehaviour
     public Transform selectedItem;
     public Transform curParent;
     public Transform parentOnDrag;
-    
+
 
     public void GetInvenInfo()
     {
         goldAmount.text = gold.ToString();
-        //InvenFrame.SetActive(true);
     }
 }

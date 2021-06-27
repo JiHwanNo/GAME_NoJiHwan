@@ -27,7 +27,7 @@ public class ItemInfo_Frame : MonoBehaviour
         stateBonus.SetActive(false);
         name_Item.text = item.name_Item;
         info_Item.text = item.info_Item;
-        resalePrice.text = string.Format("Used Price : {0}", item.resalsePrice);
+        resalePrice.text = string.Format("Resale Price : {0}", item.resalsePrice);
 
         if(item.type == "Equipment")
         {

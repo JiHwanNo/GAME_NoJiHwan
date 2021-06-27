@@ -9,8 +9,8 @@ public class Equip_Manager : MonoBehaviour
     public PlayerState player;
 
     [Header("Charecter Info")]
-    public Transform[] slot_Equip;
-    public Items_Info[] cur_Equip;
+    public Transform[] slot_Equip; // 캐릭터 창의 슬롯
+    public Items_Info[] cur_Equip; // 현재 캐릭터 창의 슬롯에 있는 아이템 정보.
 
 
 

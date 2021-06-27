@@ -20086,7 +20086,7 @@ GameObject:
   - component: {fileID: 437759874}
   m_Layer: 5
   m_Name: Get_ItemBox
-  m_TagString: Untagged
+  m_TagString: Item
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -20125,7 +20125,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   SoltBox: {fileID: 300042068}
+  Drop_Iven: []
   GoalText: {fileID: 363595262}
+  getgoal: 0
 --- !u!1 &459181334
 GameObject:
   m_ObjectHideFlags: 0
@@ -25032,9 +25034,10 @@ GameObject:
   - component: {fileID: 465750927}
   - component: {fileID: 465750929}
   - component: {fileID: 465750928}
+  - component: {fileID: 465750930}
   m_Layer: 5
   m_Name: Gold_Image
-  m_TagString: Untagged
+  m_TagString: Item
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -25097,6 +25100,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 465750926}
   m_CullTransparentMesh: 1
+--- !u!114 &465750930
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 465750926}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ba8edf288c108fc429f81aeb9d6932ee, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  image: {fileID: 0}
+  inBag: 0
 --- !u!224 &564589462 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 486190030024916867, guid: b9951c90cdf86094cac52615f105e98d, type: 3}
@@ -30368,6 +30385,8 @@ GameObject:
   m_Component:
   - component: {fileID: 840374700}
   - component: {fileID: 840374702}
+  - component: {fileID: 840374704}
+  - component: {fileID: 840374703}
   - component: {fileID: 840374701}
   m_Layer: 0
   m_Name: Mp_Posion
@@ -30434,6 +30453,46 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 840374699}
   m_CullTransparentMesh: 1
+--- !u!114 &840374703
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 840374699}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 975459a7d3c64bf4593aee50f516b41e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  type: Obj
+  name_Item: Mp Posion
+  info_Item: +100 Mp
+  resalsePrice: 100
+  count: 0
+  hpBonus: 0
+  atkBonus: 0
+  defBonus: 0
+  criBonus: 0
+  equipped: 0
+  equipNum: 0
+  select_Equip: {fileID: 0}
+  HpRecovery: 0
+  MpRecovery: 0
+--- !u!114 &840374704
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 840374699}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ba8edf288c108fc429f81aeb9d6932ee, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  image: {fileID: 0}
+  inBag: 0
 --- !u!1 &858010602
 GameObject:
   m_ObjectHideFlags: 0
@@ -40490,7 +40549,7 @@ GameObject:
   - component: {fileID: 1125414259}
   m_Layer: 5
   m_Name: ItemSlot
-  m_TagString: Untagged
+  m_TagString: Item
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -40639,6 +40698,8 @@ GameObject:
   - component: {fileID: 1288890501}
   - component: {fileID: 1288890503}
   - component: {fileID: 1288890502}
+  - component: {fileID: 1288890505}
+  - component: {fileID: 1288890504}
   m_Layer: 0
   m_Name: Gem_Weapon
   m_TagString: Item
@@ -40704,6 +40765,46 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1288890500}
   m_CullTransparentMesh: 1
+--- !u!114 &1288890504
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1288890500}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 975459a7d3c64bf4593aee50f516b41e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  type: Obj
+  name_Item: Red Gem
+  info_Item: Weapon Equitment Reinforcement
+  resalsePrice: 100
+  count: 0
+  hpBonus: 0
+  atkBonus: 0
+  defBonus: 0
+  criBonus: 0
+  equipped: 0
+  equipNum: 0
+  select_Equip: {fileID: 0}
+  HpRecovery: 0
+  MpRecovery: 0
+--- !u!114 &1288890505
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1288890500}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ba8edf288c108fc429f81aeb9d6932ee, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  image: {fileID: 0}
+  inBag: 0
 --- !u!4 &1384256406 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4737035333811575056, guid: 8784c12f355c56343a1da0d33035afb2, type: 3}
@@ -40725,6 +40826,8 @@ GameObject:
   - component: {fileID: 1415223528}
   - component: {fileID: 1415223530}
   - component: {fileID: 1415223529}
+  - component: {fileID: 1415223532}
+  - component: {fileID: 1415223531}
   m_Layer: 0
   m_Name: Hp_Posion
   m_TagString: Item
@@ -40790,6 +40893,46 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1415223527}
   m_CullTransparentMesh: 1
+--- !u!114 &1415223531
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1415223527}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 975459a7d3c64bf4593aee50f516b41e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  type: Obj
+  name_Item: Hp Posion
+  info_Item: +300 Hp
+  resalsePrice: 100
+  count: 0
+  hpBonus: 0
+  atkBonus: 0
+  defBonus: 0
+  criBonus: 0
+  equipped: 0
+  equipNum: 0
+  select_Equip: {fileID: 0}
+  HpRecovery: 0
+  MpRecovery: 0
+--- !u!114 &1415223532
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1415223527}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ba8edf288c108fc429f81aeb9d6932ee, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  image: {fileID: 0}
+  inBag: 0
 --- !u!4 &1432990218 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4737035333936068748, guid: 8784c12f355c56343a1da0d33035afb2, type: 3}
@@ -45940,6 +46083,7 @@ MonoBehaviour:
   - {fileID: 1827898473}
   - {fileID: 1288890500}
   Item_exist: 0
+  getItemCount: 0
 --- !u!4 &1760672901
 Transform:
   m_ObjectHideFlags: 0
@@ -46141,6 +46285,8 @@ GameObject:
   - component: {fileID: 1827898474}
   - component: {fileID: 1827898476}
   - component: {fileID: 1827898475}
+  - component: {fileID: 1827898478}
+  - component: {fileID: 1827898477}
   m_Layer: 0
   m_Name: Gem_Amor
   m_TagString: Item
@@ -46206,6 +46352,46 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1827898473}
   m_CullTransparentMesh: 1
+--- !u!114 &1827898477
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1827898473}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ba8edf288c108fc429f81aeb9d6932ee, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  image: {fileID: 0}
+  inBag: 0
+--- !u!114 &1827898478
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1827898473}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 975459a7d3c64bf4593aee50f516b41e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  type: Obj
+  name_Item: Blue Gem
+  info_Item: Amor Equitment Reinforcement
+  resalsePrice: 100
+  count: 0
+  hpBonus: 0
+  atkBonus: 0
+  defBonus: 0
+  criBonus: 0
+  equipped: 0
+  equipNum: 0
+  select_Equip: {fileID: 0}
+  HpRecovery: 0
+  MpRecovery: 0
 --- !u!224 &1828093481 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 486190029832095241, guid: b9951c90cdf86094cac52615f105e98d, type: 3}
@@ -71264,6 +71450,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1384256410}
     - target: {fileID: 486190031148378949, guid: b9951c90cdf86094cac52615f105e98d, type: 3}
+      propertyPath: Inventory
+      value: 
+      objectReference: {fileID: 222522063}
+    - target: {fileID: 486190031148378949, guid: b9951c90cdf86094cac52615f105e98d, type: 3}
       propertyPath: player_hpbar
       value: 
       objectReference: {fileID: 1187818592}
@@ -71471,6 +71661,10 @@ PrefabInstance:
       propertyPath: characterMove
       value: 
       objectReference: {fileID: 1973602397}
+    - target: {fileID: 1793880968747170417, guid: 10e39b8346071c74880765bad98ec540, type: 3}
+      propertyPath: dropItem_Manager
+      value: 
+      objectReference: {fileID: 437759874}
     - target: {fileID: 1793880968747170422, guid: 10e39b8346071c74880765bad98ec540, type: 3}
       propertyPath: m_Name
       value: Manager

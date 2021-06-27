@@ -24,7 +24,8 @@ public class EnemyHit : MonoBehaviour
             }
             GetComponent<Animator>().Play("Death");
             gameObject.tag = "Dead";
-        }
 
+        } 
     }
+
 }

@@ -1,8 +1,5 @@
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-using UnityEngine.UI;
 using TMPro;
+using UnityEngine;
 
 public class DropItem_Manager : MonoBehaviour
 {
@@ -11,17 +8,17 @@ public class DropItem_Manager : MonoBehaviour
     public Transform SoltBox; // 부모받기
 
     int Random_Index;
-    GameObject[] Drop_Iven;
+    public GameObject[] Drop_Iven;
 
 
     public GameObject GoalText;
-    int getgoal;
+    public int getgoal;
     EnemyState enemyState;
     private void Awake()
     {   // 시작하면 아이템 하위 생성
         Drop_Iven = new GameObject[transform.GetChild(1).childCount];
         childs = new Transform[3];
-        for(int i = 0; i< 3; i++)
+        for (int i = 0; i < 3; i++)
         {
             childs[i] = SoltBox.GetChild(i);
         }
@@ -29,15 +26,20 @@ public class DropItem_Manager : MonoBehaviour
     }
     private void OnEnable()
     {
+        Debug.Log("1");
         GetGoalAmount();
-           Random_Index = Random.Range(1, 3);
+        Random_Index = Random.Range(1, 3); // 득템 수를 결정한다. 1개 혹은 2개
+
         for (int i = 0; i <= Random_Index; i++)
         {
-            
-            if(i >=1)
+            if (i >= 1)
             {
                 //생성
                 Drop_Iven[i] = Manager.instance.ObjectPool.GetItem();
+                if (Drop_Iven[i] == null)
+                {
+                    break;
+                }
                 Drop_Iven[i].transform.SetParent(childs[i]);
                 Drop_Iven[i].transform.position = Drop_Iven[i].transform.parent.position;
                 Drop_Iven[i].SetActive(true);
@@ -46,11 +48,11 @@ public class DropItem_Manager : MonoBehaviour
     }
     private void OnDisable()
     {
-        Manager.instance.ObjectPool.ClearItem();
-        for (int i = 0; i < Drop_Iven.Length; i++)
-        {
-            Destroy(Drop_Iven[i]);
-        }
+        //Manager.instance.ObjectPool.ClearItem();
+        //for (int i = 0; i < Drop_Iven.Length; i++)
+        //{
+        //    Destroy(Drop_Iven[i]);
+        //}
     }
 
     void GetGoalAmount()

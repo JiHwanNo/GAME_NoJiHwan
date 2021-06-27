@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -14,7 +15,7 @@ public class ObjectPoolManager : MonoBehaviour
     public GameObject[] ItemPrefabs;
     public Dictionary<string, GameObject> Items;
     public bool Item_exist;
-
+    public int getItemCount;
     private void Awake()
     {
         // 장소는 ObjPoolManager 밑에 오브젝트 위치를 받는다.
@@ -63,6 +64,7 @@ public class ObjectPoolManager : MonoBehaviour
             }
 
             GameObject obj = Instantiate(enemyPrefab[Random.Range(0, enemyPrefab.Length - 1)]);
+            obj.GetComponent<EnemyState>().cur_Hp = obj.GetComponent<EnemyState>().hp;
             enemies.Add(obj);
             obj.SetActive(false);
 
@@ -72,18 +74,20 @@ public class ObjectPoolManager : MonoBehaviour
 
     public GameObject GetItem()
     {
-        
-        GameObject obj = Instantiate(ItemPrefabs[Random.Range(0, ItemPrefabs.Length - 1)]);
+        // List 받고. 아이템 체크를 dectionary
+        getItemCount = Random.Range(1, 6); // 드랍 아이템 갯수.
+        GameObject obj = Instantiate(ItemPrefabs[Random.Range(0, ItemPrefabs.Length - 1)]); // 아이템 생성
+        obj.GetComponentInChildren<TextMeshProUGUI>().text = getItemCount.ToString(); // 아이템 갯수 생성.
         
         string objname = obj.name;
-        if(!Items.ContainsKey(objname))
+        if(!Items.ContainsKey(objname)) // 중복 아이템 방지
         {
             Items.Add(obj.name, obj);   
             return obj;
         }
         GetItem();
+
         return null;
-        
     }
 
     public void ClearItem()

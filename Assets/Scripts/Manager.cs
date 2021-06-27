@@ -10,6 +10,7 @@ public class Manager : MonoBehaviour
     public Inventory_Manager inventory;
     public CharacterMove characterMove;
     public ObjectPoolManager ObjectPool;
+    public DropItem_Manager dropItem_Manager;
     private void Awake()
     {
         if(instance  != this)
