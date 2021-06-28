@@ -26,6 +26,9 @@ public class EnemyHit : MonoBehaviour
             GetComponent<Animator>().Play("Death");
             gameObject.tag = "Dead";
             StartCoroutine("SetActity");
+
+            Debug.Log(Manager.instance.characterMove.Player.GetComponent<PlayerState>().exp_Cur);
+            Debug.Log(Manager.instance.characterMove.Player.GetComponent<PlayerState>().exp_Max);
         } 
     }
     IEnumerator SetActity()
@@ -33,7 +36,7 @@ public class EnemyHit : MonoBehaviour
         while (true)
         {
             time += Time.fixedDeltaTime ;
-            if (time > 2)
+            if (time > 5)
             {
                 time = 0;
                 gameObject.SetActive(false);

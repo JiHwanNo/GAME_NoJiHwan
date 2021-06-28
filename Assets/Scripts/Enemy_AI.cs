@@ -16,6 +16,7 @@ public class Enemy_AI : MonoBehaviour
 
     NavMeshAgent Nav;
     Animator enemyAni;
+    EnemyState enemyState;
 
     bool onMove;
     Vector3 originPosition;
@@ -28,14 +29,21 @@ public class Enemy_AI : MonoBehaviour
         originPosition = transform.position;
         Nav = GetComponent<NavMeshAgent>();
         enemyAni = GetComponent<Animator>();
+        enemyState = GetComponent<EnemyState>();
 
         StartCoroutine("EnemyAI");
     }
+    //전투중 움직임 실행
     void Move_Combat()
     {
         target = Manager.instance.characterMove.Player.position;
+        if(enemyState.cur_Hp <=0)
+        {
+            Nav.speed = 0;
+            Nav.SetDestination(Vector3.zero);
+        }
 
-        if (!inAtk)
+        if (!inAtk && enemyState.cur_Hp >0)
         {
             Nav.speed = speed_Combat;
             Nav.SetDestination(target);

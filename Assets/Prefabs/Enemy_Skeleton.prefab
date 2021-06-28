@@ -1,5 +1,19 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!114 &1078636494
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2318088297211664092}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6c0c22dfe7d860c489ec967abd372cfa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemy: {fileID: 2704042344483957481}
+  dmgText: {fileID: 0}
 --- !u!1 &2704982182142505789
 GameObject:
   m_ObjectHideFlags: 0
@@ -5517,6 +5531,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hp: 300
   cur_Hp: 0
+  atk: 100
+  cri: 0.1
+  exp: 200
+  goal: 150
 --- !u!114 &1927656897
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8693,10 +8711,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 64227966186159520, guid: a1179b3754a6656469126cba8b02cba5, type: 3}
       propertyPath: m_IsTrigger
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a1179b3754a6656469126cba8b02cba5, type: 3}
+--- !u!1 &2318088297211664092 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1588372535281458, guid: a1179b3754a6656469126cba8b02cba5, type: 3}
+  m_PrefabInstance: {fileID: 2318832208040038894}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &2323702176293630566 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4881053571261320, guid: a1179b3754a6656469126cba8b02cba5, type: 3}

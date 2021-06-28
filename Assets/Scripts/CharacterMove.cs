@@ -166,6 +166,7 @@ public class CharacterMove : MonoBehaviour, IPointerDownHandler
         target = hit.transform;
         name_Target.text = target.GetComponent<Obj_Info>().Obj_Name;
         hpBar_Target.SetActive(target.GetComponent<Obj_Info>().type == "Enemy");
+        hpBar_Target.transform.GetChild(0).GetComponent<Image>().fillAmount = target.GetComponent<EnemyState>().cur_Hp / target.GetComponent<EnemyState>().hp;
         target_Tool.SetActive(true);
     }
     //타켓 체크 함수

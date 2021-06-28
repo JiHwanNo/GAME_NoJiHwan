@@ -22,7 +22,7 @@ public class Skill_Effect : MonoBehaviour
         PlayerState playerState = Manager.instance.characterMove.Player.GetComponent<PlayerState>();
         if (index == 2)
         {
-            skillPower = 1.5f;
+            skillPower = 2f;
             Manager.instance.myaudio.audioSource.PlayOneShot(Manager.instance.myaudio.Heal);
             StartCoroutine("HealSkill");
 
@@ -59,10 +59,10 @@ public class Skill_Effect : MonoBehaviour
         }
         else if (index == 1)
         {
-            skillPower = 1.5f;
+            skillPower = 2f;
             Manager.instance.myaudio.audioSource.PlayOneShot(Manager.instance.myaudio.AquaSkill_Flying);
             StartCoroutine("SkillShot");
-            playerState.Mp_Cur -= 10;
+            playerState.Mp_Cur -= 20;
         }
     }
     IEnumerator SkillShot()

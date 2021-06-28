@@ -92,10 +92,6 @@ public class Item_Manager : MonoBehaviour, IPointerUpHandler, IPointerDownHandle
 
                 Parent = null; // √ ±‚»≠
             }
-            foreach (var item in Manager.instance.inventory.Inventory_List.Keys)
-            {
-                Debug.Log(item);
-            }
         }
     }
 

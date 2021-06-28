@@ -186,14 +186,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6ed620b3ed880fd4f989380165eacc26, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  LevelUp_effect: {fileID: 0}
   Lv: 1
   hp: 1000
-  atk: 10
-  def: 5
-  cri: 0.25
+  Mp: 200
+  atk: 100
+  def: 10
+  cri: 0.5
   exp_Max: 100
   exp_Cur: 0
   hp_Cur: 1000
+  Mp_Cur: 0
 --- !u!1 &3708836537120090549
 GameObject:
   m_ObjectHideFlags: 0
