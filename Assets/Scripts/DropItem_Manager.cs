@@ -26,7 +26,6 @@ public class DropItem_Manager : MonoBehaviour
     }
     private void OnEnable()
     {
-        Debug.Log("1");
         GetGoalAmount();
         Random_Index = Random.Range(1, 3); // 득템 수를 결정한다. 1개 혹은 2개
 
@@ -48,15 +47,25 @@ public class DropItem_Manager : MonoBehaviour
     }
     private void OnDisable()
     {
-        //Manager.instance.ObjectPool.ClearItem();
-        //for (int i = 0; i < Drop_Iven.Length; i++)
-        //{
-        //    Destroy(Drop_Iven[i]);
-        //}
+        Manager.instance.ObjectPool.ClearItem();
+
+        for (int i = 1; i < 3; i++)
+        {
+            if(SoltBox.GetChild(i).childCount == 1)
+            {
+                Destroy(SoltBox.GetChild(i).GetChild(0).gameObject);
+            }
+        }
+
     }
 
     void GetGoalAmount()
     {
+        Transform parent = GoalText.transform.parent;
+        if(!parent.gameObject.activeSelf)
+        {
+            parent.gameObject.SetActive(true);
+        }
         getgoal = (int)(enemyState.goal * Random.Range(0.8f, 1.2f));
         GoalText.GetComponent<TextMeshProUGUI>().text = getgoal.ToString();
 

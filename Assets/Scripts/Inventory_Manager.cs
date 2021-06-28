@@ -21,6 +21,11 @@ public class Inventory_Manager : MonoBehaviour
     public Transform parentOnDrag;
 
 
+    public Dictionary<string, GameObject> Inventory_List;
+    void Awake()
+    {
+        Inventory_List = new Dictionary<string, GameObject>();
+    }
     public void GetInvenInfo()
     {
         goldAmount.text = gold.ToString();

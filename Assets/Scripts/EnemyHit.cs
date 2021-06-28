@@ -5,6 +5,7 @@ using UnityEngine.UI;
 
 public class EnemyHit : MonoBehaviour
 {
+    float time;
 
     public void Hit(int dmg)
     {
@@ -24,8 +25,21 @@ public class EnemyHit : MonoBehaviour
             }
             GetComponent<Animator>().Play("Death");
             gameObject.tag = "Dead";
-
+            StartCoroutine("SetActity");
         } 
     }
-
+    IEnumerator SetActity()
+    {
+        while (true)
+        {
+            time += Time.fixedDeltaTime ;
+            if (time > 2)
+            {
+                time = 0;
+                gameObject.SetActive(false);
+                break;
+            }
+            yield return null;
+        }
+    }
 }
