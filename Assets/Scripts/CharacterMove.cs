@@ -4,7 +4,6 @@ using UnityEngine;
 using UnityEngine.AI;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
-
 public class CharacterMove : MonoBehaviour, IPointerDownHandler
 {
     Animator PlayerAni;
@@ -19,7 +18,7 @@ public class CharacterMove : MonoBehaviour, IPointerDownHandler
     public float moveSpeed = 5f;
     public float rotateSpeed = 200f;
     public float Range;
-    NavMeshAgent PlayerNav;
+    public NavMeshAgent PlayerNav;
 
     [Header("Targeting")]
     public Transform target;
@@ -96,7 +95,9 @@ public class CharacterMove : MonoBehaviour, IPointerDownHandler
                 if (hit.transform.gameObject.tag == "Ground")
                 {
                     if (!onCasting)
+                    {
                         PlayerNav.SetDestination(hit.point);
+                    }
                     DropBox.SetActive(false);
                 }
                 if (hit.transform.gameObject.tag == "Player")

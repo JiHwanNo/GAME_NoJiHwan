@@ -8,7 +8,8 @@ public class Inventory_Manager : MonoBehaviour
     [Header("Frame")]
     public GameObject charInfoFrame;
     public GameObject InvenFrame;
-    public GameObject itemInfoFrame;
+    public GameObject EquipInfoFrame;
+    public GameObject ObjInfoFrame;
 
     [Header("Inventory")]
     public int gold;

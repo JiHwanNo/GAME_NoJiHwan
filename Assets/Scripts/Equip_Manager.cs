@@ -12,7 +12,13 @@ public class Equip_Manager : MonoBehaviour
     public Transform[] slot_Equip; // 캐릭터 창의 슬롯
     public Items_Info[] cur_Equip; // 현재 캐릭터 창의 슬롯에 있는 아이템 정보.
 
+    public void UsedPosion()
+    {
+        Manager.instance.myaudio.audioSource.PlayOneShot(Manager.instance.myaudio.button_Click);
 
+        Items_Info item = Manager.instance.inventory.selectedItem.GetComponent<Items_Info>();
+        
+    }
 
     public void EquipBtn()
     {
@@ -79,8 +85,8 @@ public class Equip_Manager : MonoBehaviour
 
     void Reload_Frame()
     {
-        Manager.instance.inventory.itemInfoFrame.SetActive(false);
-        Manager.instance.inventory.itemInfoFrame.SetActive(true);
+        Manager.instance.inventory.EquipInfoFrame.SetActive(false);
+        Manager.instance.inventory.EquipInfoFrame.SetActive(true);
 
         Manager.instance.inventory.charInfoFrame.SetActive(false);
         Manager.instance.inventory.charInfoFrame.SetActive(true);

@@ -110,12 +110,22 @@ public class Item_Manager : MonoBehaviour, IPointerUpHandler, IPointerDownHandle
                 image.raycastTarget = true;
                 return;
             }
-            if (releaseTime < 0.5f)
+            if (releaseTime < 0.5f && transform.GetComponent<Items_Info>().type == "Equipment")
             {
-                Manager.instance.inventory.itemInfoFrame.SetActive(false);
+                Manager.instance.inventory.EquipInfoFrame.SetActive(false);
 
-                Manager.instance.inventory.itemInfoFrame.GetComponent<ItemInfo_Frame>().item = GetComponent<Items_Info>();
-                Manager.instance.inventory.itemInfoFrame.SetActive(true);
+                Manager.instance.inventory.EquipInfoFrame.GetComponent<ItemInfo_Frame>().item = GetComponent<Items_Info>();
+                Manager.instance.inventory.EquipInfoFrame.SetActive(true);
+
+                Manager.instance.inventory.Rect.position = transform.position;
+                Manager.instance.inventory.Rect.gameObject.SetActive(true);
+            }
+            if(releaseTime < 0.5f && transform.GetComponent<Items_Info>().type == "Obj")
+            {
+                Manager.instance.inventory.ObjInfoFrame.SetActive(false);
+
+                Manager.instance.inventory.ObjInfoFrame.GetComponent<ItemInfo_Frame>().item = GetComponent<Items_Info>();
+                Manager.instance.inventory.ObjInfoFrame.SetActive(true);
 
                 Manager.instance.inventory.Rect.position = transform.position;
                 Manager.instance.inventory.Rect.gameObject.SetActive(true);
@@ -138,7 +148,7 @@ public class Item_Manager : MonoBehaviour, IPointerUpHandler, IPointerDownHandle
 
                 if (!dragging)
                 {
-                    Manager.instance.inventory.itemInfoFrame.SetActive(false);// 프레임 없애기
+                    Manager.instance.inventory.EquipInfoFrame.SetActive(false);// 프레임 없애기
 
                     Manager.instance.myaudio.audioSource.PlayOneShot(Manager.instance.myaudio.button_Click);
                     dragging = true; // 드레그 중으로 바꿈

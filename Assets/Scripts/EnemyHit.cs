@@ -27,8 +27,6 @@ public class EnemyHit : MonoBehaviour
             gameObject.tag = "Dead";
             StartCoroutine("SetActity");
 
-            Debug.Log(Manager.instance.characterMove.Player.GetComponent<PlayerState>().exp_Cur);
-            Debug.Log(Manager.instance.characterMove.Player.GetComponent<PlayerState>().exp_Max);
         } 
     }
     IEnumerator SetActity()

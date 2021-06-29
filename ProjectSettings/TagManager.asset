@@ -9,6 +9,7 @@ TagManager:
   - Dead
   - Weapon
   - Item
+  - Potal
   layers:
   - Default
   - TransparentFX
