@@ -11,6 +11,7 @@ public class Manager : MonoBehaviour
     public CharacterMove characterMove;
     public ObjectPoolManager ObjectPool;
     public DropItem_Manager dropItem_Manager;
+    public UI_Manager uI_Manager;
     private void Awake()
     {
         if(instance  != this)

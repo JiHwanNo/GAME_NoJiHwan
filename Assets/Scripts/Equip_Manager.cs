@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -7,6 +8,8 @@ public class Equip_Manager : MonoBehaviour
 {
     [Header("Player")]
     public PlayerState player;
+    public GameObject PlayerHp;
+    public GameObject PlayerMp;
 
     [Header("Charecter Info")]
     public Transform[] slot_Equip; // 캐릭터 창의 슬롯
@@ -16,8 +19,21 @@ public class Equip_Manager : MonoBehaviour
     {
         Manager.instance.myaudio.audioSource.PlayOneShot(Manager.instance.myaudio.button_Click);
 
-        Items_Info item = Manager.instance.inventory.selectedItem.GetComponent<Items_Info>();
-        
+        Transform item = Manager.instance.inventory.selectedItem;
+        Items_Info item_info = item.GetComponent<Items_Info>();
+        if(item_info.name_Item == "Hp Posion")
+        {
+            UseHP_Posion(item_info);
+            item.GetComponentInChildren<TextMeshProUGUI>().text = item_info.count.ToString();
+            PlayerHp.GetComponent<Image>().fillAmount = player.hp_Cur / player.hp;
+        }
+        if(item_info.name_Item == "Mp Posion")
+        {
+            UseMP_Posion(item_info);
+            item.GetComponentInChildren<TextMeshProUGUI>().text = item_info.count.ToString();
+            PlayerMp.GetComponent<Image>().fillAmount = player.Mp_Cur / player.Mp;
+        }
+      
     }
 
     public void EquipBtn()
@@ -90,5 +106,37 @@ public class Equip_Manager : MonoBehaviour
 
         Manager.instance.inventory.charInfoFrame.SetActive(false);
         Manager.instance.inventory.charInfoFrame.SetActive(true);
+    }
+
+    void UseHP_Posion(Items_Info item)
+    {
+        if (player.hp_Cur < player.hp)
+        {
+            if (player.hp_Cur + item.HpRecovery < player.hp)
+            {
+                player.hp_Cur += item.HpRecovery;
+            }
+            else
+            {
+                player.hp_Cur = player.hp;
+            }
+            item.count--;
+        }
+        
+    }
+    void UseMP_Posion(Items_Info item)
+    {
+        if (player.Mp_Cur < player.Mp)
+        {
+            if (player.Mp_Cur + item.MpRecovery < player.Mp)
+            {
+                player.Mp_Cur += item.MpRecovery;
+            }
+            else
+            {
+                player.Mp_Cur = player.hp;
+            }
+            item.count--;
+        }
     }
 }

@@ -1,10 +1,10 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-
+using TMPro;
 public class PlayerState : MonoBehaviour
 {
     public GameObject LevelUp_effect;
+    public TextMeshProUGUI Player_Lv;
 
     public int Lv;
     public float hp;
@@ -23,6 +23,7 @@ public class PlayerState : MonoBehaviour
     {
         hp_Cur = hp;
         Mp_Cur = Mp;
+        Player_Lv.text = Lv.ToString();
     }
 
     public void LevelUp()
@@ -34,6 +35,8 @@ public class PlayerState : MonoBehaviour
         atk += 10;
         def += 5;
         StartCoroutine("Effect_Time");
+        Player_Lv.text = Lv.ToString();
+
     }
 
     IEnumerator Effect_Time()

@@ -193,14 +193,33 @@ public class CharacterMove : MonoBehaviour, IPointerDownHandler
     //버튼 입력 함수 2개
     public void OpenInventory()
     {
-        Manager.instance.inventory.InvenFrame.SetActive(true);
+        Manager.instance.myaudio.audioSource.PlayOneShot(Manager.instance.myaudio.button_Click);
+        
+        if(Manager.instance.inventory.InvenFrame.activeSelf)
+        {
+            Manager.instance.inventory.InvenFrame.SetActive(false);
+        }
+        else
+        {
+            Manager.instance.inventory.InvenFrame.SetActive(true);
+        }
     }
     public void CloseInventory()
     {
+        Manager.instance.myaudio.audioSource.PlayOneShot(Manager.instance.myaudio.button_Click);
         Manager.instance.inventory.InvenFrame.SetActive(false);
     }
-   
-    
-
+    public void OpenInfo()
+    {
+        Manager.instance.myaudio.audioSource.PlayOneShot(Manager.instance.myaudio.button_Click);
+        if (Manager.instance.inventory.charInfoFrame.activeSelf)
+        {
+            Manager.instance.inventory.charInfoFrame.SetActive(false);
+        }
+        else
+        {
+            Manager.instance.inventory.charInfoFrame.SetActive(true);
+        }
+    }
 
 }

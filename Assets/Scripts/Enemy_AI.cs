@@ -32,6 +32,7 @@ public class Enemy_AI : MonoBehaviour
         enemyState = GetComponent<EnemyState>();
 
         StartCoroutine("EnemyAI");
+        inCombat = false;
     }
     //전투중 움직임 실행
     void Move_Combat()

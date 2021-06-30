@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemy: {fileID: 2704042344483957481}
-  dmgText: {fileID: 0}
+  dmgText: {fileID: 2774098198264307410, guid: 7a3ecfaa4533a7f488ca8a625b0ecf88, type: 3}
 --- !u!1 &2704982182142505789
 GameObject:
   m_ObjectHideFlags: 0

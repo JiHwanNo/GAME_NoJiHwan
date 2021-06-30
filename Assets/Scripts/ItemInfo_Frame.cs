@@ -24,13 +24,13 @@ public class ItemInfo_Frame : MonoBehaviour
 
     private void OnEnable()
     {
-        stateBonus.SetActive(false);
         name_Item.text = item.name_Item;
         info_Item.text = item.info_Item;
         resalePrice.text = string.Format("Resale Price : {0}", item.resalsePrice);
 
         if(item.type == "Equipment")
         {
+            stateBonus.SetActive(false);
             hpBonus.text = string.Format("HP + {0}",item.hpBonus);
             atkBonus.text = string.Format("ATK +{0}", item.atkBonus);
             defBonus.text = string.Format("DEF + {0}", item.defBonus);
@@ -46,11 +46,15 @@ public class ItemInfo_Frame : MonoBehaviour
                 releaseButton.SetActive(true);
             }
         }
+
     }
 
     private void OnDisable()
     {
-        equipButton.SetActive(false);
-        releaseButton.SetActive(false);
+        if(item.type == "Equipment")
+        {
+            equipButton.SetActive(false);
+            releaseButton.SetActive(false);
+        }
     }
 }

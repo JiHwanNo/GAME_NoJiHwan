@@ -7,13 +7,14 @@ public class Enemy_Atk : MonoBehaviour
     Enemy_AI enemy_AI;
     PlayerState playerState;
     public Transform enemy;
-    public GameObject dmgText;
+    GameObject dmgText;
 
     int dmg;
     float dmgRange;
 
     private void Awake()
     {
+        dmgText = Manager.instance.uI_Manager.Eenemy_Text;
         enemyState = enemy.GetComponent<EnemyState>();
         playerState = Manager.instance.characterMove.Player.GetComponent<PlayerState>();
         enemy_AI = enemy.GetComponent<Enemy_AI>();
