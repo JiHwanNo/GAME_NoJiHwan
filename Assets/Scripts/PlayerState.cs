@@ -36,6 +36,7 @@ public class PlayerState : MonoBehaviour
         def += 5;
         StartCoroutine("Effect_Time");
         Player_Lv.text = Lv.ToString();
+        Manager.instance.characterMove.PlayerUI();
 
     }
 

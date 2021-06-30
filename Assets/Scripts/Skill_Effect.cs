@@ -44,7 +44,6 @@ public class Skill_Effect : MonoBehaviour
                     playerState.hp_Cur = playerState.hp;
                 }
             }
-            Manager.instance.characterMove.PlayerUI();
             playerState.Mp_Cur -= 15;
 
         }
@@ -64,6 +63,8 @@ public class Skill_Effect : MonoBehaviour
             StartCoroutine("SkillShot");
             playerState.Mp_Cur -= 20;
         }
+
+        Manager.instance.characterMove.PlayerUI();
     }
     IEnumerator SkillShot()
     {

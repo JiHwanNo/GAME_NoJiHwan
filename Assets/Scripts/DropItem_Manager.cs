@@ -14,6 +14,7 @@ public class DropItem_Manager : MonoBehaviour
     public GameObject GoalText;
     public int getgoal;
     EnemyState enemyState;
+
     private void Awake()
     {   // 시작하면 아이템 하위 생성
         Drop_Iven = new GameObject[transform.GetChild(1).childCount];

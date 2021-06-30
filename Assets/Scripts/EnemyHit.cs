@@ -1,5 +1,4 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -27,13 +26,13 @@ public class EnemyHit : MonoBehaviour
             gameObject.tag = "Dead";
             StartCoroutine("SetActity");
 
-        } 
+        }
     }
     IEnumerator SetActity()
     {
         while (true)
         {
-            time += Time.fixedDeltaTime ;
+            time += Time.fixedDeltaTime;
             if (time > 5)
             {
                 time = 0;

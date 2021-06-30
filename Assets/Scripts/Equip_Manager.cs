@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
@@ -21,19 +19,30 @@ public class Equip_Manager : MonoBehaviour
 
         Transform item = Manager.instance.inventory.selectedItem;
         Items_Info item_info = item.GetComponent<Items_Info>();
-        if(item_info.name_Item == "Hp Posion")
+        if (item_info.name_Item == "Hp Posion")
         {
+            Debug.Log(item_info.name_Item);
             UseHP_Posion(item_info);
             item.GetComponentInChildren<TextMeshProUGUI>().text = item_info.count.ToString();
             PlayerHp.GetComponent<Image>().fillAmount = player.hp_Cur / player.hp;
+            if(item_info.count ==0)
+            {
+                item_info.SelfDestroy(item);
+            }
         }
-        if(item_info.name_Item == "Mp Posion")
+        if (item_info.name_Item == "Mp Posion")
         {
+            Debug.Log(item_info.name_Item);
             UseMP_Posion(item_info);
             item.GetComponentInChildren<TextMeshProUGUI>().text = item_info.count.ToString();
             PlayerMp.GetComponent<Image>().fillAmount = player.Mp_Cur / player.Mp;
+
+            if (item_info.count == 0)
+            {
+                item_info.SelfDestroy(item);
+            }
         }
-      
+
     }
 
     public void EquipBtn()
@@ -41,7 +50,7 @@ public class Equip_Manager : MonoBehaviour
         Manager.instance.myaudio.audioSource.PlayOneShot(Manager.instance.myaudio.button_Click);
 
         Items_Info item = Manager.instance.inventory.selectedItem.GetComponent<Items_Info>();
-    
+
         GameObject item_Slot = Instantiate(item.gameObject, slot_Equip[item.equipNum]);// 슬롯란에 아이템 생성
         item_Slot.GetComponent<Item_Manager>().enabled = false;
 
@@ -49,7 +58,7 @@ public class Equip_Manager : MonoBehaviour
         item.equipped = true;
         item.Select_Text();
 
-       cur_Equip[item.equipNum].select_Equip.SetActive(true); // 오브젝트 생성.
+        cur_Equip[item.equipNum].select_Equip.SetActive(true); // 오브젝트 생성.
 
         IncreaseStates(cur_Equip[item.equipNum]);
 
@@ -120,9 +129,9 @@ public class Equip_Manager : MonoBehaviour
             {
                 player.hp_Cur = player.hp;
             }
-            item.count--;
         }
-        
+
+        item.count--;
     }
     void UseMP_Posion(Items_Info item)
     {
@@ -136,7 +145,7 @@ public class Equip_Manager : MonoBehaviour
             {
                 player.Mp_Cur = player.hp;
             }
-            item.count--;
         }
+        item.count--;
     }
 }

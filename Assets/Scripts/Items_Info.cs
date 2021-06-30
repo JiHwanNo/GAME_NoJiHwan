@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class Items_Info : MonoBehaviour
@@ -34,5 +32,11 @@ public class Items_Info : MonoBehaviour
         {
             transform.GetChild(0).gameObject.SetActive(false);
         }
+    }
+
+    public void SelfDestroy(Transform obj)
+    {
+        Destroy(obj.gameObject);
+        Manager.instance.inventory.Inventory_List.Remove(obj.name);
     }
 }
