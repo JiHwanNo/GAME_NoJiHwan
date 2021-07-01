@@ -27,6 +27,8 @@ public class CharacterMove : MonoBehaviour, IPointerDownHandler
     public GameObject hpBar_Target;
     public GameObject DropBox;
     public GameObject Inventory;
+    public bool ClickNPC;
+    float targetDis;
 
     [Header("Casting")]
     public bool onCasting;
@@ -116,6 +118,17 @@ public class CharacterMove : MonoBehaviour, IPointerDownHandler
                     DropBox.transform.position = mycamera.WorldToScreenPoint(hit.point);
                     DropBox.SetActive(true);
                 }
+                if (hit.transform.gameObject.tag == "Npc")
+                {
+                    Targeting();
+                    
+                    if (!onCasting)
+                    {
+                        target.GetComponent<NPC_Dialog>().Dialog();
+                        Manager.instance.manager_Dialog.dialog_Frame.SetActive(true);
+                    }
+                }
+
             }
         }
     }
@@ -166,8 +179,11 @@ public class CharacterMove : MonoBehaviour, IPointerDownHandler
     {
         target = hit.transform;
         name_Target.text = target.GetComponent<Obj_Info>().Obj_Name;
-        hpBar_Target.SetActive(target.GetComponent<Obj_Info>().type == "Enemy");
-        hpBar_Target.transform.GetChild(0).GetComponent<Image>().fillAmount = target.GetComponent<EnemyState>().cur_Hp / target.GetComponent<EnemyState>().hp;
+        if (target.tag == "Enemy")
+        {
+            hpBar_Target.SetActive(target.GetComponent<Obj_Info>().type == "Enemy");
+            hpBar_Target.transform.GetChild(0).GetComponent<Image>().fillAmount = target.GetComponent<EnemyState>().cur_Hp / target.GetComponent<EnemyState>().hp;
+        }
         target_Tool.SetActive(true);
     }
     //타켓 체크 함수
@@ -175,7 +191,7 @@ public class CharacterMove : MonoBehaviour, IPointerDownHandler
     {
         if (target != null)
         {
-            float targetDis = (target.position - Player.position).magnitude;
+            targetDis = (target.position - Player.position).magnitude;
 
             if (targetDis > Range)
             {
@@ -194,8 +210,8 @@ public class CharacterMove : MonoBehaviour, IPointerDownHandler
     public void OpenInventory()
     {
         Manager.instance.myaudio.audioSource.PlayOneShot(Manager.instance.myaudio.button_Click);
-        
-        if(Manager.instance.inventory.InvenFrame.activeSelf)
+
+        if (Manager.instance.inventory.InvenFrame.activeSelf)
         {
             Manager.instance.inventory.InvenFrame.SetActive(false);
         }

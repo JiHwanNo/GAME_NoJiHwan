@@ -12,6 +12,7 @@ public class Manager : MonoBehaviour
     public ObjectPoolManager ObjectPool;
     public DropItem_Manager dropItem_Manager;
     public UI_Manager uI_Manager;
+    public Manager_Dialog manager_Dialog;
     private void Awake()
     {
         if(instance  != this)

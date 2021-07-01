@@ -10,6 +10,7 @@ TagManager:
   - Weapon
   - Item
   - Potal
+  - Npc
   layers:
   - Default
   - TransparentFX
