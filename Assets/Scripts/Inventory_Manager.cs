@@ -9,6 +9,7 @@ public class Inventory_Manager : MonoBehaviour
     public GameObject InvenFrame;
     public GameObject EquipInfoFrame;
     public GameObject ObjInfoFrame;
+    public GameObject storeFrame;
 
     [Header("Inventory")]
     public int gold;

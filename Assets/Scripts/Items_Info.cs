@@ -14,6 +14,7 @@ public class Items_Info : MonoBehaviour
     public int atkBonus;
     public int defBonus;
     public float criBonus;
+    public int price;
 
     public bool equipped;
     public int equipNum;

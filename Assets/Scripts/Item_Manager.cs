@@ -10,6 +10,7 @@ public class Item_Manager : MonoBehaviour, IPointerUpHandler, IPointerDownHandle
 
     [Header("Location")]
     public bool inBag;
+    public bool inStore;
 
     float releaseTime;
     bool dragging;
