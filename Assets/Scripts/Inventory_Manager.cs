@@ -10,6 +10,7 @@ public class Inventory_Manager : MonoBehaviour
     public GameObject EquipInfoFrame;
     public GameObject ObjInfoFrame;
     public GameObject storeFrame;
+    public GameObject ItemInfo_Store;
 
     [Header("Inventory")]
     public int gold;
@@ -22,7 +23,7 @@ public class Inventory_Manager : MonoBehaviour
     public Transform parentOnDrag;
 
 
-    public Dictionary<string, GameObject> Inventory_List;
+   public Dictionary<string, GameObject> Inventory_List;
     void Awake()
     {
         Inventory_List = new Dictionary<string, GameObject>();

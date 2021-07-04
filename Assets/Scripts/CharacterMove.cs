@@ -19,6 +19,7 @@ public class CharacterMove : MonoBehaviour, IPointerDownHandler
     public float rotateSpeed = 200f;
     public float Range;
     public NavMeshAgent PlayerNav;
+    public bool Talking;
 
     [Header("Targeting")]
     public Transform target;
@@ -50,6 +51,7 @@ public class CharacterMove : MonoBehaviour, IPointerDownHandler
         PlayerAni = Player.GetComponent<Animator>();
         PlayerNav = Player.GetComponent<NavMeshAgent>();
         playerState = Manager.instance.characterMove.Player.GetComponent<PlayerState>();
+        Talking = false;
     }
 
     void Start()

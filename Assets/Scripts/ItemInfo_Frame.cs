@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 
@@ -28,20 +26,20 @@ public class ItemInfo_Frame : MonoBehaviour
         info_Item.text = item.info_Item;
         resalePrice.text = string.Format("Resale Price : {0}", item.resalsePrice);
 
-        if(item.type == "Equipment")
+        if (item.type == "Equipment")
         {
             stateBonus.SetActive(false);
-            hpBonus.text = string.Format("HP + {0}",item.hpBonus);
+            hpBonus.text = string.Format("HP + {0}", item.hpBonus);
             atkBonus.text = string.Format("ATK +{0}", item.atkBonus);
             defBonus.text = string.Format("DEF + {0}", item.defBonus);
             criBonus.text = string.Format("CRI + {0}", item.criBonus);
             stateBonus.SetActive(true);
 
-            if(!item.equipped)
+            if (!item.equipped)
             {
                 equipButton.SetActive(true);
             }
-            if(item.equipped)
+            if (item.equipped)
             {
                 releaseButton.SetActive(true);
             }
@@ -51,7 +49,7 @@ public class ItemInfo_Frame : MonoBehaviour
 
     private void OnDisable()
     {
-        if(item.type == "Equipment")
+        if (item.type == "Equipment")
         {
             equipButton.SetActive(false);
             releaseButton.SetActive(false);

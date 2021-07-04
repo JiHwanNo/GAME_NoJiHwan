@@ -1,5 +1,4 @@
 using System.Collections;
-using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.EventSystems;
@@ -17,7 +16,7 @@ public class Item_Manager : MonoBehaviour, IPointerUpHandler, IPointerDownHandle
     Transform Parent;
 
 
-   
+
     public void OnDrag(PointerEventData eventData)
     {
         // 인벤토리에 아이템이 있을경우
@@ -33,21 +32,21 @@ public class Item_Manager : MonoBehaviour, IPointerUpHandler, IPointerDownHandle
         // 인벤토리에 아이템이 있을경우
         image = GetComponent<Image>();
         Manager.instance.inventory.selectedItem = transform;
-        if (inBag)
+        if (inBag && !inStore)
         {
             StartCoroutine("ReleaseTime");
         }
-        if (!inBag)
+        if (!inBag && !inStore)
         {
-            if(transform.name == "Gold_Image")
+            if (transform.name == "Gold_Image")
             {
-                Manager.instance.inventory.gold +=Manager.instance.dropItem_Manager.getgoal;
+                Manager.instance.inventory.gold += Manager.instance.dropItem_Manager.getgoal;
                 Manager.instance.inventory.GetInvenInfo();
                 transform.gameObject.SetActive(false);
             }
             else
             {
-                if (Manager.instance.inventory.Inventory_List.ContainsKey(transform.name)) // 아이템이 있을경우
+                if (Manager.instance.inventory.Inventory_List.ContainsKey(transform.GetComponent<Items_Info>().name_Item)) // 아이템이 있을경우
                 {
                     transform.gameObject.SetActive(false);
                     //자기 자신 받기
@@ -63,7 +62,7 @@ public class Item_Manager : MonoBehaviour, IPointerUpHandler, IPointerDownHandle
                     Parent.GetComponentInChildren<TextMeshProUGUI>().text = Parent.transform.GetComponent<Items_Info>().count.ToString();
                 }
 
-                if (!Manager.instance.inventory.Inventory_List.ContainsKey(transform.name)) // 인벤토리에 아이템이 없을경우
+                if (!Manager.instance.inventory.Inventory_List.ContainsKey(transform.GetComponent<Items_Info>().name_Item)) // 인벤토리에 아이템이 없을경우
                 {
                     transform.gameObject.SetActive(false);
                     //부모설정
@@ -84,22 +83,31 @@ public class Item_Manager : MonoBehaviour, IPointerUpHandler, IPointerDownHandle
                     obj.transform.localPosition = Vector3.zero;
                     obj.GetComponent<Item_Manager>().inBag = true;
                     //인벤토리 목록에 저장
-                    Manager.instance.inventory.Inventory_List.Add(transform.name, obj.gameObject);
+                    Manager.instance.inventory.Inventory_List.Add(transform.GetComponent<Items_Info>().name_Item, obj.gameObject);
 
                     obj.transform.GetComponent<Items_Info>().count += Manager.instance.ObjectPool.getItemCount;
                     obj.GetComponentInChildren<TextMeshProUGUI>().text = obj.transform.GetComponent<Items_Info>().count.ToString();
                 }
-               
+
 
                 Parent = null; // 초기화
             }
         }
+
+        if (!inBag && inStore)
+        {
+            Manager.instance.inventory.ItemInfo_Store.SetActive(false);
+
+            Manager.instance.inventory.ItemInfo_Store.GetComponent<ItemInfo_Store>().item = GetComponent<Items_Info>();
+            Manager.instance.inventory.ItemInfo_Store.SetActive(true);
+        }
+
     }
 
     public void OnPointerUp(PointerEventData eventData)
     {
         // 인벤토리에 아이템이 있을경우
-        if (inBag)
+        if (inBag&&!inStore)
         {
             StopCoroutine("ReleaseTime");
             transform.localScale = new Vector3(1, 1, 1);
@@ -121,7 +129,7 @@ public class Item_Manager : MonoBehaviour, IPointerUpHandler, IPointerDownHandle
                 Manager.instance.inventory.Rect.position = transform.position;
                 Manager.instance.inventory.Rect.gameObject.SetActive(true);
             }
-            if(releaseTime < 0.5f && transform.GetComponent<Items_Info>().type == "Obj")
+            if (releaseTime < 0.5f && transform.GetComponent<Items_Info>().type == "Obj")
             {
                 Manager.instance.inventory.ObjInfoFrame.SetActive(false);
 
@@ -132,6 +140,8 @@ public class Item_Manager : MonoBehaviour, IPointerUpHandler, IPointerDownHandle
                 Manager.instance.inventory.Rect.gameObject.SetActive(true);
             }
         }
+      
+
     }
 
     // 드레그를 시작하고 있을때.
@@ -165,5 +175,5 @@ public class Item_Manager : MonoBehaviour, IPointerUpHandler, IPointerDownHandle
         }
     }
 
-   
+
 }

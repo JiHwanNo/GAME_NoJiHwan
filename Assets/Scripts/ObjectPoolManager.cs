@@ -14,7 +14,6 @@ public class ObjectPoolManager : MonoBehaviour
 
     public GameObject[] ItemPrefabs;
     public Dictionary<string, GameObject> Items;
-    public bool Item_exist;
     public int getItemCount;
     private void Awake()
     {
@@ -89,7 +88,7 @@ public class ObjectPoolManager : MonoBehaviour
 
         return null;
     }
-
+   
     public void ClearItem()
     {
         Items.Clear();
