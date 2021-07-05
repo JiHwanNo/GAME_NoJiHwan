@@ -130,6 +130,7 @@ public class CharacterMove : MonoBehaviour, IPointerDownHandler
                         Manager.instance.manager_Dialog.dialog_Frame.SetActive(true);
                     }
                 }
+               
 
             }
         }

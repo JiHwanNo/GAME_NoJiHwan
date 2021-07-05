@@ -11,6 +11,7 @@ public class Inventory_Manager : MonoBehaviour
     public GameObject ObjInfoFrame;
     public GameObject storeFrame;
     public GameObject ItemInfo_Store;
+    public Transform SaleBox;
 
     [Header("Inventory")]
     public int gold;
@@ -21,6 +22,7 @@ public class Inventory_Manager : MonoBehaviour
     public Transform selectedItem;
     public Transform curParent;
     public Transform parentOnDrag;
+    
 
 
    public Dictionary<string, GameObject> Inventory_List;
@@ -31,5 +33,21 @@ public class Inventory_Manager : MonoBehaviour
     public void GetInvenInfo()
     {
         goldAmount.text = gold.ToString();
+    }
+
+    public void cancelbutton()
+    {
+        SaleBox.gameObject.SetActive(false);
+    }
+
+    public void SaleButton()
+    {
+        Destroy(selectedItem.gameObject);
+        gold += selectedItem.GetComponent<Items_Info>().resalsePrice;
+        GetInvenInfo();
+        SaleBox.gameObject.SetActive(false);
+        EquipInfoFrame.gameObject.SetActive(false);
+        Rect.gameObject.SetActive(false);
+
     }
 }

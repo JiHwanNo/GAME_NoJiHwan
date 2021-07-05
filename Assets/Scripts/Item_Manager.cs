@@ -3,7 +3,7 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
-public class Item_Manager : MonoBehaviour, IPointerUpHandler, IPointerDownHandler, IDragHandler
+public class Item_Manager : MonoBehaviour, IPointerUpHandler, IPointerDownHandler ,IDragHandler
 {
     public Image image;
 
@@ -16,15 +16,15 @@ public class Item_Manager : MonoBehaviour, IPointerUpHandler, IPointerDownHandle
     Transform Parent;
 
 
-
     public void OnDrag(PointerEventData eventData)
     {
         // 인벤토리에 아이템이 있을경우
         if (inBag && dragging)
         {
             transform.position = eventData.position;
+            
         }
-
+   
     }
 
     public void OnPointerDown(PointerEventData eventData)
@@ -93,7 +93,7 @@ public class Item_Manager : MonoBehaviour, IPointerUpHandler, IPointerDownHandle
                 Parent = null; // 초기화
             }
         }
-
+        //인벤토리에 없고 스토어에 있을 경우.
         if (!inBag && inStore)
         {
             Manager.instance.inventory.ItemInfo_Store.SetActive(false);
@@ -101,6 +101,7 @@ public class Item_Manager : MonoBehaviour, IPointerUpHandler, IPointerDownHandle
             Manager.instance.inventory.ItemInfo_Store.GetComponent<ItemInfo_Store>().item = GetComponent<Items_Info>();
             Manager.instance.inventory.ItemInfo_Store.SetActive(true);
         }
+        
 
     }
 
@@ -111,7 +112,7 @@ public class Item_Manager : MonoBehaviour, IPointerUpHandler, IPointerDownHandle
         {
             StopCoroutine("ReleaseTime");
             transform.localScale = new Vector3(1, 1, 1);
-
+            
             if (releaseTime >= 0.5f)
             {
                 transform.SetParent(Manager.instance.inventory.curParent);
@@ -121,6 +122,11 @@ public class Item_Manager : MonoBehaviour, IPointerUpHandler, IPointerDownHandle
             }
             if (releaseTime < 0.5f && transform.GetComponent<Items_Info>().type == "Equipment")
             {
+                if (Manager.instance.inventory.storeFrame.activeSelf)
+                {
+                    inStore = true;
+                }
+
                 Manager.instance.inventory.EquipInfoFrame.SetActive(false);
 
                 Manager.instance.inventory.EquipInfoFrame.GetComponent<ItemInfo_Frame>().item = GetComponent<Items_Info>();
@@ -128,6 +134,8 @@ public class Item_Manager : MonoBehaviour, IPointerUpHandler, IPointerDownHandle
 
                 Manager.instance.inventory.Rect.position = transform.position;
                 Manager.instance.inventory.Rect.gameObject.SetActive(true);
+
+
             }
             if (releaseTime < 0.5f && transform.GetComponent<Items_Info>().type == "Obj")
             {
@@ -140,7 +148,12 @@ public class Item_Manager : MonoBehaviour, IPointerUpHandler, IPointerDownHandle
                 Manager.instance.inventory.Rect.gameObject.SetActive(true);
             }
         }
-      
+        if (inBag && inStore)
+        {
+            Manager.instance.inventory.SaleBox.gameObject.SetActive(true);
+            Manager.instance.inventory.SaleBox.GetChild(0).GetComponent<TextMeshProUGUI>().text = string.Format("ReSale : {0} G", transform.GetComponent<Items_Info>().resalsePrice);
+            inStore = false;
+        }
 
     }
 
@@ -164,8 +177,9 @@ public class Item_Manager : MonoBehaviour, IPointerUpHandler, IPointerDownHandle
                     Manager.instance.myaudio.audioSource.PlayOneShot(Manager.instance.myaudio.button_Click);
                     dragging = true; // 드레그 중으로 바꿈
                     Manager.instance.inventory.curParent = transform.parent; // 현재 부모 설정
-                    transform.SetParent(Manager.instance.inventory.parentOnDrag); // 부모를 Slot_Box로 설정.
 
+                    transform.SetParent(Manager.instance.inventory.parentOnDrag); // 부모를 Slot_Box로 설정.
+                    
                     image.raycastTarget = false;
 
                     Manager.instance.inventory.Rect.gameObject.SetActive(false);

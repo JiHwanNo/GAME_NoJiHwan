@@ -74,6 +74,7 @@ public class Enemy_AI : MonoBehaviour
         {
             onMove = false;
         }
+        // Test ÇØ¾ßÇÔ.
         if (!onMove)
         {
             onMove = true;
@@ -107,13 +108,14 @@ public class Enemy_AI : MonoBehaviour
     }
     IEnumerator EnemyAI()
     {
-
+       
         while (true)
         {
             originDis = (originPosition - transform.position).magnitude;
             targetDis = (target - transform.position).magnitude;
             float speed = Nav.desiredVelocity.magnitude;
             enemyAni.SetFloat("Speed", speed);
+           
             if (!inCombat)
             {
                 Move_NonCombat();
