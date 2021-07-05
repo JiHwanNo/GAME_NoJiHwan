@@ -32,7 +32,7 @@ public class Equip_Manager : MonoBehaviour
         }
         if (item_info.name_Item == "Mp Posion")
         {
-            Debug.Log(item_info.name_Item);
+
             UseMP_Posion(item_info);
             item.GetComponentInChildren<TextMeshProUGUI>().text = item_info.count.ToString();
             PlayerMp.GetComponent<Image>().fillAmount = player.Mp_Cur / player.Mp;

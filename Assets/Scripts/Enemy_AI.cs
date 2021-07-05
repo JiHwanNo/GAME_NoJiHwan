@@ -1,5 +1,4 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 
@@ -31,21 +30,21 @@ public class Enemy_AI : MonoBehaviour
         enemyAni = GetComponent<Animator>();
         enemyState = GetComponent<EnemyState>();
 
-        inCombat = false;
+        inCombat = true;
         StartCoroutine("EnemyAI");
-        
+
     }
     //전투중 움직임 실행
     void Move_Combat()
     {
         target = Manager.instance.characterMove.Player.position;
-        if(enemyState.cur_Hp <=0)
+        if (enemyState.cur_Hp <= 0)
         {
             Nav.speed = 0;
             Nav.SetDestination(Vector3.zero);
         }
 
-        if (!inAtk && enemyState.cur_Hp >0)
+        if (!inAtk && enemyState.cur_Hp > 0)
         {
             Nav.speed = speed_Combat;
             Nav.SetDestination(target);
@@ -74,7 +73,6 @@ public class Enemy_AI : MonoBehaviour
         {
             onMove = false;
         }
-        // Test 해야함.
         if (!onMove)
         {
             onMove = true;
@@ -82,7 +80,7 @@ public class Enemy_AI : MonoBehaviour
 
             target = new Vector3(transform.position.x + Random.Range(-1 * moveRange, moveRange), 0,
                 transform.position.z + Random.Range(-1 * moveRange, moveRange));
-
+            
             Nav.SetDestination(target);
         }
         if (originDis >= moveRange)
@@ -91,6 +89,7 @@ public class Enemy_AI : MonoBehaviour
             target = originPosition;
             Nav.SetDestination(target);
         }
+        
     }
 
     public void Enemy_Atk()
@@ -108,14 +107,14 @@ public class Enemy_AI : MonoBehaviour
     }
     IEnumerator EnemyAI()
     {
-       
+
         while (true)
         {
             originDis = (originPosition - transform.position).magnitude;
             targetDis = (target - transform.position).magnitude;
             float speed = Nav.desiredVelocity.magnitude;
             enemyAni.SetFloat("Speed", speed);
-           
+
             if (!inCombat)
             {
                 Move_NonCombat();

@@ -13,7 +13,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemy: {fileID: 2704042344483957481}
-  dmgText: {fileID: 2774098198264307410, guid: 7a3ecfaa4533a7f488ca8a625b0ecf88, type: 3}
 --- !u!1 &2704982182142505789
 GameObject:
   m_ObjectHideFlags: 0
@@ -5561,7 +5560,7 @@ NavMeshAgent:
   m_Acceleration: 8
   avoidancePriority: 50
   m_AngularSpeed: 120
-  m_StoppingDistance: 2
+  m_StoppingDistance: 1
   m_AutoTraverseOffMeshLink: 1
   m_AutoBraking: 1
   m_AutoRepath: 1
@@ -5583,8 +5582,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed_Noncombat: 1
   speed_Combat: 3
-  moveRange: 8
-  trackingRange: 20
+  moveRange: 10
+  trackingRange: 15
   inCombat: 0
 --- !u!1 &2706059010989928901
 GameObject:
