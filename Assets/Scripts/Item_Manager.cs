@@ -122,10 +122,7 @@ public class Item_Manager : MonoBehaviour, IPointerUpHandler, IPointerDownHandle
             }
             if (releaseTime < 0.5f && transform.GetComponent<Items_Info>().type == "Equipment")
             {
-                if (Manager.instance.inventory.storeFrame.activeSelf)
-                {
-                    inStore = true;
-                }
+                
 
                 Manager.instance.inventory.EquipInfoFrame.SetActive(false);
 
@@ -147,8 +144,13 @@ public class Item_Manager : MonoBehaviour, IPointerUpHandler, IPointerDownHandle
                 Manager.instance.inventory.Rect.position = transform.position;
                 Manager.instance.inventory.Rect.gameObject.SetActive(true);
             }
+
+            if (Manager.instance.inventory.storeFrame.activeSelf)
+            {
+                inStore = true;
+            }
         }
-        if (inBag && inStore)
+        if (inBag && inStore &&!transform.GetComponent<Items_Info>().equipped)
         {
             Manager.instance.inventory.SaleBox.gameObject.SetActive(true);
             Manager.instance.inventory.SaleBox.GetChild(0).GetComponent<TextMeshProUGUI>().text = string.Format("ReSale : {0} G", transform.GetComponent<Items_Info>().resalsePrice);

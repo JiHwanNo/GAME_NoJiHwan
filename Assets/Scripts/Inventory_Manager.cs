@@ -42,12 +42,28 @@ public class Inventory_Manager : MonoBehaviour
 
     public void SaleButton()
     {
-        Destroy(selectedItem.gameObject);
-        gold += selectedItem.GetComponent<Items_Info>().resalsePrice;
-        GetInvenInfo();
-        SaleBox.gameObject.SetActive(false);
-        EquipInfoFrame.gameObject.SetActive(false);
-        Rect.gameObject.SetActive(false);
-
+        if(selectedItem.GetComponent<Items_Info>().type == "Equipment")
+        {
+            Destroy(selectedItem.gameObject);
+            gold += selectedItem.GetComponent<Items_Info>().resalsePrice;
+            GetInvenInfo();
+            SaleBox.gameObject.SetActive(false);
+            EquipInfoFrame.gameObject.SetActive(false);
+            Rect.gameObject.SetActive(false);
+        }
+        if (selectedItem.GetComponent<Items_Info>().type == "Obj")
+        {
+            selectedItem.GetComponent<Items_Info>().count--;
+            selectedItem.GetComponentInChildren<TextMeshProUGUI>().text = selectedItem.GetComponent<Items_Info>().count.ToString();
+            if (selectedItem.GetComponent<Items_Info>().count <=0)
+            {
+                Destroy(selectedItem.gameObject);
+            }
+            gold += selectedItem.GetComponent<Items_Info>().resalsePrice;
+            GetInvenInfo();
+            SaleBox.gameObject.SetActive(false);
+            EquipInfoFrame.gameObject.SetActive(false);
+            Rect.gameObject.SetActive(false);
+        }
     }
 }

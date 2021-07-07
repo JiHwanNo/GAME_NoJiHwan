@@ -121,6 +121,7 @@ public class CharacterMove : MonoBehaviour, IPointerDownHandler
                     target = hit.transform;
                     DropBox.transform.position = mycamera.WorldToScreenPoint(hit.point);
                     DropBox.SetActive(true);
+                    
                 }
                 if (hit.transform.gameObject.tag == "Npc")
                 {

@@ -113,7 +113,7 @@ public class Skill_Effect : MonoBehaviour
     }
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.tag == "Enemy" || other.gameObject.tag == "Dead")
+        if (other.gameObject.tag == "Enemy" )
         {
             StopCoroutine("SkillShot");
             gameObject.SetActive(false);

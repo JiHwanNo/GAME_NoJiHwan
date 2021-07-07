@@ -75,7 +75,7 @@ public class ObjectPoolManager : MonoBehaviour
     {
         // List 받고. 아이템 체크를 dectionary
         getItemCount = Random.Range(1, 6); // 드랍 아이템 갯수.
-        GameObject obj = Instantiate(ItemPrefabs[Random.Range(0, ItemPrefabs.Length - 1)]); // 아이템 생성
+        GameObject obj = Instantiate(ItemPrefabs[Random.Range(0, ItemPrefabs.Length - 1)]); // 아이템 생성   
         obj.GetComponentInChildren<TextMeshProUGUI>().text = getItemCount.ToString(); // 아이템 갯수 생성.
         
         string objname = obj.name;

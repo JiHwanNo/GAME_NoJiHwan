@@ -29,8 +29,10 @@ public class Enemy_AI : MonoBehaviour
         Nav = GetComponent<NavMeshAgent>();
         enemyAni = GetComponent<Animator>();
         enemyState = GetComponent<EnemyState>();
+        inCombat = false;
+        inAtk = false;
+        onMove = false;
 
-        inCombat = true;
         StartCoroutine("EnemyAI");
 
     }
@@ -77,7 +79,7 @@ public class Enemy_AI : MonoBehaviour
         {
             onMove = true;
             Nav.speed = speed_Noncombat;
-
+            
             target = new Vector3(transform.position.x + Random.Range(-1 * moveRange, moveRange), 0,
                 transform.position.z + Random.Range(-1 * moveRange, moveRange));
             
