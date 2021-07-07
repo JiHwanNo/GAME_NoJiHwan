@@ -96,4 +96,6 @@ public class SkillBtn : MonoBehaviour, MouseInput.IPlayerActions
             OnClickBtn(2);
         }
     }
+
+   
 }

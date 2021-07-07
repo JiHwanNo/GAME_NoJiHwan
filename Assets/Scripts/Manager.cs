@@ -13,6 +13,7 @@ public class Manager : MonoBehaviour
     public DropItem_Manager dropItem_Manager;
     public UI_Manager uI_Manager;
     public Manager_Dialog manager_Dialog;
+    public MenuController menu_Controller;
     private void Awake()
     {
         if(instance  != this)

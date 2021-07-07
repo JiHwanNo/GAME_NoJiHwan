@@ -3,6 +3,7 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.AI;
 using UnityEngine.EventSystems;
+using UnityEngine.InputSystem;
 using UnityEngine.UI;
 public class CharacterMove : MonoBehaviour, IPointerDownHandler
 {
@@ -85,7 +86,8 @@ public class CharacterMove : MonoBehaviour, IPointerDownHandler
     //클릭 이벤트 생성 
     public void OnPointerDown(PointerEventData eventData)
     {
-        if (Input.GetMouseButton(0))
+        if (Input.GetMouseButton(0) || Input.touchCount == 1 )
+
         {
             Ray ray = mycamera.ScreenPointToRay(eventData.position);
             Physics.Raycast(ray, out hit);
@@ -186,6 +188,10 @@ public class CharacterMove : MonoBehaviour, IPointerDownHandler
         {
             hpBar_Target.SetActive(target.GetComponent<Obj_Info>().type == "Enemy");
             hpBar_Target.transform.GetChild(0).GetComponent<Image>().fillAmount = target.GetComponent<EnemyState>().cur_Hp / target.GetComponent<EnemyState>().hp;
+        }
+        else if(target.tag =="Npc")
+        {
+            hpBar_Target.transform.GetChild(0).GetComponent<Image>().fillAmount = 100f;
         }
         target_Tool.SetActive(true);
     }

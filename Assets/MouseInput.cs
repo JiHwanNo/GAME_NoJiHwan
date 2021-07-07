@@ -78,6 +78,33 @@ public class @MouseInput : IInputActionCollection, IDisposable
                     ""isPartOfComposite"": false
                 }
             ]
+        },
+        {
+            ""name"": ""UI"",
+            ""id"": ""d65d2cdd-2b5f-4896-a576-106bd0940c8b"",
+            ""actions"": [
+                {
+                    ""name"": ""ESC"",
+                    ""type"": ""Button"",
+                    ""id"": ""4ae79793-1b48-4ed5-b721-6e18aa0f7db8"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """"
+                }
+            ],
+            ""bindings"": [
+                {
+                    ""name"": """",
+                    ""id"": ""32d1217a-94cd-4a5b-beac-9a7f56b11321"",
+                    ""path"": ""<Keyboard>/escape"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""ESC"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                }
+            ]
         }
     ],
     ""controlSchemes"": [
@@ -96,6 +123,17 @@ public class @MouseInput : IInputActionCollection, IDisposable
                     ""isOR"": false
                 }
             ]
+        },
+        {
+            ""name"": ""Touch"",
+            ""bindingGroup"": ""Touch"",
+            ""devices"": [
+                {
+                    ""devicePath"": ""<Touchscreen>"",
+                    ""isOptional"": false,
+                    ""isOR"": false
+                }
+            ]
         }
     ]
 }");
@@ -104,6 +142,9 @@ public class @MouseInput : IInputActionCollection, IDisposable
         m_Player_Skill_1 = m_Player.FindAction("Skill_1", throwIfNotFound: true);
         m_Player_Skill_2 = m_Player.FindAction("Skill_2", throwIfNotFound: true);
         m_Player_Skill_3 = m_Player.FindAction("Skill_3", throwIfNotFound: true);
+        // UI
+        m_UI = asset.FindActionMap("UI", throwIfNotFound: true);
+        m_UI_ESC = m_UI.FindAction("ESC", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -198,6 +239,39 @@ public class @MouseInput : IInputActionCollection, IDisposable
         }
     }
     public PlayerActions @Player => new PlayerActions(this);
+
+    // UI
+    private readonly InputActionMap m_UI;
+    private IUIActions m_UIActionsCallbackInterface;
+    private readonly InputAction m_UI_ESC;
+    public struct UIActions
+    {
+        private @MouseInput m_Wrapper;
+        public UIActions(@MouseInput wrapper) { m_Wrapper = wrapper; }
+        public InputAction @ESC => m_Wrapper.m_UI_ESC;
+        public InputActionMap Get() { return m_Wrapper.m_UI; }
+        public void Enable() { Get().Enable(); }
+        public void Disable() { Get().Disable(); }
+        public bool enabled => Get().enabled;
+        public static implicit operator InputActionMap(UIActions set) { return set.Get(); }
+        public void SetCallbacks(IUIActions instance)
+        {
+            if (m_Wrapper.m_UIActionsCallbackInterface != null)
+            {
+                @ESC.started -= m_Wrapper.m_UIActionsCallbackInterface.OnESC;
+                @ESC.performed -= m_Wrapper.m_UIActionsCallbackInterface.OnESC;
+                @ESC.canceled -= m_Wrapper.m_UIActionsCallbackInterface.OnESC;
+            }
+            m_Wrapper.m_UIActionsCallbackInterface = instance;
+            if (instance != null)
+            {
+                @ESC.started += instance.OnESC;
+                @ESC.performed += instance.OnESC;
+                @ESC.canceled += instance.OnESC;
+            }
+        }
+    }
+    public UIActions @UI => new UIActions(this);
     private int m_InputControllerSchemeIndex = -1;
     public InputControlScheme InputControllerScheme
     {
@@ -207,10 +281,23 @@ public class @MouseInput : IInputActionCollection, IDisposable
             return asset.controlSchemes[m_InputControllerSchemeIndex];
         }
     }
+    private int m_TouchSchemeIndex = -1;
+    public InputControlScheme TouchScheme
+    {
+        get
+        {
+            if (m_TouchSchemeIndex == -1) m_TouchSchemeIndex = asset.FindControlSchemeIndex("Touch");
+            return asset.controlSchemes[m_TouchSchemeIndex];
+        }
+    }
     public interface IPlayerActions
     {
         void OnSkill_1(InputAction.CallbackContext context);
         void OnSkill_2(InputAction.CallbackContext context);
         void OnSkill_3(InputAction.CallbackContext context);
+    }
+    public interface IUIActions
+    {
+        void OnESC(InputAction.CallbackContext context);
     }
 }

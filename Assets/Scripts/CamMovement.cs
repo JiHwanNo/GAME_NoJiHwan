@@ -18,7 +18,7 @@ public class CamMovement : MonoBehaviour
     }
     void CamMove()
     {
-        if(Input.GetMouseButton(1))
+        if(Input.GetMouseButton(1) )
         {
             mouseX += Input.GetAxis("Mouse X");
             mouseY += Input.GetAxis("Mouse Y")*-1;
@@ -38,7 +38,6 @@ public class CamMovement : MonoBehaviour
         CamMove();
         Zoom();
         centralAxis.position = new Vector3(player.position.x, 0, player.position.z)+new Vector3(0,10,0); 
-
 
     }
 }
