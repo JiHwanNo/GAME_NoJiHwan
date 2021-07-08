@@ -14,6 +14,7 @@ public class Manager : MonoBehaviour
     public UI_Manager uI_Manager;
     public Manager_Dialog manager_Dialog;
     public MenuController menu_Controller;
+    public QuestManager questManager;
     private void Awake()
     {
         if(instance  != this)

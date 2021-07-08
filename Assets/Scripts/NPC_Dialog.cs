@@ -8,9 +8,14 @@ public class NPC_Dialog : MonoBehaviour
     public string[] dialog;
     //퀘스트를 받은경우. dectionary
     //퀘스틑 안받을 경우.
+    public string QuestTile;
+    public int goal; //퀘스트 목표
+    public bool isSucess;
 
-
-
+    private void Start()
+    {
+        isSucess = false;
+    }
     public void Dialog()
     {
         dialogStep = Random.Range(0, 2);

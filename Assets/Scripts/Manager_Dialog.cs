@@ -1,8 +1,10 @@
 using TMPro;
 using UnityEngine;
+
 public class Manager_Dialog : MonoBehaviour
 {
     public GameObject dialog_Frame;
+    public GameObject Quest_Frame;
     public TextMeshProUGUI npc_Name;
     public TextMeshProUGUI npc_Dialog;
 
@@ -24,12 +26,9 @@ public class Manager_Dialog : MonoBehaviour
     public void TalkButton()
     {
         dialog_Frame.SetActive(false);
-        if (BuyButton.activeSelf)
-        {
-            BuyButton.SetActive(false);
-            ReinforceButton.SetActive(false);
-            Talk_Button.SetActive(false);
+       
+            Quest_Frame.SetActive(true);
         
-        }
+        
     }
 }
