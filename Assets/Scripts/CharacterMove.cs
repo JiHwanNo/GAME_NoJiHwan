@@ -3,7 +3,6 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.AI;
 using UnityEngine.EventSystems;
-using UnityEngine.InputSystem;
 using UnityEngine.UI;
 public class CharacterMove : MonoBehaviour, IPointerDownHandler
 {
@@ -47,6 +46,9 @@ public class CharacterMove : MonoBehaviour, IPointerDownHandler
     [Header("PlayerInfoUpate")]
     PlayerState playerState;
 
+    [Header("QuestCount")]
+    public int Skeleton;
+
     private void Awake()
     {
         PlayerAni = Player.GetComponent<Animator>();
@@ -59,6 +61,7 @@ public class CharacterMove : MonoBehaviour, IPointerDownHandler
     {
         PlayerNav.speed = moveSpeed;
         PlayerNav.angularSpeed = rotateSpeed;
+        Skeleton = 0;
     }
     private void FixedUpdate()
     {
@@ -69,11 +72,23 @@ public class CharacterMove : MonoBehaviour, IPointerDownHandler
     public void GetPlayerExp()
     {
         playerState.exp_Cur += target.gameObject.GetComponent<EnemyState>().exp;
+
         if (playerState.exp_Cur >= playerState.exp_Max)
         {
             playerState.Lv++;
             playerState.exp_Cur -= playerState.exp_Max;
             playerState.LevelUp();
+        }
+        if(target.GetComponent<Obj_Info>().Obj_Name == "Skeleton" && Manager.instance.questManager.questList.ContainsValue("Get Skeleton Born"))
+        {
+            Skeleton++;
+            for (int i = 0; i < Manager.instance.questManager.questList.Count; i++)
+            {
+                if (Manager.instance.questManager.QuestBox.GetChild(i).GetChild(0).GetComponent<Text>().text.Contains("Get Skeleton Born"))
+                {
+                    Manager.instance.questManager.QuestBox.GetChild(i).GetChild(1).GetComponent<Text>().text = Skeleton.ToString();
+                }
+            }
         }
     }
     //플레이어 상태창 동기화 (HP,MP)
@@ -86,7 +101,7 @@ public class CharacterMove : MonoBehaviour, IPointerDownHandler
     //클릭 이벤트 생성 
     public void OnPointerDown(PointerEventData eventData)
     {
-        if (Input.GetMouseButton(0) || Input.touchCount == 1 )
+        if (Input.GetMouseButton(0) || Input.touchCount == 1)
 
         {
             Ray ray = mycamera.ScreenPointToRay(eventData.position);
@@ -121,19 +136,19 @@ public class CharacterMove : MonoBehaviour, IPointerDownHandler
                     target = hit.transform;
                     DropBox.transform.position = mycamera.WorldToScreenPoint(hit.point);
                     DropBox.SetActive(true);
-                    
+
                 }
                 if (hit.transform.gameObject.tag == "Npc")
                 {
                     Targeting();
-                    
+
                     if (!onCasting)
                     {
                         target.GetComponent<NPC_Dialog>().Dialog();
                         Manager.instance.manager_Dialog.dialog_Frame.SetActive(true);
                     }
                 }
-               
+
 
             }
         }
@@ -190,7 +205,7 @@ public class CharacterMove : MonoBehaviour, IPointerDownHandler
             hpBar_Target.SetActive(target.GetComponent<Obj_Info>().type == "Enemy");
             hpBar_Target.transform.GetChild(0).GetComponent<Image>().fillAmount = target.GetComponent<EnemyState>().cur_Hp / target.GetComponent<EnemyState>().hp;
         }
-        else if(target.tag =="Npc")
+        else if (target.tag == "Npc")
         {
             hpBar_Target.transform.GetChild(0).GetComponent<Image>().fillAmount = 100f;
         }
