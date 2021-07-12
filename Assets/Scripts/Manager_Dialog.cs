@@ -26,9 +26,9 @@ public class Manager_Dialog : MonoBehaviour
     public void TalkButton()
     {
         dialog_Frame.SetActive(false);
-       
-            Quest_Frame.SetActive(true);
-        
-        
+        //퀘스트 완료 전
+        Quest_Frame.SetActive(true);
+        //퀘스트 완료 되었을때.
+
     }
 }

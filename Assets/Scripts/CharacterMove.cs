@@ -79,7 +79,8 @@ public class CharacterMove : MonoBehaviour, IPointerDownHandler
             playerState.exp_Cur -= playerState.exp_Max;
             playerState.LevelUp();
         }
-        if(target.GetComponent<Obj_Info>().Obj_Name == "Skeleton" && Manager.instance.questManager.questList.ContainsValue("Get Skeleton Born"))
+        //퀘스트 중 목표 얻기.
+        if (target.GetComponent<Obj_Info>().Obj_Name == "Skeleton" && Manager.instance.questManager.questList.ContainsValue("Get Skeleton Born"))
         {
             Skeleton++;
             for (int i = 0; i < Manager.instance.questManager.questList.Count; i++)
@@ -87,6 +88,7 @@ public class CharacterMove : MonoBehaviour, IPointerDownHandler
                 if (Manager.instance.questManager.QuestBox.GetChild(i).GetChild(0).GetComponent<Text>().text.Contains("Get Skeleton Born"))
                 {
                     Manager.instance.questManager.QuestBox.GetChild(i).GetChild(1).GetComponent<Text>().text = Skeleton.ToString();
+
                 }
             }
         }

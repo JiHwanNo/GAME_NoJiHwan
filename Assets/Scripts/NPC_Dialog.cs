@@ -12,6 +12,10 @@ public class NPC_Dialog : MonoBehaviour
     public int goal; //퀘스트 목표
     public bool isSucess;
 
+    [Header("Finish Quest Info")]
+    public int GetExp;
+    public int GetCoin;
+
     private void Start()
     {
         isSucess = false;
