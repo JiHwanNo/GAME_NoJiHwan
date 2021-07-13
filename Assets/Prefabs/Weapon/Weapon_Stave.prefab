@@ -226,6 +226,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   image: {fileID: 0}
   inBag: 1
+  inStore: 0
 --- !u!114 &2238850794189340180
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -239,6 +240,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   type: Equipment
+  DetailType: Weapon
   name_Item: Stave
   info_Item: Basic Stave, It's standard.
   resalsePrice: 10
@@ -247,6 +249,7 @@ MonoBehaviour:
   atkBonus: 20
   defBonus: 0
   criBonus: 0.25
+  price: 0
   equipped: 0
   equipNum: 2
   select_Equip: {fileID: 0}

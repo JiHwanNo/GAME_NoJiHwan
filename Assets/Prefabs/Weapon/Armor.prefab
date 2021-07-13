@@ -92,6 +92,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   image: {fileID: 0}
   inBag: 1
+  inStore: 0
 --- !u!114 &5222173476300497739
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -105,6 +106,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   type: Equipment
+  DetailType: Armor
   name_Item: Robe
   info_Item: Basic Robe, It's standard.
   resalsePrice: 10
@@ -113,6 +115,7 @@ MonoBehaviour:
   atkBonus: 10
   defBonus: 5
   criBonus: 0.1
+  price: 0
   equipped: 0
   equipNum: 1
   select_Equip: {fileID: 0}

@@ -10,6 +10,7 @@ public class Item_Manager : MonoBehaviour, IPointerUpHandler, IPointerDownHandle
     [Header("Location")]
     public bool inBag;
     public bool inStore;
+    public bool inReinforce;
 
     float releaseTime;
     bool dragging;
@@ -32,10 +33,12 @@ public class Item_Manager : MonoBehaviour, IPointerUpHandler, IPointerDownHandle
         // 인벤토리에 아이템이 있을경우
         image = GetComponent<Image>();
         Manager.instance.inventory.selectedItem = transform;
+        //인벤토리 일때.
         if (inBag && !inStore)
         {
             StartCoroutine("ReleaseTime");
         }
+        //득템할때.
         if (!inBag && !inStore)
         {
             if (transform.name == "Gold_Image")
@@ -46,7 +49,8 @@ public class Item_Manager : MonoBehaviour, IPointerUpHandler, IPointerDownHandle
             }
             else
             {
-                if (Manager.instance.inventory.Inventory_List.ContainsKey(transform.GetComponent<Items_Info>().name_Item)) // 아이템이 있을경우
+                // 아이템이 있을경우
+                if (Manager.instance.inventory.Inventory_List.ContainsKey(transform.GetComponent<Items_Info>().name_Item)) 
                 {
                     transform.gameObject.SetActive(false);
                     //자기 자신 받기
@@ -61,8 +65,8 @@ public class Item_Manager : MonoBehaviour, IPointerUpHandler, IPointerDownHandle
                     Parent.GetComponent<Items_Info>().count += Manager.instance.ObjectPool.getItemCount;
                     Parent.GetComponentInChildren<TextMeshProUGUI>().text = Parent.transform.GetComponent<Items_Info>().count.ToString();
                 }
-
-                if (!Manager.instance.inventory.Inventory_List.ContainsKey(transform.GetComponent<Items_Info>().name_Item)) // 인벤토리에 아이템이 없을경우
+                // 인벤토리에 아이템이 없을경우
+                if (!Manager.instance.inventory.Inventory_List.ContainsKey(transform.GetComponent<Items_Info>().name_Item)) 
                 {
                     transform.gameObject.SetActive(false);
                     //부모설정
@@ -122,8 +126,6 @@ public class Item_Manager : MonoBehaviour, IPointerUpHandler, IPointerDownHandle
             }
             if (releaseTime < 0.5f && transform.GetComponent<Items_Info>().type == "Equipment")
             {
-                
-
                 Manager.instance.inventory.EquipInfoFrame.SetActive(false);
 
                 Manager.instance.inventory.EquipInfoFrame.GetComponent<ItemInfo_Frame>().item = GetComponent<Items_Info>();
@@ -149,14 +151,32 @@ public class Item_Manager : MonoBehaviour, IPointerUpHandler, IPointerDownHandle
             {
                 inStore = true;
             }
+            if(Manager.instance.reinforce_Manager.ReinforceFrame.activeSelf && transform.GetComponent<Items_Info>().type == "Equipment")
+            {
+                inReinforce = true;
+            }
         }
+        //아이템 스토어 이벤트 발생.
         if (inBag && inStore &&!transform.GetComponent<Items_Info>().equipped)
         {
             Manager.instance.inventory.SaleBox.gameObject.SetActive(true);
             Manager.instance.inventory.SaleBox.GetChild(0).GetComponent<TextMeshProUGUI>().text = string.Format("ReSale : {0} G", transform.GetComponent<Items_Info>().resalsePrice);
             inStore = false;
         }
+        //아이템 강화 이벤트 발생.
+        if (inBag && inReinforce && !transform.GetComponent<Items_Info>().equipped)
+        {
+            if(Manager.instance.reinforce_Manager.Item_Slot.childCount ==0)
+            {
 
+                GameObject obj = Instantiate(transform.gameObject);
+                obj.transform.SetParent(Manager.instance.reinforce_Manager.Item_Slot);
+                obj.SetActive(true);
+                obj.transform.localPosition = Vector3.zero;
+            }
+
+            inReinforce = false;
+        }
     }
 
     // 드레그를 시작하고 있을때.

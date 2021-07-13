@@ -4,6 +4,7 @@ public class Items_Info : MonoBehaviour
 {
     [Header("Common Info")]
     public string type;
+    public string DetailType;
     public string name_Item;
     public string info_Item;
     public int resalsePrice;
