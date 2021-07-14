@@ -227,6 +227,7 @@ MonoBehaviour:
   image: {fileID: 0}
   inBag: 1
   inStore: 0
+  inReinforce: 0
 --- !u!114 &2238850794189340180
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -245,6 +246,8 @@ MonoBehaviour:
   info_Item: Basic Stave, It's standard.
   resalsePrice: 10
   count: 1
+  ReinforceCost: 100
+  MaterialCount: 1
   hpBonus: 0
   atkBonus: 20
   defBonus: 0

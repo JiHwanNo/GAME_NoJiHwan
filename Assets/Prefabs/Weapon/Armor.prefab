@@ -93,6 +93,7 @@ MonoBehaviour:
   image: {fileID: 0}
   inBag: 1
   inStore: 0
+  inReinforce: 0
 --- !u!114 &5222173476300497739
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -111,6 +112,8 @@ MonoBehaviour:
   info_Item: Basic Robe, It's standard.
   resalsePrice: 10
   count: 1
+  ReinforceCost: 200
+  MaterialCount: 2
   hpBonus: 200
   atkBonus: 10
   defBonus: 5

@@ -93,6 +93,7 @@ MonoBehaviour:
   image: {fileID: 0}
   inBag: 1
   inStore: 0
+  inReinforce: 0
 --- !u!114 &4504719050711916571
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -111,6 +112,8 @@ MonoBehaviour:
   info_Item: Basic Sword, It's standard.
   resalsePrice: 10
   count: 1
+  ReinforceCost: 100
+  MaterialCount: 1
   hpBonus: 0
   atkBonus: 10
   defBonus: 0

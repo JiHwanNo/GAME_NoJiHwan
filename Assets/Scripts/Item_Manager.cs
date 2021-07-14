@@ -168,11 +168,22 @@ public class Item_Manager : MonoBehaviour, IPointerUpHandler, IPointerDownHandle
         {
             if(Manager.instance.reinforce_Manager.Item_Slot.childCount ==0)
             {
-
                 GameObject obj = Instantiate(transform.gameObject);
                 obj.transform.SetParent(Manager.instance.reinforce_Manager.Item_Slot);
                 obj.SetActive(true);
                 obj.transform.localPosition = Vector3.zero;
+                Manager.instance.reinforce_Manager.Item = transform.gameObject;
+            }
+            else if(Manager.instance.reinforce_Manager.Item_Slot.childCount == 1)
+            {
+                GameObject obj = Instantiate(transform.gameObject);
+                obj.transform.SetParent(Manager.instance.reinforce_Manager.Item_Slot);
+                obj.SetActive(true);
+                obj.transform.localPosition = Vector3.zero;
+                Manager.instance.reinforce_Manager.Item = transform.gameObject;
+                Destroy(Manager.instance.reinforce_Manager.Item_Slot.GetChild(0).gameObject);
+                Manager.instance.reinforce_Manager.ReinforceFrame.SetActive(false);
+                Manager.instance.reinforce_Manager.ReinforceFrame.SetActive(true);
             }
 
             inReinforce = false;
