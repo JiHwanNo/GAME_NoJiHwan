@@ -9,8 +9,10 @@ public class Items_Info : MonoBehaviour
     public string info_Item;
     public int resalsePrice;
     public int count;
+    [Header("Reinforce Info")]
     public int ReinforceCost;
     public int MaterialCount;
+    public int ItemLv;
 
     [Header("Equipment Info")]
     public int hpBonus;
