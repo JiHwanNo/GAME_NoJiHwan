@@ -248,7 +248,7 @@ MonoBehaviour:
   count: 1
   ReinforceCost: 100
   MaterialCount: 1
-  ItemLv: 3
+  ItemLv: 0
   hpBonus: 0
   atkBonus: 20
   defBonus: 0

@@ -10,14 +10,15 @@ public class Items_Info : MonoBehaviour
     public int resalsePrice;
     public int count;
     [Header("Reinforce Info")]
+    public string MaterialName;
     public int ReinforceCost;
     public int MaterialCount;
     public int ItemLv;
 
     [Header("Equipment Info")]
-    public int hpBonus;
-    public int atkBonus;
-    public int defBonus;
+    public float hpBonus;
+    public float atkBonus;
+    public float defBonus;
     public float criBonus;
     public int price;
 
@@ -44,5 +45,17 @@ public class Items_Info : MonoBehaviour
     {
         Destroy(obj.gameObject);
         Manager.instance.inventory.Inventory_List.Remove(obj.name);
+    }
+
+    public void ItemLevelUp()
+    {
+        ItemLv++;
+        hpBonus *= 1.2f;
+        atkBonus *= 1.2f;
+        defBonus *= 1.2f;
+        criBonus *= 1.2f;
+
+        ReinforceCost *= 2;
+        MaterialCount *= 2;
     }
 }

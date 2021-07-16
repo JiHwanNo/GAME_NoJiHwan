@@ -89,8 +89,8 @@ public class Equip_Manager : MonoBehaviour
     {
         player.hp += item.hpBonus;
         player.hp_Cur += item.hpBonus;
-        player.atk += item.atkBonus;
-        player.def += item.defBonus;
+        player.atk += (int)item.atkBonus;
+        player.def += (int)item.defBonus;
         player.cri += item.criBonus;
 
         Reload_Frame();
@@ -101,8 +101,8 @@ public class Equip_Manager : MonoBehaviour
 
         player.hp -= item.hpBonus;
         player.hp_Cur -= item.hpBonus;
-        player.atk -= item.atkBonus;
-        player.def -= item.defBonus;
+        player.atk -= (int)item.atkBonus;
+        player.def -= (int)item.defBonus;
         player.cri -= item.criBonus;
 
         Reload_Frame();

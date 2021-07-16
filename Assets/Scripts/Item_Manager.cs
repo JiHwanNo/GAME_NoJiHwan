@@ -177,6 +177,7 @@ public class Item_Manager : MonoBehaviour, IPointerUpHandler, IPointerDownHandle
             else if(Manager.instance.reinforce_Manager.Item_Slot.childCount == 1)
             {
                 GameObject obj = Instantiate(transform.gameObject);
+                obj.name = transform.gameObject.name;
                 obj.transform.SetParent(Manager.instance.reinforce_Manager.Item_Slot);
                 obj.SetActive(true);
                 obj.transform.localPosition = Vector3.zero;
