@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Items_Info : MonoBehaviour
 {
@@ -50,6 +51,7 @@ public class Items_Info : MonoBehaviour
     public void ItemLevelUp()
     {
         ItemLv++;
+        Colorset(ItemLv);
         hpBonus *= 1.2f;
         atkBonus *= 1.2f;
         defBonus *= 1.2f;
@@ -57,5 +59,34 @@ public class Items_Info : MonoBehaviour
 
         ReinforceCost *= 2;
         MaterialCount *= 2;
+    }
+
+    void Colorset(int ltemlevel)
+    {
+        switch (ltemlevel)
+        {
+            case 0:
+                break;
+            case 1:
+                transform.GetComponent<Image>().color = new Color32(255,0,0,255);
+                break;
+            case 2:
+                transform.GetComponent<Image>().color = new Color32(255, 160, 0, 255);
+                break;
+            case 3:
+                transform.GetComponent<Image>().color = new Color32(255, 255, 0, 255);
+                break;
+            case 4:
+                transform.GetComponent<Image>().color = new Color32(0, 255, 41, 255);
+                break;
+            case 5:
+                transform.GetComponent<Image>().color = new Color32(0, 255, 231, 255);
+                break;
+            case 6:
+                transform.GetComponent<Image>().color = new Color32(0, 153, 255, 255);
+                break;
+            default:
+                break;
+        }
     }
 }

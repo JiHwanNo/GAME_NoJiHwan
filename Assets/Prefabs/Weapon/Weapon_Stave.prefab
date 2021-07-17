@@ -246,6 +246,7 @@ MonoBehaviour:
   info_Item: Basic Stave, It's standard.
   resalsePrice: 10
   count: 1
+  MaterialName: Gem_Weapon
   ReinforceCost: 100
   MaterialCount: 1
   ItemLv: 0

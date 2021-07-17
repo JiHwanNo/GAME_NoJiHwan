@@ -112,8 +112,10 @@ MonoBehaviour:
   info_Item: Basic Sword, It's standard.
   resalsePrice: 10
   count: 1
+  MaterialName: Gem_Weapon
   ReinforceCost: 100
   MaterialCount: 1
+  ItemLv: 0
   hpBonus: 0
   atkBonus: 10
   defBonus: 0
