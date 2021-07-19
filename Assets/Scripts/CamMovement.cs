@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class CamMovement : MonoBehaviour
@@ -18,12 +16,12 @@ public class CamMovement : MonoBehaviour
     }
     void CamMove()
     {
-        if(Input.GetMouseButton(1) )
+        if (Input.GetMouseButton(1))
         {
             mouseX += Input.GetAxis("Mouse X");
-            mouseY += Input.GetAxis("Mouse Y")*-1;
+            mouseY += Input.GetAxis("Mouse Y") * -1;
 
-            centralAxis.rotation = Quaternion.Euler(new Vector3(centralAxis.rotation.x +mouseY, centralAxis.rotation.y + mouseX,0)*camSpeed);
+            centralAxis.rotation = Quaternion.Euler(new Vector3(centralAxis.rotation.x + mouseY, centralAxis.rotation.y + mouseX, 0) * camSpeed);
 
         }
     }
@@ -31,13 +29,13 @@ public class CamMovement : MonoBehaviour
     {
         wheel += Input.GetAxis("Mouse ScrollWheel");
 
-        cam.localPosition = new Vector3(0, 0, wheel);
+        cam.localPosition = new Vector3(0, 0, wheel) * camSpeed;
     }
     private void FixedUpdate()
     {
         CamMove();
         Zoom();
-        centralAxis.position = new Vector3(player.position.x, 0, player.position.z)+new Vector3(0,10,0); 
+        centralAxis.position = new Vector3(player.position.x, 0, player.position.z) + new Vector3(0, 10, 2);
 
     }
 }

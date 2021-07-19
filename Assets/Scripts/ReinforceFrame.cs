@@ -48,10 +48,10 @@ public class ReinforceFrame : MonoBehaviour
     {
         while (true)
         {
-            if (Slot.childCount == 1)
+            if (Slot.childCount == 1) // 슬롯에 아이템이 들어갔다면.
             {
                 Item = Slot.GetChild(0).gameObject;
-                items_Info = Slot.GetChild(0).GetComponent<Items_Info>();
+                items_Info = Item.GetComponent<Items_Info>();
                 StopCoroutine("checkItem");
                 StartCoroutine("UpdateMaterial");
 

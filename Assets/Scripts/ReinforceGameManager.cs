@@ -5,7 +5,6 @@ public class ReinforceGameManager : MonoBehaviour
 {
     GameObject RangeBar;
     GameObject Trigger;
-    int ReinforceLv;
     int speed;
     Vector3 Range;
     bool IsTrigger;
@@ -14,21 +13,22 @@ public class ReinforceGameManager : MonoBehaviour
     public GameObject success;
     public GameObject fail;
     ReinforceFrame reinforce;
-
+    Items_Info invenitem;
     private void Start()
     {
         reinforce = Manager.instance.reinforce_Manager.ReinforceFrame.GetComponent<ReinforceFrame>();
+        
     }
     private void OnEnable()
     {
         iteminfoFrame.SetActive(false);
-        ReinforceLv = Manager.instance.reinforce_Manager.Item.GetComponent<Items_Info>().ItemLv;
+        invenitem = Manager.instance.reinforce_Manager.Item.GetComponent<Items_Info>();
         RangeBar = transform.GetChild(1).gameObject;
         Trigger = transform.GetChild(2).gameObject;
 
         RangeBar.SetActive(true);
 
-        speed = 2 * (Manager.instance.reinforce_Manager.Item.GetComponent<Items_Info>().ItemLv + 1);
+        speed = 2 * (invenitem.ItemLv + 1);
 
         StartCoroutine("GameStart");
     }
@@ -49,15 +49,16 @@ public class ReinforceGameManager : MonoBehaviour
         IsTrigger = Trigger.GetComponent<TriggerManager>().trigger;
         if (IsTrigger)
         {
-            Manager.instance.reinforce_Manager.Item.GetComponent<Items_Info>().ItemLevelUp();
+            invenitem.ItemLevelUp();
             Range = RangeBar.transform.localScale;
-            Range.x -= (float)0.05 * ReinforceLv;
+            Range.x -= (float)0.05 * invenitem.ItemLv;
             RangeBar.transform.localScale = Range;
             success.SetActive(true);
         }
         else
         {
             fail.SetActive(true);
+            Destroy(invenitem.gameObject);
         }
         StartCoroutine("CloseFrame");
     }

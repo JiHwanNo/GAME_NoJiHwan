@@ -37,6 +37,8 @@ public class EnemyHit : MonoBehaviour
             {
                 time = 0;
                 gameObject.SetActive(false);
+                gameObject.tag = "Enemy";
+                StopCoroutine("SetActity");
                 break;
             }
             yield return null;

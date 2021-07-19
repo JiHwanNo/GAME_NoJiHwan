@@ -16,10 +16,11 @@ public class Questdata : MonoBehaviour // 오케이 누르면 생성자로 클래스 생성.
     public GameObject GetQuestItem;
 
     PlayerState playerState;
-
+    Transform TextBox;
     private void Awake()
     {
         playerState = Manager.instance.characterMove.Player.GetComponent<PlayerState>();
+        TextBox = Manager.instance.questManager.QuestBox;
     }
     private void OnEnable()
     {
@@ -77,8 +78,9 @@ public class Questdata : MonoBehaviour // 오케이 누르면 생성자로 클래스 생성.
             FinshQuest();
             for (int i = 0; i < Manager.instance.questManager.QuestBox.childCount; i++)
             {
-                if (Manager.instance.questManager.QuestBox.GetChild(i).GetChild(0).GetComponent<Text>().text.Contains(QuestName))
+                if (TextBox.GetChild(i).GetChild(0).GetComponent<Text>().text.Contains(QuestName))
                 {
+                    TextBox.GetChild(i).gameObject.SetActive(false);
                     Manager.instance.questManager.questList.Remove(i);
                 }
             }
@@ -94,7 +96,7 @@ public class Questdata : MonoBehaviour // 오케이 누르면 생성자로 클래스 생성.
     void FinshQuest()
     {
         GetQuestItem.SetActive(true);
-
+        //퀘스트 완료. 보상받기.
         Manager.instance.characterMove.target.GetComponent<NPC_Dialog>().isSucess = true;
         GetQuestItem.transform.GetChild(2).GetComponent<TextMeshProUGUI>().text = string.Format("Coin : {0}", Manager.instance.characterMove.target.GetComponent<NPC_Dialog>().GetCoin.ToString());
         GetQuestItem.transform.GetChild(3).GetComponent<TextMeshProUGUI>().text = string.Format("Exp : {0}", Manager.instance.characterMove.target.GetComponent<NPC_Dialog>().GetExp.ToString());
