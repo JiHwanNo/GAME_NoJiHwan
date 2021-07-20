@@ -43,7 +43,7 @@ public class Enemy_AI : MonoBehaviour
         if (enemyState.cur_Hp <= 0)
         {
             Nav.speed = 0;
-            Nav.SetDestination(Vector3.zero);
+            Nav.SetDestination(transform.position);
         }
 
         if (!inAtk && enemyState.cur_Hp > 0)
