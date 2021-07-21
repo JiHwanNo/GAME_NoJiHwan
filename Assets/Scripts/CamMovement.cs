@@ -10,10 +10,10 @@ public class CamMovement : MonoBehaviour
     float mouseY;
     float wheel;
 
-    private void Start()
+    /*private void Start()
     {
         centralAxis.Rotate(90f, 0f, 0f);
-    }
+    }*/
     void CamMove()
     {
         if (Input.GetMouseButton(1))
@@ -35,7 +35,7 @@ public class CamMovement : MonoBehaviour
     {
         CamMove();
         Zoom();
-        centralAxis.position = new Vector3(player.position.x, 0, player.position.z) + new Vector3(0, 10, 2);
+        centralAxis.position = new Vector3(player.position.x, 0, player.position.z) + new Vector3(0, 4f, 2f);
 
     }
 }

@@ -42,6 +42,7 @@ public class Enemy_AI : MonoBehaviour
         target = Manager.instance.characterMove.Player.position;
         if (enemyState.cur_Hp <= 0)
         {
+            StopCoroutine("EnemyAI");
             Nav.speed = 0;
             Nav.SetDestination(transform.position);
         }
@@ -51,7 +52,7 @@ public class Enemy_AI : MonoBehaviour
             Nav.speed = speed_Combat;
             Nav.SetDestination(target);
 
-            if (targetDis <= 3)
+            if (targetDis <= 3f)
             {
                 inAtk = true;
                 enemyAni.Play("Idle");
@@ -71,7 +72,7 @@ public class Enemy_AI : MonoBehaviour
     }
     void Move_NonCombat()
     {
-        if (targetDis <= 2)
+        if (targetDis <= 3f)
         {
             onMove = false;
         }
@@ -96,12 +97,13 @@ public class Enemy_AI : MonoBehaviour
 
     public void Enemy_Atk()
     {
-        if (targetDis <= 2)
+        if (targetDis <= 4f)
         {
+            Nav.SetDestination(transform.position);
             transform.LookAt(target);
             enemyAni.Play("EnemyAtk");
         }
-        if (targetDis > 2)
+        if (targetDis > 3f)
         {
             inAtk = false;
             enemyAni.Play("Idle");
@@ -109,7 +111,6 @@ public class Enemy_AI : MonoBehaviour
     }
     IEnumerator EnemyAI()
     {
-
         while (true)
         {
             originDis = (originPosition - transform.position).magnitude;

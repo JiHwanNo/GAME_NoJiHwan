@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
@@ -19,7 +17,8 @@ public class CharInfoFrame : MonoBehaviour
     private void OnEnable()
     {
         lev.text = player.Lv.ToString();
-        hp.text = player.hp.ToString();
+        int HP = (int)player.hp;
+        hp.text = HP.ToString();
         atk.text = player.atk.ToString();
         def.text = player.def.ToString();
         cri.text = string.Format("{0:0.00}", player.cri);

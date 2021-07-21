@@ -122,6 +122,10 @@ public class CharacterMove : MonoBehaviour, IPointerDownHandler
                         PlayerNav.SetDestination(hit.point);
                     }
                     DropBox.SetActive(false);
+                    if(target_Tool.activeSelf)
+                    {
+                        target_Tool.SetActive(false);
+                    }
                 }
                 if (hit.transform.gameObject.tag == "Player")
                 {
