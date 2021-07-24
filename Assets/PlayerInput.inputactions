@@ -92,6 +92,33 @@
                     "isPartOfComposite": false
                 }
             ]
+        },
+        {
+            "name": "Mouse",
+            "id": "2a3c3a9e-5936-40d2-b72a-3d875401bd35",
+            "actions": [
+                {
+                    "name": "Shift",
+                    "type": "Button",
+                    "id": "17d2e456-aa73-4c73-b4a5-c2d93a62bd72",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": ""
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "170ac9dd-150f-4060-a8c2-0cd38c397fff",
+                    "path": "<Keyboard>/shift",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Shift",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
         }
     ],
     "controlSchemes": [

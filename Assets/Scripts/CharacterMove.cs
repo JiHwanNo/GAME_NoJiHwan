@@ -68,6 +68,7 @@ public class CharacterMove : MonoBehaviour, IPointerDownHandler
         PlayerAni.SetBool("Walk", PlayerNav.velocity != Vector3.zero);
 
         OnTarget();
+
     }
     public void GetPlayerExp()
     {
@@ -103,8 +104,7 @@ public class CharacterMove : MonoBehaviour, IPointerDownHandler
     //클릭 이벤트 생성 
     public void OnPointerDown(PointerEventData eventData)
     {
-        if (Input.GetMouseButton(0) || Input.touchCount == 1)
-
+        if (Input.GetMouseButton(0) || Input.touchCount ==1)
         {
             Ray ray = mycamera.ScreenPointToRay(eventData.position);
             Physics.Raycast(ray, out hit);

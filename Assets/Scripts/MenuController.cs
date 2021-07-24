@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -24,9 +22,9 @@ public class MenuController : MonoBehaviour, MouseInput.IUIActions
     }
     public void OnESC(InputAction.CallbackContext context)
     {
-        if(context.started)
+        if (context.started)
         {
-            if(!MenuBackGround.activeSelf)
+            if (!MenuBackGround.activeSelf)
             {
                 MenuBackGround.SetActive(true);
             }

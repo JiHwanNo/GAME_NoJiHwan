@@ -105,6 +105,33 @@ public class @MouseInput : IInputActionCollection, IDisposable
                     ""isPartOfComposite"": false
                 }
             ]
+        },
+        {
+            ""name"": ""Mouse"",
+            ""id"": ""2a3c3a9e-5936-40d2-b72a-3d875401bd35"",
+            ""actions"": [
+                {
+                    ""name"": ""Shift"",
+                    ""type"": ""Button"",
+                    ""id"": ""17d2e456-aa73-4c73-b4a5-c2d93a62bd72"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """"
+                }
+            ],
+            ""bindings"": [
+                {
+                    ""name"": """",
+                    ""id"": ""170ac9dd-150f-4060-a8c2-0cd38c397fff"",
+                    ""path"": ""<Keyboard>/shift"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Shift"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                }
+            ]
         }
     ],
     ""controlSchemes"": [
@@ -145,6 +172,9 @@ public class @MouseInput : IInputActionCollection, IDisposable
         // UI
         m_UI = asset.FindActionMap("UI", throwIfNotFound: true);
         m_UI_ESC = m_UI.FindAction("ESC", throwIfNotFound: true);
+        // Mouse
+        m_Mouse = asset.FindActionMap("Mouse", throwIfNotFound: true);
+        m_Mouse_Shift = m_Mouse.FindAction("Shift", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -272,6 +302,39 @@ public class @MouseInput : IInputActionCollection, IDisposable
         }
     }
     public UIActions @UI => new UIActions(this);
+
+    // Mouse
+    private readonly InputActionMap m_Mouse;
+    private IMouseActions m_MouseActionsCallbackInterface;
+    private readonly InputAction m_Mouse_Shift;
+    public struct MouseActions
+    {
+        private @MouseInput m_Wrapper;
+        public MouseActions(@MouseInput wrapper) { m_Wrapper = wrapper; }
+        public InputAction @Shift => m_Wrapper.m_Mouse_Shift;
+        public InputActionMap Get() { return m_Wrapper.m_Mouse; }
+        public void Enable() { Get().Enable(); }
+        public void Disable() { Get().Disable(); }
+        public bool enabled => Get().enabled;
+        public static implicit operator InputActionMap(MouseActions set) { return set.Get(); }
+        public void SetCallbacks(IMouseActions instance)
+        {
+            if (m_Wrapper.m_MouseActionsCallbackInterface != null)
+            {
+                @Shift.started -= m_Wrapper.m_MouseActionsCallbackInterface.OnShift;
+                @Shift.performed -= m_Wrapper.m_MouseActionsCallbackInterface.OnShift;
+                @Shift.canceled -= m_Wrapper.m_MouseActionsCallbackInterface.OnShift;
+            }
+            m_Wrapper.m_MouseActionsCallbackInterface = instance;
+            if (instance != null)
+            {
+                @Shift.started += instance.OnShift;
+                @Shift.performed += instance.OnShift;
+                @Shift.canceled += instance.OnShift;
+            }
+        }
+    }
+    public MouseActions @Mouse => new MouseActions(this);
     private int m_InputControllerSchemeIndex = -1;
     public InputControlScheme InputControllerScheme
     {
@@ -299,5 +362,9 @@ public class @MouseInput : IInputActionCollection, IDisposable
     public interface IUIActions
     {
         void OnESC(InputAction.CallbackContext context);
+    }
+    public interface IMouseActions
+    {
+        void OnShift(InputAction.CallbackContext context);
     }
 }
