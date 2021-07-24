@@ -45,6 +45,7 @@ public class Enemy_AI : MonoBehaviour
             StopCoroutine("EnemyAI");
             Nav.speed = 0;
             Nav.SetDestination(transform.position);
+            
         }
 
         if (!inAtk && enemyState.cur_Hp > 0)

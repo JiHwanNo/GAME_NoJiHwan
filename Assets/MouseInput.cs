@@ -41,6 +41,14 @@ public class @MouseInput : IInputActionCollection, IDisposable
                     ""expectedControlType"": ""Button"",
                     ""processors"": """",
                     ""interactions"": """"
+                },
+                {
+                    ""name"": ""Skill_4"",
+                    ""type"": ""Button"",
+                    ""id"": ""b974fd9f-a8c6-4f14-8dd7-6242895712e4"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """"
                 }
             ],
             ""bindings"": [
@@ -74,6 +82,17 @@ public class @MouseInput : IInputActionCollection, IDisposable
                     ""processors"": """",
                     ""groups"": ""InputController"",
                     ""action"": ""Skill_3"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""8925a7f2-e7d7-43a7-84fc-cbc05e0557f7"",
+                    ""path"": ""<Keyboard>/4"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""InputController"",
+                    ""action"": ""Skill_4"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 }
@@ -169,6 +188,7 @@ public class @MouseInput : IInputActionCollection, IDisposable
         m_Player_Skill_1 = m_Player.FindAction("Skill_1", throwIfNotFound: true);
         m_Player_Skill_2 = m_Player.FindAction("Skill_2", throwIfNotFound: true);
         m_Player_Skill_3 = m_Player.FindAction("Skill_3", throwIfNotFound: true);
+        m_Player_Skill_4 = m_Player.FindAction("Skill_4", throwIfNotFound: true);
         // UI
         m_UI = asset.FindActionMap("UI", throwIfNotFound: true);
         m_UI_ESC = m_UI.FindAction("ESC", throwIfNotFound: true);
@@ -227,6 +247,7 @@ public class @MouseInput : IInputActionCollection, IDisposable
     private readonly InputAction m_Player_Skill_1;
     private readonly InputAction m_Player_Skill_2;
     private readonly InputAction m_Player_Skill_3;
+    private readonly InputAction m_Player_Skill_4;
     public struct PlayerActions
     {
         private @MouseInput m_Wrapper;
@@ -234,6 +255,7 @@ public class @MouseInput : IInputActionCollection, IDisposable
         public InputAction @Skill_1 => m_Wrapper.m_Player_Skill_1;
         public InputAction @Skill_2 => m_Wrapper.m_Player_Skill_2;
         public InputAction @Skill_3 => m_Wrapper.m_Player_Skill_3;
+        public InputAction @Skill_4 => m_Wrapper.m_Player_Skill_4;
         public InputActionMap Get() { return m_Wrapper.m_Player; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -252,6 +274,9 @@ public class @MouseInput : IInputActionCollection, IDisposable
                 @Skill_3.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnSkill_3;
                 @Skill_3.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnSkill_3;
                 @Skill_3.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnSkill_3;
+                @Skill_4.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnSkill_4;
+                @Skill_4.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnSkill_4;
+                @Skill_4.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnSkill_4;
             }
             m_Wrapper.m_PlayerActionsCallbackInterface = instance;
             if (instance != null)
@@ -265,6 +290,9 @@ public class @MouseInput : IInputActionCollection, IDisposable
                 @Skill_3.started += instance.OnSkill_3;
                 @Skill_3.performed += instance.OnSkill_3;
                 @Skill_3.canceled += instance.OnSkill_3;
+                @Skill_4.started += instance.OnSkill_4;
+                @Skill_4.performed += instance.OnSkill_4;
+                @Skill_4.canceled += instance.OnSkill_4;
             }
         }
     }
@@ -358,6 +386,7 @@ public class @MouseInput : IInputActionCollection, IDisposable
         void OnSkill_1(InputAction.CallbackContext context);
         void OnSkill_2(InputAction.CallbackContext context);
         void OnSkill_3(InputAction.CallbackContext context);
+        void OnSkill_4(InputAction.CallbackContext context);
     }
     public interface IUIActions
     {

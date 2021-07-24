@@ -24,6 +24,7 @@ public class EnemyHit : MonoBehaviour
             }
             GetComponent<Animator>().Play("Death");
             gameObject.tag = "Dead";
+            transform.GetComponent<BoxCollider>().isTrigger = true;
             StartCoroutine("SetActity");
 
         }
@@ -38,6 +39,7 @@ public class EnemyHit : MonoBehaviour
                 time = 0;
                 gameObject.SetActive(false);
                 gameObject.tag = "Enemy";
+                transform.GetComponent<BoxCollider>().isTrigger = false;
                 StopCoroutine("SetActity");
                 break;
             }

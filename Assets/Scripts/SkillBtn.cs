@@ -52,6 +52,10 @@ public class SkillBtn : MonoBehaviour, MouseInput.IPlayerActions
                 Manager.instance.characterMove.Casting(castingTime[index], SkiilName[index], skillObj[index]);
             }
         }
+        else if(index ==3) // ºí¸µÅ©
+        {
+
+        }
     }
 
 
@@ -97,5 +101,11 @@ public class SkillBtn : MonoBehaviour, MouseInput.IPlayerActions
         }
     }
 
-   
+    public void OnSkill_4(InputAction.CallbackContext context)
+    {
+        if (context.performed)
+        {
+            OnClickBtn(3);
+        }
+    }
 }

@@ -1,6 +1,5 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
-using UnityEngine.UI;
 public class CamMovement : MonoBehaviour, MouseInput.IMouseActions
 {
     public Transform player;
@@ -14,7 +13,6 @@ public class CamMovement : MonoBehaviour, MouseInput.IMouseActions
     bool ShiftBool;
     MouseInput IMouseActions;
 
-    public Text test;
     private void Awake()
     {
         IMouseActions = new MouseInput();
@@ -32,45 +30,49 @@ public class CamMovement : MonoBehaviour, MouseInput.IMouseActions
     }
     void CamMove()
     {
-        if (Input.GetMouseButton(1)&&ShiftBool)
-        {
-            mouseX += Input.GetAxis("Mouse X");
-            mouseY += Input.GetAxis("Mouse Y") * -1;
+        mouseX += Input.GetAxis("Mouse X");
+        mouseY += Input.GetAxis("Mouse Y") * -1;
 
-            centralAxis.rotation = Quaternion.Euler(new Vector3(centralAxis.rotation.x + mouseY, centralAxis.rotation.y + mouseX, 0) * camSpeed);
-
-        }
+        centralAxis.rotation = Quaternion.Euler(new Vector3(centralAxis.rotation.x + mouseY, centralAxis.rotation.y + mouseX, 0) * camSpeed);
     }
-    void Zoom()
-    { // 줌이 픽스트업데이트에서 계속 고정값으로 넣기 때문에... 안됨.
-        if(Input.touchCount ==2)
-        {
-            
-            Touch touchZero = Input.GetTouch(0);
-            Touch touchOne = Input.GetTouch(1);
-            Vector2 touchZeroPrePos = touchZero.position - touchZero.deltaPosition;
-            Vector2 touchOnePrePos = touchOne.position - touchOne.deltaPosition;
 
-            float PreMagnitude = (touchZeroPrePos - touchOnePrePos).magnitude;
-            float currentMagnitude = (touchZero.position - touchOne.position).magnitude;
+    void TouchZoom()
+    {
+        Touch touchZero = Input.GetTouch(0);
+        Touch touchOne = Input.GetTouch(1);
 
-            float different = currentMagnitude - PreMagnitude;
-            
-            cam.localPosition = new Vector3(0, 0, different*0.01f);
-            test.text = cam.localPosition.ToString();
-        }
-        else
-        {
-            wheel += Input.GetAxis("Mouse ScrollWheel");
+        Vector2 touchZeroPrevPos = touchZero.position - touchZero.deltaPosition;
+        Vector2 touchOnePrevPos = touchOne.position - touchOne.deltaPosition;
 
-            cam.localPosition = new Vector3(0, 0, wheel) * camSpeed;
-        }
+        float prevdistance = Vector2.Distance(touchZeroPrevPos, touchOnePrevPos);
+        float currentMagnitude = Vector2.Distance(touchZero.position, touchOne.position);
+
+        float difference = prevdistance - currentMagnitude;
+        cam.GetComponent<Camera>().fieldOfView += difference * 0.1f;
+    }
+    void MouseZoom()
+    {
+        wheel += Input.GetAxis("Mouse ScrollWheel");
+
+        cam.localPosition = new Vector3(0, 0, wheel) * camSpeed;
+
     }
     private void FixedUpdate()
     {
-        CamMove();
-        Zoom();
-        centralAxis.position = new Vector3(player.position.x, 0, player.position.z) + new Vector3(0, 6f, 6.5f);
+        if (Input.GetMouseButton(1) && ShiftBool)
+        {
+            CamMove();
+        }
+        if (Input.touchCount == 2)
+        {
+            TouchZoom();
+        }
+        if (Input.GetMouseButton(2))
+        {
+            MouseZoom();
+        }
+
+        centralAxis.position = new Vector3(player.position.x, 0, player.position.z) + new Vector3(0, 6f, 3f);
 
     }
 
@@ -80,7 +82,7 @@ public class CamMovement : MonoBehaviour, MouseInput.IMouseActions
         {
             ShiftBool = true;
         }
-        else if(context.canceled)
+        else if (context.canceled)
         {
             ShiftBool = false;
         }

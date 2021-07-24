@@ -28,6 +28,14 @@
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": ""
+                },
+                {
+                    "name": "Skill_4",
+                    "type": "Button",
+                    "id": "b974fd9f-a8c6-4f14-8dd7-6242895712e4",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": ""
                 }
             ],
             "bindings": [
@@ -61,6 +69,17 @@
                     "processors": "",
                     "groups": "InputController",
                     "action": "Skill_3",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "8925a7f2-e7d7-43a7-84fc-cbc05e0557f7",
+                    "path": "<Keyboard>/4",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "InputController",
+                    "action": "Skill_4",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }
