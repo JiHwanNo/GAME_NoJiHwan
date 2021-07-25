@@ -1,8 +1,6 @@
 using System.Collections;
-using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
-using UnityEngine.UI;
 
 public class Skill_Effect : MonoBehaviour
 {
@@ -16,21 +14,31 @@ public class Skill_Effect : MonoBehaviour
     public float skillPower;
     int dmg;
     float dmgRange;
+
+    CharacterMove character;
+    Audio_Manager myaudio;
+    PlayerState playerState;
+    private void Awake()
+    {
+        character = Manager.instance.characterMove;
+        myaudio = Manager.instance.myaudio;
+        playerState = character.Player.GetComponent<PlayerState>();
+    }
     private void OnEnable()
     {
-        target = Manager.instance.characterMove.atkTarget;
-        PlayerState playerState = Manager.instance.characterMove.Player.GetComponent<PlayerState>();
+        target = character.atkTarget;
+        
         if (index == 2)
         {
             skillPower = 2f;
-            Manager.instance.myaudio.audioSource.PlayOneShot(Manager.instance.myaudio.Heal);
+            myaudio.audioSource.PlayOneShot(myaudio.Heal);
             StartCoroutine("HealSkill");
 
             CalculateDmg();
             Vector3 hitPoint = (transform.position) * 0.5f;
             dmgText.GetComponent<TextMeshProUGUI>().text = dmg.ToString();
             dmgText.GetComponent<TextMeshProUGUI>().fontSize = 50 * dmgRange;
-            dmgText.transform.position = Manager.instance.characterMove.mycamera.WorldToScreenPoint(Manager.instance.characterMove.Player.transform.position + new Vector3(0, 1, 0));
+            dmgText.transform.position = character.mycamera.WorldToScreenPoint(Manager.instance.characterMove.Player.transform.position + new Vector3(0, 1, 0));
             dmgText.SetActive(true);
 
             if (playerState.hp_Cur < playerState.hp)
@@ -47,10 +55,16 @@ public class Skill_Effect : MonoBehaviour
             playerState.Mp_Cur -= 15;
 
         }
+        else if( index == 4)
+        {
+            myaudio.audioSource.PlayOneShot(myaudio.Heal);
+
+            Vector3 hitPoint = (transform.position) * 0.5f;
+        }
         else if (index == 0)
         {
             skillPower = 1.25f;
-            Manager.instance.myaudio.audioSource.PlayOneShot(Manager.instance.myaudio.FireSkill_Flying);
+            myaudio.audioSource.PlayOneShot(myaudio.FireSkill_Flying);
             StartCoroutine("SkillShot");
             playerState.Mp_Cur -= 5;
 
@@ -59,12 +73,12 @@ public class Skill_Effect : MonoBehaviour
         else if (index == 1)
         {
             skillPower = 2f;
-            Manager.instance.myaudio.audioSource.PlayOneShot(Manager.instance.myaudio.AquaSkill_Flying);
+            myaudio.audioSource.PlayOneShot(myaudio.AquaSkill_Flying);
             StartCoroutine("SkillShot");
             playerState.Mp_Cur -= 20;
         }
 
-        Manager.instance.characterMove.PlayerUI();
+        character.PlayerUI();
     }
     IEnumerator SkillShot()
     {
@@ -94,7 +108,7 @@ public class Skill_Effect : MonoBehaviour
 
     public void CalculateDmg()
     {
-        PlayerState playerState = Manager.instance.characterMove.Player.GetComponent<PlayerState>();
+        PlayerState playerState = character.Player.GetComponent<PlayerState>();
 
         dmgRange = Random.Range(0.8f, 1.2f);
         dmg = (int)(playerState.atk * skillPower * dmgRange);
@@ -113,7 +127,7 @@ public class Skill_Effect : MonoBehaviour
     }
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.tag == "Enemy" )
+        if (other.gameObject.tag == "Enemy")
         {
             StopCoroutine("SkillShot");
             gameObject.SetActive(false);
@@ -133,6 +147,36 @@ public class Skill_Effect : MonoBehaviour
                 other.GetComponent<EnemyHit>().Hit(dmg);
 
             }
+        }
+    }
+    public void StartSheild()
+    {
+        StartCoroutine("Sheild");
+    }
+    public void StopSheild()
+    {
+        StopCoroutine("Sheild");
+    }
+    IEnumerator Sheild()
+    {
+        float currentHp = playerState.hp_Cur;
+        while (true)
+        {
+            transform.position = character.Player.position;
+            time += Time.fixedDeltaTime * speed;
+            if (currentHp > playerState.hp_Cur &&time >1f) // 플레이어 체력에 변화가 있다면
+            {
+                time = 0;
+                float diffrent = currentHp - playerState.hp_Cur;
+                if (diffrent <= playerState.Mp_Cur)
+                {
+                    playerState.hp_Cur += diffrent;
+                    playerState.Mp_Cur -= diffrent;
+                    character.PlayerUI();
+                }
+                
+            }
+            yield return null;
         }
     }
 }
