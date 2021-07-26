@@ -6,11 +6,10 @@ using UnityEngine.EventSystems;
 using UnityEngine.UI;
 public class CharacterMove : MonoBehaviour, IPointerDownHandler
 {
-    Animator PlayerAni;
+    public Animator PlayerAni;
 
     [Header("Camera")]
     public Camera mycamera;
-    public GameObject touchEffect;
     RaycastHit hit;
 
     [Header("Player")]
@@ -62,6 +61,7 @@ public class CharacterMove : MonoBehaviour, IPointerDownHandler
         PlayerNav.speed = moveSpeed;
         PlayerNav.angularSpeed = rotateSpeed;
         Skeleton = 0;
+        onCasting = false;
     }
     private void FixedUpdate()
     {
@@ -111,9 +111,7 @@ public class CharacterMove : MonoBehaviour, IPointerDownHandler
 
             if (hit.transform != null)
             {
-                touchEffect.SetActive(false);
-                touchEffect.transform.position = mycamera.WorldToScreenPoint(hit.point);
-                touchEffect.SetActive(true);
+                
 
                 if (hit.transform.gameObject.tag == "Ground")
                 {

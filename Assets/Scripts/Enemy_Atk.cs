@@ -41,7 +41,7 @@ public class Enemy_Atk : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
 
-        if (other.gameObject.tag == "Player" && enemy_AI.inCombat)
+        if (other.gameObject.tag == "Player" && enemy_AI.inCombat && !enemy_AI.Isdead)
         {
             Vector3 hitPoint = (other.transform.position + transform.position) * 0.5f;
 

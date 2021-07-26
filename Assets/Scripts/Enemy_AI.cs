@@ -12,7 +12,7 @@ public class Enemy_AI : MonoBehaviour
 
     public bool inCombat;
     bool inAtk;
-
+    public bool Isdead;
     NavMeshAgent Nav;
     Animator enemyAni;
     EnemyState enemyState;
@@ -25,6 +25,7 @@ public class Enemy_AI : MonoBehaviour
 
     private void OnEnable()
     {
+        Isdead = false;
         originPosition = transform.position;
         Nav = GetComponent<NavMeshAgent>();
         enemyAni = GetComponent<Animator>();
@@ -44,6 +45,7 @@ public class Enemy_AI : MonoBehaviour
         {
             StopCoroutine("EnemyAI");
             Nav.speed = 0;
+            Isdead = true;
             Nav.SetDestination(transform.position);
             
         }
@@ -53,8 +55,9 @@ public class Enemy_AI : MonoBehaviour
             Nav.speed = speed_Combat;
             Nav.SetDestination(target);
 
-            if (targetDis <= 3f)
+            if (targetDis <= 2f)
             {
+                Nav.SetDestination(transform.position);
                 inAtk = true;
                 enemyAni.Play("Idle");
             }
@@ -73,11 +76,12 @@ public class Enemy_AI : MonoBehaviour
     }
     void Move_NonCombat()
     {
-        if (targetDis <= 3f)
+        if (targetDis <= 2f)
         {
             onMove = false;
+            
         }
-        if (!onMove)
+        if (!onMove || Nav.speed ==0)
         {
             onMove = true;
             Nav.speed = speed_Noncombat;
@@ -98,13 +102,12 @@ public class Enemy_AI : MonoBehaviour
 
     public void Enemy_Atk()
     {
-        if (targetDis <= 4f)
+        if (targetDis <= 2f)
         {
-            Nav.SetDestination(transform.position);
             transform.LookAt(target);
             enemyAni.Play("EnemyAtk");
         }
-        if (targetDis > 3f)
+        if (targetDis > 2f)
         {
             inAtk = false;
             enemyAni.Play("Idle");

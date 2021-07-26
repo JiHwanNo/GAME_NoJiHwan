@@ -15,6 +15,8 @@ public class SkillBtn : MonoBehaviour, MouseInput.IPlayerActions
     public float[] castingTime;
     public GameObject[] skillObj;
     CharacterMove character;
+
+    public Transform BlinkPoint;
     private void Awake()
     {
         mouseInput = new MouseInput();
@@ -54,12 +56,23 @@ public class SkillBtn : MonoBehaviour, MouseInput.IPlayerActions
                 character.Casting(castingTime[index], SkiilName[index], skillObj[index]);
             }
         }
-        else if(index ==3) // 블링크
+        // 블링크
+        else if (index ==3) 
         {
             if (!cool[index] && !character.onCasting)
             {
-
+                skillObj[3].SetActive(true);
+                character.Player.position = BlinkPoint.position;
+                StartCoroutine("Blink");
+                StartCoroutine(CoolDown(index));
+                character.PlayerNav.SetDestination(character.Player.transform.position);
             }
+        }
+        //실드
+        else if(index ==4)
+        {
+            skillObj[4].SetActive(true);
+            skillObj[4].GetComponent<Skill_Effect>().StartSheild();
         }
     }
 
@@ -118,9 +131,7 @@ public class SkillBtn : MonoBehaviour, MouseInput.IPlayerActions
     {
         if(context.started)
         {
-            skillObj[4].SetActive(true);
-            skillObj[4].GetComponent<Skill_Effect>().StartSheild();
-
+            OnClickBtn(4);
         }
         else if(context.canceled)
         {
@@ -128,5 +139,28 @@ public class SkillBtn : MonoBehaviour, MouseInput.IPlayerActions
             skillObj[4].GetComponent<Skill_Effect>().StopSheild();
         }
         
+    }
+
+    IEnumerator Blink()
+    {
+        character.PlayerAni.Play("Player_Casting");
+        character.onCasting = true;
+        float time = 0;
+        while (true)
+        {
+            time += Time.deltaTime;
+        
+            skillObj[3].transform.position = character.Player.position;
+
+            if(time >= 1f)
+            {
+                skillObj[3].SetActive(false);
+                StopCoroutine("Blink");
+                character.PlayerAni.Play("Idle");
+                character.onCasting = false;
+            }
+
+            yield return null;
+        }
     }
 }

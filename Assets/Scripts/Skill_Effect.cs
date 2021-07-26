@@ -9,7 +9,7 @@ public class Skill_Effect : MonoBehaviour
     public GameObject hitEffect;
     public int index;
     float time = 0;
-
+    int sheildNum;
     public GameObject dmgText;
     public float skillPower;
     int dmg;
@@ -20,6 +20,7 @@ public class Skill_Effect : MonoBehaviour
     PlayerState playerState;
     private void Awake()
     {
+        sheildNum = 0;
         character = Manager.instance.characterMove;
         myaudio = Manager.instance.myaudio;
         playerState = character.Player.GetComponent<PlayerState>();
@@ -27,7 +28,7 @@ public class Skill_Effect : MonoBehaviour
     private void OnEnable()
     {
         target = character.atkTarget;
-        
+
         if (index == 2)
         {
             skillPower = 2f;
@@ -55,7 +56,7 @@ public class Skill_Effect : MonoBehaviour
             playerState.Mp_Cur -= 15;
 
         }
-        else if( index == 4)
+        else if (index == 4)
         {
             myaudio.audioSource.PlayOneShot(myaudio.Heal);
 
@@ -76,6 +77,10 @@ public class Skill_Effect : MonoBehaviour
             myaudio.audioSource.PlayOneShot(myaudio.AquaSkill_Flying);
             StartCoroutine("SkillShot");
             playerState.Mp_Cur -= 20;
+        }
+        else if(index ==3)
+        {
+            playerState.Mp_Cur -= 30;
         }
 
         character.PlayerUI();
@@ -151,11 +156,26 @@ public class Skill_Effect : MonoBehaviour
     }
     public void StartSheild()
     {
-        StartCoroutine("Sheild");
+        if (sheildNum == 0)
+        {
+            StartCoroutine("Sheild");
+            character.PlayerAni.Play("Player_Casting");
+            character.onCasting = true;
+            sheildNum = 1;
+        }
+        else if (sheildNum == 1)
+        {
+            StopSheild();
+            sheildNum = 0;
+        }
     }
     public void StopSheild()
     {
         StopCoroutine("Sheild");
+        character.PlayerAni.Play("Idle");
+        gameObject.SetActive(false);
+        character.onCasting = false;
+
     }
     IEnumerator Sheild()
     {
@@ -164,7 +184,7 @@ public class Skill_Effect : MonoBehaviour
         {
             transform.position = character.Player.position;
             time += Time.fixedDeltaTime * speed;
-            if (currentHp > playerState.hp_Cur &&time >1f) // 플레이어 체력에 변화가 있다면
+            if (currentHp > playerState.hp_Cur && time > 1f) // 플레이어 체력에 변화가 있다면
             {
                 time = 0;
                 float diffrent = currentHp - playerState.hp_Cur;
@@ -174,7 +194,7 @@ public class Skill_Effect : MonoBehaviour
                     playerState.Mp_Cur -= diffrent;
                     character.PlayerUI();
                 }
-                
+
             }
             yield return null;
         }
