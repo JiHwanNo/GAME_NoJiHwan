@@ -224,11 +224,11 @@ GameObject:
   m_Component:
   - component: {fileID: 3145184179198533738}
   - component: {fileID: 3096229651317162592}
-  - component: {fileID: 285267542762290060}
   - component: {fileID: 435726166801055508}
   - component: {fileID: 370840078404270172}
   - component: {fileID: 695799253257150463}
   - component: {fileID: 5997880525959042028}
+  - component: {fileID: 8603792726628059218}
   m_Layer: 0
   m_Name: Enemy_Boss
   m_TagString: Boss
@@ -271,24 +271,6 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &285267542762290060
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3145999179385809834}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2ad4c831ef6596140a76f5d7ce4ef225, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  speed_Noncombat: 1
-  speed_Combat: 3
-  moveRange: 10
-  trackingRange: 15
-  inCombat: 0
-  Isdead: 0
 --- !u!195 &435726166801055508
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -355,6 +337,24 @@ MonoBehaviour:
   cri: 0.2
   exp: 1500
   goal: 1000
+--- !u!114 &8603792726628059218
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3145999179385809834}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 20885707259b49f45b2e267ea6ad2dcd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed_Noncombat: 0
+  speed_Combat: 0
+  moveRange: 0
+  trackingRange: 0
+  inCombat: 0
+  Isdead: 0
 --- !u!1 &3146012337235625406
 GameObject:
   m_ObjectHideFlags: 0

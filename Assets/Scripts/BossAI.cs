@@ -1,8 +1,9 @@
 using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 
-public class Enemy_AI : MonoBehaviour
+public class BossAI : MonoBehaviour
 {
     public float speed_Noncombat;
     public float speed_Combat;
@@ -34,7 +35,7 @@ public class Enemy_AI : MonoBehaviour
         inAtk = false;
         onMove = false;
 
-        StartCoroutine("EnemyAI");
+        StartCoroutine("Boss_AI");
 
     }
     //전투중 움직임 실행
@@ -43,11 +44,11 @@ public class Enemy_AI : MonoBehaviour
         target = Manager.instance.characterMove.Player.position;
         if (enemyState.cur_Hp <= 0)
         {
-            StopCoroutine("EnemyAI");
+            StopCoroutine("Boss_AI");
             Nav.speed = 0;
             Isdead = true;
             Nav.SetDestination(transform.position);
-            
+
         }
 
         if (!inAtk && enemyState.cur_Hp > 0)
@@ -55,7 +56,7 @@ public class Enemy_AI : MonoBehaviour
             Nav.speed = speed_Combat;
             Nav.SetDestination(target);
 
-            if (targetDis <= 2f)
+            if (targetDis <= 4f)
             {
                 Nav.SetDestination(transform.position);
                 inAtk = true;
@@ -76,19 +77,19 @@ public class Enemy_AI : MonoBehaviour
     }
     void Move_NonCombat()
     {
-        if (targetDis <= 2f)
+        if (targetDis <= 4f)
         {
             onMove = false;
-            
+
         }
-        if (!onMove || Nav.speed ==0)
+        if (!onMove || Nav.speed == 0)
         {
             onMove = true;
             Nav.speed = speed_Noncombat;
-            
+
             target = new Vector3(transform.position.x + Random.Range(-1 * moveRange, moveRange), 0,
                 transform.position.z + Random.Range(-1 * moveRange, moveRange));
-            
+
             Nav.SetDestination(target);
         }
         if (originDis >= moveRange)
@@ -97,24 +98,24 @@ public class Enemy_AI : MonoBehaviour
             target = originPosition;
             Nav.SetDestination(target);
         }
-        
+
     }
 
-   public void Enemy_Atk()
-   {
-       
-       if (targetDis <= 2f)
-       {
-           transform.LookAt(target);
-           enemyAni.Play("EnemyAtk");
-       }
-       if (targetDis > 2f)
-       {
-           inAtk = false;
-           enemyAni.Play("Idle");
-       }
-   }
-    IEnumerator EnemyAI()
+    public void Boss_Atk() // 공격이 일어날때. 에니메이션에서 실행시켜준다.
+    {
+        
+        if (targetDis <= 5f)
+        {
+            transform.LookAt(target);
+            enemyAni.Play("EnemyAtk");
+        }
+        if (targetDis > 5f)
+        {
+            inAtk = false;
+            enemyAni.Play("Idle");
+        }
+    }
+    IEnumerator Boss_AI()
     {
         while (true)
         {
@@ -136,3 +137,4 @@ public class Enemy_AI : MonoBehaviour
     }
 
 }
+
