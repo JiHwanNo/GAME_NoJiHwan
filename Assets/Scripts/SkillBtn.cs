@@ -48,7 +48,7 @@ public class SkillBtn : MonoBehaviour, MouseInput.IPlayerActions
         }
         else if (index == 1 || index == 0)// 그외 공격마법
         {
-            if (!cool[index] && character.target != null && character.target.gameObject.tag == "Enemy"
+            if (!cool[index] && character.target != null && character.target.gameObject.tag == "Enemy" ||character.target.gameObject.tag == "Boss"
             && !character.onCasting)
             {
                 cool[index] = true;

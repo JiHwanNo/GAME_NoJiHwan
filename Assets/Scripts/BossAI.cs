@@ -107,7 +107,7 @@ public class BossAI : MonoBehaviour
         if (targetDis <= 5f)
         {
             transform.LookAt(target);
-            enemyAni.Play("EnemyAtk");
+            enemyAni.Play("Boss_Attack");
         }
         if (targetDis > 5f)
         {

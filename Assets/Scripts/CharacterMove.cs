@@ -30,6 +30,10 @@ public class CharacterMove : MonoBehaviour, IPointerDownHandler
     public bool ClickNPC;
     float targetDis;
 
+    public GameObject taget_Boss;
+    public TextMeshProUGUI name_Boss;
+    public GameObject[] HpBar_Boss;
+
     [Header("Casting")]
     public bool onCasting;
     public Image castingBar;
@@ -152,8 +156,10 @@ public class CharacterMove : MonoBehaviour, IPointerDownHandler
                         Manager.instance.manager_Dialog.dialog_Frame.SetActive(true);
                     }
                 }
-
-
+                if(hit.transform.tag == "Boss")
+                {
+                    Boss_Targeting();
+                }
             }
         }
     }
@@ -214,6 +220,26 @@ public class CharacterMove : MonoBehaviour, IPointerDownHandler
             hpBar_Target.transform.GetChild(0).GetComponent<Image>().fillAmount = 100f;
         }
         target_Tool.SetActive(true);
+    }
+    void Boss_Targeting()
+    {
+        target = hit.transform;
+        float cur_Hp = target.GetComponent<EnemyState>().cur_Hp;
+        name_Boss.text = target.GetComponent<Obj_Info>().Obj_Name;
+        float temp_Hp = cur_Hp / 1000; // 4900 =4
+        if(temp_Hp != 5)
+        {
+            float temp_Fill = cur_Hp % 1000; // 900
+
+            HpBar_Boss[(int)temp_Hp - 1].GetComponent<Image>().fillAmount = temp_Fill / 1000f;
+        }
+        for (int i = 0; i < temp_Hp; i++)
+        {
+            HpBar_Boss[i].GetComponent<Image>().fillAmount = 100f;
+        }
+
+        taget_Boss.SetActive(true);
+
     }
     //타켓 체크 함수
     void OnTarget()
