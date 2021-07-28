@@ -12,6 +12,9 @@ public class ObjectPoolManager : MonoBehaviour
     public GameObject[] enemyPrefab;
     [SerializeField] List<GameObject> enemies;
 
+    public GameObject Boss;
+
+
     public GameObject[] ItemPrefabs;
     public Dictionary<string, GameObject> Items;
     public int getItemCount;

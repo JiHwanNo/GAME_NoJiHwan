@@ -12,6 +12,7 @@ TagManager:
   - Npc
   - Store
   - RangeBar
+  - Boss
   layers:
   - Default
   - TransparentFX
