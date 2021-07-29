@@ -150,7 +150,10 @@ public class Skill_Effect : MonoBehaviour
             if (other.gameObject.tag == "Enemy")
             {
                 other.GetComponent<EnemyHit>().Hit(dmg);
-
+            }
+            if (other.gameObject.tag == "Boss")
+            {
+                other.GetComponent<BossHit>().Hit(dmg);
             }
         }
     }

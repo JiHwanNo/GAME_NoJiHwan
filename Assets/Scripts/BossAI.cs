@@ -103,7 +103,6 @@ public class BossAI : MonoBehaviour
 
     public void Boss_Atk() // 공격이 일어날때. 에니메이션에서 실행시켜준다.
     {
-        
         if (targetDis <= 5f)
         {
             transform.LookAt(target);

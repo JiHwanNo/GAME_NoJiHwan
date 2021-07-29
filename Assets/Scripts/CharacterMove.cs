@@ -80,8 +80,6 @@ public class CharacterMove : MonoBehaviour, IPointerDownHandler
 
         if (playerState.exp_Cur >= playerState.exp_Max)
         {
-            playerState.Lv++;
-            playerState.exp_Cur -= playerState.exp_Max;
             playerState.LevelUp();
         }
         //퀘스트 중 목표 얻기.
@@ -108,15 +106,13 @@ public class CharacterMove : MonoBehaviour, IPointerDownHandler
     //클릭 이벤트 생성 
     public void OnPointerDown(PointerEventData eventData)
     {
-        if (Input.GetMouseButton(0) || Input.touchCount ==1)
+        if (Input.GetMouseButton(0) || Input.touchCount == 1)
         {
             Ray ray = mycamera.ScreenPointToRay(eventData.position);
             Physics.Raycast(ray, out hit);
 
             if (hit.transform != null)
             {
-                
-
                 if (hit.transform.gameObject.tag == "Ground")
                 {
                     if (!onCasting)
@@ -124,9 +120,10 @@ public class CharacterMove : MonoBehaviour, IPointerDownHandler
                         PlayerNav.SetDestination(hit.point);
                     }
                     DropBox.SetActive(false);
-                    if(target_Tool.activeSelf)
+                    if (target_Tool.activeSelf || taget_Boss.activeSelf)
                     {
                         target_Tool.SetActive(false);
+                        taget_Boss.SetActive(false);
                     }
                 }
                 if (hit.transform.gameObject.tag == "Player")
@@ -156,9 +153,11 @@ public class CharacterMove : MonoBehaviour, IPointerDownHandler
                         Manager.instance.manager_Dialog.dialog_Frame.SetActive(true);
                     }
                 }
-                if(hit.transform.tag == "Boss")
+                if (hit.transform.tag == "Boss")
                 {
-                    Boss_Targeting();
+                    target = hit.transform;
+                    Boss_Targeting(target);
+                    taget_Boss.SetActive(true);
                 }
             }
         }
@@ -221,25 +220,38 @@ public class CharacterMove : MonoBehaviour, IPointerDownHandler
         }
         target_Tool.SetActive(true);
     }
-    void Boss_Targeting()
+    public void Boss_Targeting(Transform _target)
     {
-        target = hit.transform;
-        float cur_Hp = target.GetComponent<EnemyState>().cur_Hp;
-        name_Boss.text = target.GetComponent<Obj_Info>().Obj_Name;
-        float temp_Hp = cur_Hp / 1000; // 4900 =4
-        if(temp_Hp != 5)
+        float cur_Hp = _target.GetComponent<EnemyState>().cur_Hp;
+        name_Boss.text = _target.GetComponent<Obj_Info>().Obj_Name;
+
+
+        int temp_Hp = (int)cur_Hp / 1000; // 1700 =1
+        int temp_Fill = (int)cur_Hp % 1000; // 700
+
+        if (temp_Hp != 0)
         {
-            float temp_Fill = cur_Hp % 1000; // 900
-
-            HpBar_Boss[(int)temp_Hp - 1].GetComponent<Image>().fillAmount = temp_Fill / 1000f;
+            for (int i = 0; i < 5; i++)
+            {
+                if (i < temp_Hp)
+                {
+                    HpBar_Boss[i].GetComponent<Image>().fillAmount = 100f;
+                }
+                else if (i >= temp_Hp)
+                {
+                    HpBar_Boss[i].GetComponent<Image>().fillAmount = 0;
+                }
+            }
+            if (temp_Hp != 5)
+            {
+                HpBar_Boss[temp_Hp].GetComponent<Image>().fillAmount = temp_Fill / 1000f;
+            }
         }
-        for (int i = 0; i < temp_Hp; i++)
+        else if (temp_Hp == 0)
         {
-            HpBar_Boss[i].GetComponent<Image>().fillAmount = 100f;
+            HpBar_Boss[0].GetComponent<Image>().fillAmount = temp_Fill / 1000f;
+            HpBar_Boss[1].GetComponent<Image>().fillAmount = 0;
         }
-
-        taget_Boss.SetActive(true);
-
     }
     //타켓 체크 함수
     void OnTarget()

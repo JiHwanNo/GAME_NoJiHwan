@@ -33,21 +33,38 @@ public class PlayerState : MonoBehaviour
     public void LevelUp()
     {
         LevelUp_effect.SetActive(true);
-        exp_Max *= 2;
-        hp *= 1.1f;
-        Mp *= 1.1f;
-        atk += 10;
-        def += 5;
-        hp_Cur = hp;
-        Mp_Cur = Mp;
-        PlayerHp.GetComponent<Image>().fillAmount = hp_Cur / hp;
-        PlayerMp.GetComponent<Image>().fillAmount = Mp_Cur / Mp;
-        StartCoroutine("Effect_Time");
-        Player_Lv.text = Lv.ToString();
-        Manager.instance.characterMove.PlayerUI();
+        StartCoroutine("Levelup");
+        
 
     }
+    IEnumerator Levelup()
+    {
+        while (true)
+        {
+            if (exp_Cur < exp_Max)
+            {
+                StopCoroutine("Levelup");
+                break;
+            }
+            Lv++;
+            exp_Cur -= exp_Max;
+            exp_Max *= 2;
+            hp *= 1.1f;
+            Mp *= 1.1f;
+            atk += 10;
+            def += 5;
+            hp_Cur = hp;
+            Mp_Cur = Mp;
+            PlayerHp.GetComponent<Image>().fillAmount = hp_Cur / hp;
+            PlayerMp.GetComponent<Image>().fillAmount = Mp_Cur / Mp;
+            StartCoroutine("Effect_Time");
+            Player_Lv.text = Lv.ToString();
+            Manager.instance.characterMove.PlayerUI();
 
+            
+            yield return null;
+        }
+    }
     IEnumerator Effect_Time()
     {
         while (true)

@@ -106,8 +106,6 @@ public class Questdata : MonoBehaviour // 오케이 누르면 생성자로 클래스 생성.
         playerState.exp_Cur += Manager.instance.characterMove.target.GetComponent<NPC_Dialog>().GetExp;
         while (playerState.exp_Cur >= playerState.exp_Max)
         {
-            playerState.Lv++;
-            playerState.exp_Cur -= playerState.exp_Max;
             playerState.LevelUp();
         }
     }
