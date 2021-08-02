@@ -14,10 +14,10 @@ public class Enemy_Atk : MonoBehaviour
 
     private void Awake()
     {
-        dmgText = Manager.instance.uI_Manager.Eenemy_Text;
         enemyState = enemy.GetComponent<EnemyState>();
         playerState = Manager.instance.characterMove.Player.GetComponent<PlayerState>();
         enemy_AI = enemy.GetComponent<Enemy_AI>();
+        dmgText = Manager.instance.uI_Manager.Eenemy_Text;
     }
 
     void CalculateDmg()
@@ -43,7 +43,7 @@ public class Enemy_Atk : MonoBehaviour
 
         if (other.gameObject.tag == "Player" && enemy_AI.inCombat && !enemy_AI.Isdead)
         {
-            Vector3 hitPoint = (other.transform.position + transform.position) * 0.5f;
+            Vector3 hitPoint = (Manager.instance.characterMove.Player.position);
 
             CalculateDmg();
 

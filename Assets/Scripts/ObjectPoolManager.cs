@@ -1,7 +1,6 @@
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
-using UnityEngine.UI;
 
 public class ObjectPoolManager : MonoBehaviour
 {
@@ -52,7 +51,7 @@ public class ObjectPoolManager : MonoBehaviour
     //적 생성.
     public GameObject GetEnemy()
     {
-        if(enemies.Count >10)
+        if (enemies.Count > 10)
         {
             return null;
         }
@@ -68,7 +67,7 @@ public class ObjectPoolManager : MonoBehaviour
 
             GameObject obj = Instantiate(enemyPrefab[Random.Range(0, enemyPrefab.Length - 1)]);
             obj.GetComponent<EnemyState>().cur_Hp = obj.GetComponent<EnemyState>().hp;
-            enemies.Add(obj);
+            enemies.Add(obj); 
             obj.SetActive(false);
 
             return obj;
@@ -83,18 +82,18 @@ public class ObjectPoolManager : MonoBehaviour
         GameObject obj = Instantiate(ItemPrefabs[temprandom]); // 아이템 생성   
         obj.name = ItemPrefabs[temprandom].name;
         obj.GetComponentInChildren<TextMeshProUGUI>().text = getItemCount.ToString(); // 아이템 갯수 생성.
-        
+
         string objname = obj.name;
-        if(!Items.ContainsKey(objname)) // 중복 아이템 방지
+        if (!Items.ContainsKey(objname)) // 중복 아이템 방지
         {
-            Items.Add(obj.name, obj);   
+            Items.Add(obj.name, obj);
             return obj;
         }
         GetItem();
 
         return null;
     }
-   
+
     public void ClearItem()
     {
         Items.Clear();

@@ -15,7 +15,7 @@ public class BossAI : MonoBehaviour
     bool inAtk;
     public bool Isdead;
     NavMeshAgent Nav;
-    Animator enemyAni;
+    public Animator BossAni;
     EnemyState enemyState;
 
     bool onMove;
@@ -24,13 +24,28 @@ public class BossAI : MonoBehaviour
     Vector3 target;
     float targetDis;
 
+    BossAttack attack;
+
+    [Header("Pettern 1")]
+    GameObject Summoner;
+    [SerializeField] List<GameObject> Summoners;
+    int RandomRange;
+    private void Awake()
+    {
+        Summoner = Manager.instance.ObjectPool.enemyPrefab[0];
+    }
+    private void Start()
+    {
+        RandomRange = 5;
+    }
     private void OnEnable()
     {
         Isdead = false;
         originPosition = transform.position;
         Nav = GetComponent<NavMeshAgent>();
-        enemyAni = GetComponent<Animator>();
+        BossAni = GetComponent<Animator>();
         enemyState = GetComponent<EnemyState>();
+        attack = transform.GetChild(3).GetComponent<BossAttack>();
         inCombat = false;
         inAtk = false;
         onMove = false;
@@ -60,7 +75,7 @@ public class BossAI : MonoBehaviour
             {
                 Nav.SetDestination(transform.position);
                 inAtk = true;
-                enemyAni.Play("Idle");
+                BossAni.Play("Idle");
             }
         }
 
@@ -103,17 +118,29 @@ public class BossAI : MonoBehaviour
 
     public void Boss_Atk() // 공격이 일어날때. 에니메이션에서 실행시켜준다.
     {
+        int BossHp = (int)enemyState.cur_Hp;
+        int BossPattern_percentage = Random.Range(0, 100);
         if (targetDis <= 5f)
         {
             transform.LookAt(target);
-            enemyAni.Play("Boss_Attack");
+            BossAni.Play("Boss_Attack");
+            if(BossPattern_percentage <5 || BossPattern_percentage>95)
+            {
+               Boss_Pattern(BossHp);
+            }
+            else
+            {
+                attack.Attack();
+            }
+           
         }
         if (targetDis > 5f)
         {
             inAtk = false;
-            enemyAni.Play("Idle");
+            BossAni.Play("Idle");
         }
     }
+
     IEnumerator Boss_AI()
     {
         while (true)
@@ -121,7 +148,7 @@ public class BossAI : MonoBehaviour
             originDis = (originPosition - transform.position).magnitude;
             targetDis = (target - transform.position).magnitude;
             float speed = Nav.desiredVelocity.magnitude;
-            enemyAni.SetFloat("Speed", speed);
+            BossAni.SetFloat("Speed", speed);
 
             if (!inCombat)
             {
@@ -132,6 +159,76 @@ public class BossAI : MonoBehaviour
                 Move_Combat();
             }
             yield return null;
+        }
+    }
+
+    void Boss_Pattern(int BossCurrent)
+    {
+        // 소환, 퍼지는 공격, 유도탄.
+        if (BossCurrent > 4000)
+        {
+            recall_Summoner();
+        }
+        else if (BossCurrent > 2000 && BossCurrent <= 4000)
+        {
+            // 퍼지는 공격
+        }
+        else if (BossCurrent > 0 && BossCurrent <= 2000)
+        {
+            // 유도탄
+        }
+        BossAni.Play("Idle");
+    }
+
+    void recall_Summoner()
+    {
+        CheckObject();
+    }
+
+    // 패턴 1 소환수 얻기.
+    void CheckObject()
+    {
+        for (int i = 0; i < 3; i++)
+        {
+            GameObject obj = GetObject();
+            if (obj != null)
+            {
+                EnemyState enemy = obj.GetComponent<EnemyState>();
+                obj.transform.position = transform.position + new Vector3(Random.Range(-1 * RandomRange, RandomRange),0, Random.Range(-1 * RandomRange, RandomRange));
+                enemy.atk /= 4;
+                enemy.exp /= 3;
+                enemy.cur_Hp /= 3;
+
+                obj.SetActive(true);
+                obj.GetComponent<Enemy_AI>().inCombat = true;
+                
+
+            }
+        }
+
+    }
+    GameObject GetObject()
+    {
+        if (Summoners.Count >2)
+        {
+            return null;
+        }
+        else
+        {
+            foreach (var enemy in Summoners)
+            {
+                if (!enemy.activeSelf)
+                {
+                    return enemy;
+                }
+            }
+
+            GameObject obj = Instantiate(Summoner);
+            obj.GetComponent<EnemyState>().cur_Hp = obj.GetComponent<EnemyState>().hp;
+            Summoners.Add(obj);
+            obj.SetActive(false);
+
+            return obj;
         }
     }
 
