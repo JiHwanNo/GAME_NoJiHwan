@@ -1,5 +1,4 @@
 using System.Collections;
-using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 
@@ -12,7 +11,7 @@ public class BossAttack : MonoBehaviour
     public GameObject Attack_Object;
     public GameObject hitEffect;
     GameObject dmgText;
-    Vector3 dir;
+    public Vector3 dir;
 
     [Header("Player")]
     CharacterMove character;
@@ -28,35 +27,35 @@ public class BossAttack : MonoBehaviour
         playerState = character.Player.GetComponent<PlayerState>();
         dmgText = Manager.instance.uI_Manager.Boss_Text;
         bossAI = transform.parent.GetComponent<BossAI>();
-        
+
     }
     private void Start()
     {
         speed = 5;
     }
-    public void Attack()
-    { 
-        transform.position = transform.parent.position + new Vector3(0, 2, 0);
-        gameObject.SetActive(true);
-        
-        dir = character.Player.position + new Vector3(0, 2, 0);
-        StartCoroutine("SkillShot");
-        
+    private void OnEnable()
+    {
+        StartCoroutine(SkillShot(dir));
     }
-
-    IEnumerator SkillShot()
+    public IEnumerator SkillShot(Vector3 Dir)
     {
         while (true)
         {
-            transform.LookAt(dir);
+            transform.LookAt(Dir);
             transform.Translate(Vector3.forward * speed * Time.deltaTime);
-            if((transform.position- dir).magnitude < 0.5f)
-            {
-                StopCoroutine("SkillShot");
-                gameObject.SetActive(false);
-                OnHitEffect(dir);
-                bossAI.BossAni.Play("Idle");
-                break;
+          if ((transform.position - Dir).magnitude < 0.5f && !bossAI.PatternOn)
+          {
+              StopCoroutine("SkillShot");
+              gameObject.SetActive(false);
+              OnHitEffect(Dir);
+              bossAI.BossAni.Play("Idle");
+              break;
+          }
+         else if (Mathf.Abs((transform.position - transform.parent.position).magnitude) > 10)
+         {
+             StopCoroutine("SkillShot");
+             gameObject.SetActive(false);
+             bossAI.BossAni.Play("Idle");
             }
             yield return null;
         }
@@ -96,14 +95,14 @@ public class BossAttack : MonoBehaviour
             playerState.hp_Cur -= dmg;
             character.PlayerUI();
         }
-        if(other.gameObject.tag =="Ground" && other.gameObject.tag == "Skill")
-        {
-            StopCoroutine("SkillShot");
-            gameObject.SetActive(false);
-
-            Vector3 hitPoint = (other.transform.position) * 0.5f;
-            OnHitEffect(hitPoint);
-        }
+       if (other.gameObject.tag == "Ground")
+       {
+           StopCoroutine("SkillShot");
+           gameObject.SetActive(false);
+       
+           Vector3 hitPoint = (other.transform.position) * 0.5f;
+           OnHitEffect(hitPoint);
+       }
 
         bossAI.BossAni.Play("Idle");
     }
@@ -115,5 +114,5 @@ public class BossAttack : MonoBehaviour
 
     }
 
-   
+
 }

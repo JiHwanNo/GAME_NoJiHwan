@@ -13,7 +13,6 @@ public class ObjectPoolManager : MonoBehaviour
 
     public GameObject Boss;
 
-
     public GameObject[] ItemPrefabs;
     public Dictionary<string, GameObject> Items;
     public int getItemCount;

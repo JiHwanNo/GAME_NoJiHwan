@@ -23,32 +23,48 @@ public class BossAI : MonoBehaviour
     float originDis;
     Vector3 target;
     float targetDis;
-
-    BossAttack attack;
+    [Header("NomalAttack")]
+    Transform attack;
+    CharacterMove Character;
 
     [Header("Pettern 1")]
     GameObject Summoner;
-    [SerializeField] List<GameObject> Summoners;
+    List<GameObject> Summoners;
     int RandomRange;
+
+    [Header("Pattern 2")]
+    GameObject Bullet;
+    List<GameObject> Bullets;
+    GameObject[] BulletPrfab;
+    public bool PatternOn;
+    int bulletCount;
     private void Awake()
     {
-        Summoner = Manager.instance.ObjectPool.enemyPrefab[0];
+        Bullets = new List<GameObject>();
+        Nav = GetComponent<NavMeshAgent>();
+        BossAni = GetComponent<Animator>();
+        enemyState = GetComponent<EnemyState>();
+        Summoners = new List<GameObject>();
+        Character = Manager.instance.characterMove;
     }
     private void Start()
     {
         RandomRange = 5;
+        bulletCount = 30;
+        BulletPrfab = new GameObject[bulletCount];
     }
     private void OnEnable()
     {
-        Isdead = false;
         originPosition = transform.position;
-        Nav = GetComponent<NavMeshAgent>();
-        BossAni = GetComponent<Animator>();
-        enemyState = GetComponent<EnemyState>();
-        attack = transform.GetChild(3).GetComponent<BossAttack>();
+
+        Summoner = Manager.instance.ObjectPool.enemyPrefab[0];
+        Bullet = transform.GetChild(4).gameObject;
+        attack = transform.GetChild(3);
         inCombat = false;
         inAtk = false;
         onMove = false;
+        Isdead = false;
+        PatternOn = false;
 
         StartCoroutine("Boss_AI");
 
@@ -124,15 +140,16 @@ public class BossAI : MonoBehaviour
         {
             transform.LookAt(target);
             BossAni.Play("Boss_Attack");
-            if(BossPattern_percentage <5 || BossPattern_percentage>95)
+            if (BossPattern_percentage < 10 || BossPattern_percentage > 90)
             {
-               Boss_Pattern(BossHp);
+                Boss_Pattern(BossHp);
             }
             else
             {
-                attack.Attack();
+                attack.position = transform.position + new Vector3(0, 2, 0);
+                attack.GetComponent<BossAttack>().dir = Character.Player.position + new Vector3(0, 2, 0);
+                attack.gameObject.SetActive(true);
             }
-           
         }
         if (targetDis > 5f)
         {
@@ -164,6 +181,7 @@ public class BossAI : MonoBehaviour
 
     void Boss_Pattern(int BossCurrent)
     {
+        PatternOn = true;
         // 소환, 퍼지는 공격, 유도탄.
         if (BossCurrent > 4000)
         {
@@ -171,13 +189,12 @@ public class BossAI : MonoBehaviour
         }
         else if (BossCurrent > 2000 && BossCurrent <= 4000)
         {
-            // 퍼지는 공격
+            Spread_Bullet();
         }
         else if (BossCurrent > 0 && BossCurrent <= 2000)
         {
             // 유도탄
         }
-        BossAni.Play("Idle");
     }
 
     void recall_Summoner()
@@ -194,22 +211,23 @@ public class BossAI : MonoBehaviour
             if (obj != null)
             {
                 EnemyState enemy = obj.GetComponent<EnemyState>();
-                obj.transform.position = transform.position + new Vector3(Random.Range(-1 * RandomRange, RandomRange),0, Random.Range(-1 * RandomRange, RandomRange));
+                obj.transform.position = transform.position + new Vector3(Random.Range(-1 * RandomRange, RandomRange), 0, Random.Range(-1 * RandomRange, RandomRange));
                 enemy.atk /= 4;
                 enemy.exp /= 3;
                 enemy.cur_Hp /= 3;
 
                 obj.SetActive(true);
                 obj.GetComponent<Enemy_AI>().inCombat = true;
-                
 
             }
         }
 
+        PatternOn = false;
+
     }
     GameObject GetObject()
     {
-        if (Summoners.Count >2)
+        if (Summoners.Count > 2)
         {
             return null;
         }
@@ -232,5 +250,50 @@ public class BossAI : MonoBehaviour
         }
     }
 
+    // 패턴 2 총알 퍼지기
+    void Spread_Bullet()
+    {
+        BossAni.Play("Boss_Attack");
+        CheckBullet();
+    }
+    // 오브젝트 풀로 bullet 받고. 이동 시키고.
+    void CheckBullet()
+    {
+        for (int i = 0; i < bulletCount; i++)
+        {
+            BulletPrfab[i] = GetBullet();
+            BulletPrfab[i].transform.position = transform.position + new Vector3(0,2,0);
+            Vector3 Randomdir = new Vector3(Random.Range(-365, 365), 0, Random.Range(-365, 365));
+            BulletPrfab[i].GetComponent<BossAttack>().dir = Randomdir;
+
+            BulletPrfab[i].SetActive(true);
+        }
+
+    }
+    GameObject GetBullet()
+    {
+        if (Bullets.Count > bulletCount)
+        {
+            return null;
+        }
+        else
+        {
+            foreach (var enemy in Bullets)
+            {
+                if (!enemy.activeSelf)
+                {
+                    return enemy;
+                }
+            }
+
+            GameObject obj = Instantiate(Bullet);
+            obj.transform.SetParent(transform);
+            Bullets.Add(obj);
+            obj.SetActive(false);
+
+            return obj;
+        }
+    }
+  
 }
 
