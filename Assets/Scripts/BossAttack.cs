@@ -18,7 +18,7 @@ public class BossAttack : MonoBehaviour
     PlayerState playerState;
     float speed;
 
-    int dmg;
+    public int dmg;
     float dmgRange;
     private void Awake()
     {
@@ -41,21 +41,20 @@ public class BossAttack : MonoBehaviour
     {
         while (true)
         {
-            transform.LookAt(Dir);
             transform.Translate(Vector3.forward * speed * Time.deltaTime);
-          if ((transform.position - Dir).magnitude < 0.5f && !bossAI.PatternOn)
-          {
-              StopCoroutine("SkillShot");
-              gameObject.SetActive(false);
-              OnHitEffect(Dir);
-              bossAI.BossAni.Play("Idle");
-              break;
-          }
-         else if (Mathf.Abs((transform.position - transform.parent.position).magnitude) > 10)
-         {
-             StopCoroutine("SkillShot");
-             gameObject.SetActive(false);
-             bossAI.BossAni.Play("Idle");
+            if ((transform.position - Dir).magnitude < 0.5f && !bossAI.PatternOn)
+            {
+                StopAllCoroutines();
+                gameObject.SetActive(false);
+                OnHitEffect(Dir);
+                bossAI.BossAni.Play("Idle");
+                break;
+            }
+            else if (Mathf.Abs((transform.position - transform.parent.position).magnitude) > 10)
+            {
+                StopAllCoroutines();
+                gameObject.SetActive(false);
+                bossAI.BossAni.Play("Idle");
             }
             yield return null;
         }
@@ -95,14 +94,14 @@ public class BossAttack : MonoBehaviour
             playerState.hp_Cur -= dmg;
             character.PlayerUI();
         }
-       if (other.gameObject.tag == "Ground")
-       {
-           StopCoroutine("SkillShot");
-           gameObject.SetActive(false);
-       
-           Vector3 hitPoint = (other.transform.position) * 0.5f;
-           OnHitEffect(hitPoint);
-       }
+        if (other.gameObject.tag == "Ground")
+        {
+            StopCoroutine("SkillShot");
+            gameObject.SetActive(false);
+
+            Vector3 hitPoint = (other.transform.position) * 0.5f;
+            OnHitEffect(hitPoint);
+        }
 
         bossAI.BossAni.Play("Idle");
     }
@@ -114,5 +113,37 @@ public class BossAttack : MonoBehaviour
 
     }
 
+    public void Tracking()
+    {
+        StartCoroutine("check_time");
+    }
+    IEnumerator check_time()
+    {
+        float time = 0;
+        while (true)
+        {
+            time += Time.deltaTime;
+            if (time > 1f)
+            {
+                StopCoroutine("SkillShot");
+                StartCoroutine("Tracking_bullet");
+                StopCoroutine("check_time");
+                break;
+            }
+            yield return null;
+        }
+        
+    }
+    IEnumerator Tracking_bullet()
+    {
+        while (true)
+        {
+            transform.position += transform.forward * 0.5f * Time.deltaTime;
+            Transform target = character.Player;
+            Vector3 t_dir = ((target.position +new Vector3(0,2,0)) - transform.position).normalized;
 
+            transform.forward = Vector3.Lerp(transform.forward, t_dir, 0.25f);
+            yield return null;
+        }
+    }
 }

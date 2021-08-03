@@ -50,7 +50,7 @@ public class BossAI : MonoBehaviour
     private void Start()
     {
         RandomRange = 5;
-        bulletCount = 30;
+        bulletCount = 20;
         BulletPrfab = new GameObject[bulletCount];
     }
     private void OnEnable()
@@ -193,10 +193,10 @@ public class BossAI : MonoBehaviour
         }
         else if (BossCurrent > 0 && BossCurrent <= 2000)
         {
-            // 유도탄
+            Tracking_Bullet();
         }
     }
-
+    #region 패턴 1
     void recall_Summoner()
     {
         CheckObject();
@@ -249,7 +249,8 @@ public class BossAI : MonoBehaviour
             return obj;
         }
     }
-
+    #endregion
+    #region 패턴 2
     // 패턴 2 총알 퍼지기
     void Spread_Bullet()
     {
@@ -259,16 +260,18 @@ public class BossAI : MonoBehaviour
     // 오브젝트 풀로 bullet 받고. 이동 시키고.
     void CheckBullet()
     {
+        int count = 360 / bulletCount;
         for (int i = 0; i < bulletCount; i++)
         {
             BulletPrfab[i] = GetBullet();
             BulletPrfab[i].transform.position = transform.position + new Vector3(0,2,0);
-            Vector3 Randomdir = new Vector3(Random.Range(-365, 365), 0, Random.Range(-365, 365));
-            BulletPrfab[i].GetComponent<BossAttack>().dir = Randomdir;
-
+            
+            int y = i * count;
+            Vector3 rotation = new Vector3(0f, (float)y, 0f);
+            BulletPrfab[i].transform.localRotation = Quaternion.Euler(rotation);
+            BulletPrfab[i].GetComponent<BossAttack>().dir = BulletPrfab[i].transform.forward;
             BulletPrfab[i].SetActive(true);
         }
-
     }
     GameObject GetBullet()
     {
@@ -294,6 +297,28 @@ public class BossAI : MonoBehaviour
             return obj;
         }
     }
-  
+    #endregion
+
+    void Tracking_Bullet()
+    {
+        BossAni.Play("Boss_Attack");
+
+        int count = 360 / 5;
+        for (int i = 0; i < 5; i++)
+        {
+            BulletPrfab[i] = GetBullet();
+            BulletPrfab[i].GetComponent<BossAttack>().dmg /= 4;
+            BulletPrfab[i].transform.position = transform.position + new Vector3(0, 2, 0);
+
+            int y = i * count;
+            Vector3 rotation = new Vector3(0f, (float)y, 0f);
+            BulletPrfab[i].transform.localRotation = Quaternion.Euler(rotation);
+            BulletPrfab[i].GetComponent<BossAttack>().dir = BulletPrfab[i].transform.forward;
+
+            BulletPrfab[i].SetActive(true);
+            BulletPrfab[i].GetComponent<BossAttack>().Tracking();
+        }
+
+    }
 }
 
