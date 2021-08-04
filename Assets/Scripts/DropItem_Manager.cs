@@ -57,7 +57,7 @@ public class DropItem_Manager : MonoBehaviour
                 Destroy(SoltBox.GetChild(i).GetChild(0).gameObject);
             }
         }
-
+        Manager.instance.characterMove.target.GetComponent<EnemyHit>().is_get = true;
     }
 
     void GetGoalAmount()

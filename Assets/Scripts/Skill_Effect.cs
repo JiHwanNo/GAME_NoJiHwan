@@ -71,11 +71,15 @@ public class Skill_Effect : MonoBehaviour
 
 
         }
-        else if (index == 1)
+        else if (index == 1)// 범위 스킬
         {
             skillPower = 2f;
             myaudio.audioSource.PlayOneShot(myaudio.AquaSkill_Flying);
-            StartCoroutine("SkillShot");
+            StartCoroutine("HealSkill");
+
+            CalculateDmg();
+            Vector3 hitPoint = (transform.position) * 0.5f;
+
             playerState.Mp_Cur -= 20;
         }
         else if(index ==3)
@@ -92,6 +96,13 @@ public class Skill_Effect : MonoBehaviour
             Vector3 dir = target.position + new Vector3(0, 2, 0);
             transform.LookAt(dir);
             transform.Translate(Vector3.forward * speed * Time.deltaTime);
+            if ((transform.position - dir).magnitude < 0.5f)
+            {
+                StopAllCoroutines();
+                gameObject.SetActive(false);
+                OnHitEffect(dir);
+                break;
+            }
             yield return null;
         }
     }
@@ -113,8 +124,6 @@ public class Skill_Effect : MonoBehaviour
 
     void CalculateDmg()
     {
-        PlayerState playerState = character.Player.GetComponent<PlayerState>();
-
         dmgRange = Random.Range(0.8f, 1.2f);
         dmg = (int)(playerState.atk * skillPower * dmgRange);
 

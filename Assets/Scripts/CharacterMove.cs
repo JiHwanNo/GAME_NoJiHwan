@@ -74,32 +74,10 @@ public class CharacterMove : MonoBehaviour, IPointerDownHandler
         OnTarget();
 
     }
-    public void GetPlayerExp()
-    {
-        playerState.exp_Cur += target.gameObject.GetComponent<EnemyState>().exp;
-
-        if (playerState.exp_Cur >= playerState.exp_Max)
-        {
-            playerState.LevelUp();
-        }
-        //퀘스트 중 목표 얻기.
-        if (target.GetComponent<Obj_Info>().Obj_Name == "Skeleton" && Manager.instance.questManager.questList.ContainsValue("Get Skeleton Born"))
-        {
-            Skeleton++;
-            for (int i = 0; i < Manager.instance.questManager.questList.Count; i++)
-            {
-                if (Manager.instance.questManager.QuestBox.GetChild(i).GetChild(0).GetComponent<Text>().text.Contains("Get Skeleton Born"))
-                {
-                    Manager.instance.questManager.QuestBox.GetChild(i).GetChild(1).GetComponent<Text>().text = Skeleton.ToString();
-
-                }
-            }
-        }
-    }
+    
     //플레이어 상태창 동기화 (HP,MP)
     public void PlayerUI()
     {
-        PlayerState playerState = Manager.instance.characterMove.Player.GetComponent<PlayerState>();
         player_hpbar.fillAmount = playerState.hp_Cur / playerState.hp;
         player_mpbar.fillAmount = playerState.Mp_Cur / playerState.Mp;
     }
@@ -139,8 +117,11 @@ public class CharacterMove : MonoBehaviour, IPointerDownHandler
                 if (hit.transform.gameObject.tag == "Dead")
                 {
                     target = hit.transform;
-                    DropBox.transform.position = mycamera.WorldToScreenPoint(hit.point);
-                    DropBox.SetActive(true);
+                    if(!target.GetComponent<EnemyHit>().is_get)
+                    {
+                        DropBox.transform.position = mycamera.WorldToScreenPoint(hit.point);
+                        DropBox.SetActive(true);
+                    }
 
                 }
                 if (hit.transform.gameObject.tag == "Npc")

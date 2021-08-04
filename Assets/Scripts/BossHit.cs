@@ -20,7 +20,6 @@ public class BossHit : MonoBehaviour
 
         if (enemyState.cur_Hp <= 0)
         {
-            character.GetPlayerExp();
             if (character.target == transform)
             {
                 character.target = null;

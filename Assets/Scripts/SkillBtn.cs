@@ -37,7 +37,7 @@ public class SkillBtn : MonoBehaviour, MouseInput.IPlayerActions
 
     public void OnClickBtn(int index)
     {
-        if (index == 2)//힐
+        if (index == 2 || index == 1)//힐
         {
             if (!cool[index] && !character.onCasting)
             {
@@ -46,7 +46,7 @@ public class SkillBtn : MonoBehaviour, MouseInput.IPlayerActions
                 character.Casting(castingTime[index], SkiilName[index], skillObj[index]);
             }
         }
-        else if (index == 1 || index == 0)// 그외 공격마법
+        else if (index == 0)// 그외 공격마법
         {
             if (!cool[index] && character.target != null && character.target.gameObject.tag == "Enemy" && !character.onCasting)
             {

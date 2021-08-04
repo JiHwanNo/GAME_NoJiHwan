@@ -16,6 +16,13 @@ public class ObjectPoolManager : MonoBehaviour
     public GameObject[] ItemPrefabs;
     public Dictionary<string, GameObject> Items;
     public int getItemCount;
+
+    public GameObject dmgtext;
+    List<GameObject> dmgtexts;
+    public Transform dmgtextparent;
+
+    public GameObject effect;
+    List<GameObject> effects;
     private void Awake()
     {
         // 장소는 ObjPoolManager 밑에 오브젝트 위치를 받는다.
@@ -30,6 +37,8 @@ public class ObjectPoolManager : MonoBehaviour
         enemies = new List<GameObject>();
 
         Items = new Dictionary<string, GameObject>();
+        dmgtexts = new List<GameObject>();
+        effects = new List<GameObject>();
     }
 
     private void FixedUpdate()
@@ -92,7 +101,38 @@ public class ObjectPoolManager : MonoBehaviour
 
         return null;
     }
+    public GameObject GetdmgText()
+    {
+        foreach (var temptext in dmgtexts)
+        {
+            if(!temptext.activeSelf)
+            {
+                return temptext;
+            }
+        }
+        GameObject text = Instantiate(dmgtext, dmgtext.transform.parent);
+        dmgtexts.Add(text);
+        text.SetActive(false);
 
+        return text;
+
+    }
+    public GameObject GetEffect()
+    {
+        foreach (var effect in effects)
+        {
+            if (!effect.activeSelf)
+            {
+                return effect;
+            }
+        }
+        GameObject obj = Instantiate(effect, effect.transform.parent);
+        dmgtexts.Add(obj);
+        obj.SetActive(false);
+
+        return obj;
+
+    }
     public void ClearItem()
     {
         Items.Clear();

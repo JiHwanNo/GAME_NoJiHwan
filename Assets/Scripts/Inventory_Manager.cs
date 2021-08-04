@@ -12,11 +12,13 @@ public class Inventory_Manager : MonoBehaviour
     public GameObject storeFrame;
     public GameObject ItemInfo_Store;
     public Transform SaleBox;
+    public GameObject PosionSlot;
 
     [Header("Inventory")]
     public int gold;
     public TextMeshProUGUI goldAmount;
     public Transform Rect;
+    public Equip_Manager equip_Manager;
 
     [Header("Drag&Drop")]
     public Transform selectedItem;
@@ -29,6 +31,7 @@ public class Inventory_Manager : MonoBehaviour
     void Awake()
     {
         Inventory_List = new Dictionary<string, GameObject>();
+        equip_Manager = GetComponent<Equip_Manager>();
     }
     public void GetInvenInfo()
     {
@@ -42,24 +45,25 @@ public class Inventory_Manager : MonoBehaviour
 
     public void SaleButton()
     {
-        if(selectedItem.GetComponent<Items_Info>().type == "Equipment")
+        Items_Info items_Info = selectedItem.GetComponent<Items_Info>();
+        if(items_Info.type == "Equipment")
         {
             Destroy(selectedItem.gameObject);
-            gold += selectedItem.GetComponent<Items_Info>().resalsePrice;
+            gold += items_Info.resalsePrice;
             GetInvenInfo();
             SaleBox.gameObject.SetActive(false);
             EquipInfoFrame.gameObject.SetActive(false);
             Rect.gameObject.SetActive(false);
         }
-        if (selectedItem.GetComponent<Items_Info>().type == "Obj")
+        if (items_Info.type == "Obj")
         {
-            selectedItem.GetComponent<Items_Info>().count--;
+            items_Info.count--;
             selectedItem.GetComponentInChildren<TextMeshProUGUI>().text = selectedItem.GetComponent<Items_Info>().count.ToString();
-            if (selectedItem.GetComponent<Items_Info>().count <=0)
+            if (items_Info.count <=0)
             {
                 Destroy(selectedItem.gameObject);
             }
-            gold += selectedItem.GetComponent<Items_Info>().resalsePrice;
+            gold += items_Info.resalsePrice;
             GetInvenInfo();
             SaleBox.gameObject.SetActive(false);
             EquipInfoFrame.gameObject.SetActive(false);

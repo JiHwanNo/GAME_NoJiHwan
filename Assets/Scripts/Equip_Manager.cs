@@ -1,33 +1,44 @@
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
-
+using System.Collections.Generic;
 public class Equip_Manager : MonoBehaviour
 {
     [Header("Player")]
     public PlayerState player;
     public GameObject PlayerHp;
     public GameObject PlayerMp;
+    public CharacterMove character;
 
     [Header("Charecter Info")]
     public Transform[] slot_Equip; // 캐릭터 창의 슬롯
     public Items_Info[] cur_Equip; // 현재 캐릭터 창의 슬롯에 있는 아이템 정보.
 
+    PosionSlotManager posionSlot;
+    private void Start()
+    {
+        character = Manager.instance.GetComponent<CharacterMove>();
+        posionSlot = Manager.instance.inventory.PosionSlot.GetComponent<PosionSlotManager>();
+    }
     public void UsedPosion()
     {
         Manager.instance.myaudio.audioSource.PlayOneShot(Manager.instance.myaudio.button_Click);
 
         Transform item = Manager.instance.inventory.selectedItem;
         Items_Info item_info = item.GetComponent<Items_Info>();
+
+        Dictionary<string, GameObject> inven_list = Manager.instance.inventory.Inventory_List;
+
         if (item_info.name_Item == "Hp Posion")
         {
-            Debug.Log(item_info.name_Item);
             UseHP_Posion(item_info);
             item.GetComponentInChildren<TextMeshProUGUI>().text = item_info.count.ToString();
-            PlayerHp.GetComponent<Image>().fillAmount = player.hp_Cur / player.hp;
+            character.PlayerUI();
             if(item_info.count ==0)
             {
                 item_info.SelfDestroy(item);
+                inven_list.Remove(item_info.name_Item);
+                posionSlot.Check_Posion();
             }
         }
         if (item_info.name_Item == "Mp Posion")
@@ -35,11 +46,13 @@ public class Equip_Manager : MonoBehaviour
 
             UseMP_Posion(item_info);
             item.GetComponentInChildren<TextMeshProUGUI>().text = item_info.count.ToString();
-            PlayerMp.GetComponent<Image>().fillAmount = player.Mp_Cur / player.Mp;
+            character.PlayerUI();
 
             if (item_info.count == 0)
             {
                 item_info.SelfDestroy(item);
+                inven_list.Remove(item_info.name_Item);
+                posionSlot.Check_Posion();
             }
         }
 
