@@ -21,6 +21,7 @@ public class EnemyHit : MonoBehaviour
     BoxCollider boxCollider;
     private void Start()
     {
+        is_get = false;
         character = Manager.instance.characterMove;
         playerState = Manager.instance.characterMove.Player.GetComponent<PlayerState>();
         enemyState = GetComponent<EnemyState>();
@@ -28,8 +29,9 @@ public class EnemyHit : MonoBehaviour
         questlist = Manager.instance.questManager.questList;
         qusetbox = Manager.instance.questManager.QuestBox;
         boxCollider = GetComponent<BoxCollider>();
-        is_get = false;
+        
     }
+    
     public void Hit(int dmg)
     {
         GetComponent<Enemy_AI>().inCombat = true;

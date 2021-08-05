@@ -6,8 +6,8 @@ public class Equip_Manager : MonoBehaviour
 {
     [Header("Player")]
     public PlayerState player;
-    public GameObject PlayerHp;
-    public GameObject PlayerMp;
+    public Image PlayerHp;
+    public Image PlayerMp;
     public CharacterMove character;
 
     [Header("Charecter Info")]
@@ -33,8 +33,8 @@ public class Equip_Manager : MonoBehaviour
         {
             UseHP_Posion(item_info);
             item.GetComponentInChildren<TextMeshProUGUI>().text = item_info.count.ToString();
-            character.PlayerUI();
-            if(item_info.count ==0)
+            PlayerHp.fillAmount = player.hp_Cur / player.hp;
+            if (item_info.count ==0)
             {
                 item_info.SelfDestroy(item);
                 inven_list.Remove(item_info.name_Item);
@@ -46,7 +46,7 @@ public class Equip_Manager : MonoBehaviour
 
             UseMP_Posion(item_info);
             item.GetComponentInChildren<TextMeshProUGUI>().text = item_info.count.ToString();
-            character.PlayerUI();
+            PlayerMp.fillAmount = player.Mp_Cur / player.Mp;
 
             if (item_info.count == 0)
             {

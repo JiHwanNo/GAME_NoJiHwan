@@ -157,7 +157,7 @@ public class SkillBtn : MonoBehaviour, MouseInput.IPlayerActions
         
             skillObj[3].transform.position = character.Player.position;
 
-            if(time >= 1f)
+            if(time >= 0.4f)
             {
                 skillObj[3].SetActive(false);
                 StopCoroutine("Blink");

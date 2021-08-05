@@ -8,17 +8,18 @@ public class BossHit : MonoBehaviour
 
     private void Start()
     {
+        time = 0;
         character = Manager.instance.characterMove;
     }
     public void Hit(int dmg)
     {
         GetComponent<BossAI>().inCombat = true;
-        EnemyState enemyState = GetComponent<EnemyState>();
-        enemyState.cur_Hp -= dmg;
+        EnemyState BossState = GetComponent<EnemyState>();
+        BossState.cur_Hp -= dmg;
 
         character.Boss_Targeting(transform);
 
-        if (enemyState.cur_Hp <= 0)
+        if (BossState.cur_Hp <= 0)
         {
             if (character.target == transform)
             {
@@ -37,11 +38,11 @@ public class BossHit : MonoBehaviour
         while (true)
         {
             time += Time.fixedDeltaTime;
-            if (time > 5)
+            if (time > 5f)
             {
                 time = 0;
                 gameObject.SetActive(false);
-                gameObject.tag = "Enemy";
+                gameObject.tag = "Boss";
                 transform.GetComponent<BoxCollider>().isTrigger = false;
                 StopCoroutine("SetActity");
                 break;

@@ -25,17 +25,17 @@ public class Enemy_AI : MonoBehaviour
 
     private void OnEnable()
     {
+        inCombat = false;
         Isdead = false;
         originPosition = transform.position;
         Nav = GetComponent<NavMeshAgent>();
         enemyAni = GetComponent<Animator>();
         enemyState = GetComponent<EnemyState>();
-        inCombat = false;
         inAtk = false;
         onMove = false;
-
+        enemyState.cur_Hp = enemyState.hp;
         StartCoroutine("EnemyAI");
-
+        
     }
     //전투중 움직임 실행
     void Move_Combat()
@@ -47,11 +47,14 @@ public class Enemy_AI : MonoBehaviour
             Nav.speed = 0;
             Isdead = true;
             Nav.SetDestination(transform.position);
-            
+            inAtk = false;
+            inCombat = false;
+            onMove = false;
         }
 
         if (!inAtk && enemyState.cur_Hp > 0)
         {
+
             Nav.speed = speed_Combat;
             Nav.SetDestination(target);
 
@@ -81,15 +84,15 @@ public class Enemy_AI : MonoBehaviour
             onMove = false;
             
         }
-        if (!onMove || Nav.speed ==0)
+        if (!onMove || Nav.speed == 0)
         {
             onMove = true;
             Nav.speed = speed_Noncombat;
             
-            target = new Vector3(transform.position.x + Random.Range(-1 * moveRange, moveRange), 0,
-                transform.position.z + Random.Range(-1 * moveRange, moveRange));
+            target = new Vector3(transform.position.x + Random.Range(-1 * moveRange, moveRange), 0, transform.position.z + Random.Range(-1 * moveRange, moveRange));
             
             Nav.SetDestination(target);
+
         }
         if (originDis >= moveRange)
         {
@@ -97,7 +100,7 @@ public class Enemy_AI : MonoBehaviour
             target = originPosition;
             Nav.SetDestination(target);
         }
-        
+
     }
 
    public void Enemy_Atk()

@@ -59,7 +59,7 @@ public class ObjectPoolManager : MonoBehaviour
     //Àû »ı¼º.
     public GameObject GetEnemy()
     {
-        if (enemies.Count > 10)
+        if (enemies.Count > 12)
         {
             return null;
         }
